@@ -339,6 +339,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floating-ui/core@npm:^0.6.2":
+  version: 0.6.2
+  resolution: "@floating-ui/core@npm:0.6.2"
+  checksum: b3e1844da852fe141cfa4163026a7c5ffb4399a96105340dffdd5b76dcafea72c6221a06b4674c2b500bc776adc9d9e4ed39dba55e7d844d9507d994c0af743a
+  languageName: node
+  linkType: hard
+
+"@floating-ui/dom@npm:0.4.5":
+  version: 0.4.5
+  resolution: "@floating-ui/dom@npm:0.4.5"
+  dependencies:
+    "@floating-ui/core": ^0.6.2
+  checksum: 3024aba55fe7ee78b429a6a5d61f5719a6bb2acc79c8a33304b9d30c443efba3a5288acaf9003402e31ee97a533eda97c30a0f2c97e9e54c697df9b80a23dad8
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.0.1":
   version: 1.1.2
   resolution: "@gar/promisify@npm:1.1.2"
@@ -869,6 +885,28 @@ __metadata:
     "@babel/runtime": ^7.10.2
     "@babel/runtime-corejs3": ^7.10.2
   checksum: 38401a9a400f26f3dcc24b84997461a16b32869a9893d323602bed8da40a8bcc0243b8d2880e942249a1496cea7a7de769e93d21c0baa439f01e1ee936fed665
+  languageName: node
+  linkType: hard
+
+"ariakit-utils@npm:0.17.0-next.16":
+  version: 0.17.0-next.16
+  resolution: "ariakit-utils@npm:0.17.0-next.16"
+  peerDependencies:
+    react: ^17.0.0 || ^18.0.0
+  checksum: 0c02ba56aa6574f749cb94174d80af062f90a934ae38f9bda49ed01b81184b41c52a1abe54509a00e608316c207c9aa6680c330151f04acc635ce594c5b60349
+  languageName: node
+  linkType: hard
+
+"ariakit@npm:2.0.0-next.23":
+  version: 2.0.0-next.23
+  resolution: "ariakit@npm:2.0.0-next.23"
+  dependencies:
+    "@floating-ui/dom": 0.4.5
+    ariakit-utils: 0.17.0-next.16
+  peerDependencies:
+    react: ^17.0.0 || ^18.0.0
+    react-dom: ^17.0.0 || ^18.0.0
+  checksum: 7660e5b395c035d47a6847c05736e6c2c0ff9380ea004f5aa3bc3bd1214f873ce42ea111fb4d1d0e12c805235b9950fc2cff31d05cfb89db7d4e1b331e310c92
   languageName: node
   linkType: hard
 
@@ -4374,6 +4412,15 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"react-icons@npm:4.3.1":
+  version: 4.3.1
+  resolution: "react-icons@npm:4.3.1"
+  peerDependencies:
+    react: "*"
+  checksum: 2cc608acdd3e906aa3aaee290b8398220639677c949382d86e554020e5dab6a9f1ed7484418aa5272cb5c5c018e1fc9a323d433d901697a76530029f9ecb1263
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -5480,6 +5527,7 @@ resolve@^2.0.0-next.3:
   dependencies:
     "@bjeco/prettier-config": latest
     "@bjeco/stylelint-config": latest
+    ariakit: 2.0.0-next.23
     clsx: 1.1.1
     eslint: 8.13.0
     eslint-config-next: 12.1.5
@@ -5493,6 +5541,7 @@ resolve@^2.0.0-next.3:
     prettier: 2.6.2
     react: 18.0.0
     react-dom: 18.0.0
+    react-icons: 4.3.1
     sass: 1.50.1
     stylelint: 14.7.1
     swr: 1.3.0
