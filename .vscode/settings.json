@@ -6,7 +6,23 @@
     "editor.wordWrap": "on",
     "editor.wrappingIndent": "same"
   },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "autoSnippet.snippets": [
+    {
+      "pattern": "**/[A-Z]*.js",
+      "snippet": "React Component"
+    },
+    {
+      "pattern": "**/index.js",
+      "snippet": "Export Index"
+    }
+  ],
   "cssModules.camelCase": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
@@ -24,5 +40,29 @@
   },
   "emmet.triggerExpansionOnTab": true,
   "git.autofetch": true,
-  "prettier.requireConfig": true
+  "prettier.requireConfig": true,
+  "jest.coverageColors": {
+    "covered": "rgba(9, 156, 65, 1)",
+    "uncovered": "rgba(0, 0, 0, 1)",
+    "partially-covered": "rgba(235, 198, 52, 1)"
+  },
+  "jest.jestCommandLine": "yarn test",
+  "jest.showCoverageOnLoad": true,
+  // "workbench.colorCustomizations": {
+  //   "activityBar.activeBackground": "#567ebc",
+  //   "activityBar.activeBorder": "#dce0e6",
+  //   "activityBar.background": "#2b4c7e",
+  //   "activityBar.foreground": "#dce0e6",
+  //   "activityBar.inactiveForeground": "#567ebc",
+  //   "activityBarBadge.background": "#dce0e6",
+  //   "activityBarBadge.foreground": "#2b4c7e",
+  //   "list.hoverBackground": "#567ebc",
+  //   "list.activeSelectionBackground": "#2b4c7e",
+  //   "list.activeSelectionForeground": "#dce0e6",
+  //   "list.hoverForeground": "#fff",
+  //   "sideBar.background": "#1F1F20",
+  //   "sideBar.foreground": "#dce0e6",
+  //   "sideBarSectionHeader.background": "#2b4c7e",
+  //   "sideBarSectionHeader.foreground": "#dce0e6"
+  // }
 }
