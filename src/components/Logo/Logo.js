@@ -1,8 +1,21 @@
 import styles from './Logo.module.scss';
+import { motion } from 'framer-motion';
+
+const variants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  enter: { opacity: 1, scale: 1 },
+  exit: { opacity: 0, scale: 0.8 },
+};
 
 const Logo = () => (
-  <svg
+  <motion.svg
+    animate='enter'
     className={styles._}
+    exit='exit'
+    initial='hidden'
+    style={{ originX: 1, originY: 1 }}
+    transition={{ ease: 'anticipate', duration: 2 }}
+    variants={variants}
     xmlns='http://www.w3.org/2000/svg'
     viewBox='0 0 300 258.34'
     role='img'
@@ -41,7 +54,7 @@ const Logo = () => (
       <path d='M194.76 86.2v1.74h6.28c-1.67-.02-4.7-.17-5.94-.88-.38-.22-.35-.87-.35-.87Z' />
       <path d='m221.47 93.44-9.84-6.35-4.62-.62-9.12.03-2.84-1.85c-.26.4-.29 1.55-.29 1.55s-.03.65.35.87c1.24.71 4.26.85 5.94.88h8.61l4.39 2.47 4.39 2.47h-6.88l4.06 2.71.15.1c.58.38 2.71 1.77 3.75 1.94.48.08 2.04.16 2.04.16l1.89-.51-7.27-2.81 5.3-1.05Z' />
     </g>
-  </svg>
+  </motion.svg>
 );
 
 export default Logo;
