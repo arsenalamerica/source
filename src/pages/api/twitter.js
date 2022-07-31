@@ -1,5 +1,5 @@
-import { ReasonPhrases, StatusCodes } from 'http-status-codes';
-import getFetchUrl from '../../utils/getFetchUrl';
+// import { ReasonPhrases, StatusCodes } from 'http-status-codes';
+import { getFetchUrl } from '@utils';
 
 const userId = process.env.TWITTER_USER_ID;
 const bearerToken = process.env.TWITTER_BEARER_TOKEN;
@@ -18,7 +18,7 @@ const headers = {
 
 const fetchUrl = getFetchUrl(url, params);
 
-export default async (req, res) => {
+const twitter = async (req, res) => {
   const response = await fetch(fetchUrl, {
     method: 'GET',
     headers,
@@ -51,3 +51,5 @@ export default async (req, res) => {
   );
   return res.status(200).json({ data: tweetData });
 };
+
+export default twitter;

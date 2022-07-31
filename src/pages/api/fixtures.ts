@@ -40,7 +40,7 @@ const params = {
 
 const fetchUrl = getFetchUrl(url, params);
 
-export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
+const fixtures = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   const response = await fetch(fetchUrl, {
     method: 'GET',
   });
@@ -50,3 +50,5 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   res.setHeader('Cache-Control', 's-maxage=300');
   res.status(200).json(results);
 };
+
+export default fixtures;
