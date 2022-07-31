@@ -1,13 +1,14 @@
 import 'normalize.css';
-import './app.css';
+import './_app.scss';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as Fathom from 'fathom-client';
 import { AnimatePresence } from 'framer-motion';
-
+import { HeadingLevel } from 'ariakit/heading';
+import { AppProps } from 'next/app';
 import Head from 'next/head';
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   const router = useRouter();
 
   useEffect(() => {
@@ -39,12 +40,14 @@ const App = ({ Component, pageProps }) => {
       <Head>
         <title>Tacoma Gooners</title>
       </Head>
-      <AnimatePresence
-        exitBeforeEnter
-        onExitComplete={() => window.scrollTo(0, 0)}
-      >
-        <Component {...pageProps} />
-      </AnimatePresence>
+      <HeadingLevel>
+        <AnimatePresence
+          exitBeforeEnter
+          onExitComplete={() => window.scrollTo(0, 0)}
+        >
+          <Component {...pageProps} />
+        </AnimatePresence>
+      </HeadingLevel>
     </>
   );
 };

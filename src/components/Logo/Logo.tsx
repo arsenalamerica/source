@@ -7,7 +7,7 @@ const variants = {
   exit: { opacity: 0, scale: 0.8 },
 };
 
-const Logo = () => (
+const Logo = (): JSX.Element => (
   <motion.svg
     animate='enter'
     className={styles._}
