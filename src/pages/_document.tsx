@@ -1,14 +1,9 @@
-import Document, { Head, Html, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
-  static async getInitialProps(context) {
-    const initialProperties = await Document.getInitialProps(context);
-    return { ...initialProperties };
-  }
-
   render() {
     return (
-      <Html lang='en'>
+      <Html>
         <Head>
           <link href='/favicon.ico' rel='icon' />
 
@@ -30,6 +25,16 @@ class MyDocument extends Document {
             type='image/png'
           />
           <link href='/site.webmanifest' rel='manifest' />
+          <link rel='preconnect' href='https://fonts.googleapis.com' />
+          <link
+            rel='preconnect'
+            href='https://fonts.gstatic.com'
+            crossOrigin='anonymous'
+          />
+          <link
+            href='https://fonts.googleapis.com/css2?family=Noto+Sans&family=Sulphur+Point:wght@700&display=swap'
+            rel='stylesheet'
+          />
         </Head>
         <body>
           <Main />

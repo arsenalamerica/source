@@ -1,11 +1,5 @@
-import {
-  Toolbar,
-  ToolbarItem,
-  ToolbarSeparator,
-  useToolbarState,
-} from 'ariakit/toolbar';
+import { Toolbar, ToolbarItem, useToolbarState } from 'ariakit/toolbar';
 import { ImTwitter, ImInstagram, ImFacebook } from 'react-icons/im';
-import { trackGoal } from 'fathom-client';
 import { motion } from 'framer-motion';
 
 import styles from './SocialBar.module.scss';
@@ -16,15 +10,13 @@ const variants = {
   exit: { opacity: 0, scale: 0.8 },
 };
 
-const SocialBar = () => {
+const SocialBar = (): JSX.Element => {
   const toolbar = useToolbarState();
 
   const toolbarItemSharedProps = {
-    as: 'a',
     className: styles.button,
     rel: 'noopener noreferrer',
     target: '_blank',
-    onClick: () => trackGoal('LMVFQXLJ'),
   };
 
   return (
@@ -40,18 +32,21 @@ const SocialBar = () => {
     >
       <ToolbarItem
         {...toolbarItemSharedProps}
+        as='a'
         href='https://twitter.com/tacomagooners'
       >
         <ImTwitter />
       </ToolbarItem>
       <ToolbarItem
         {...toolbarItemSharedProps}
+        as='a'
         href='https://www.instagram.com/tacomagooners/'
       >
         <ImInstagram />
       </ToolbarItem>
       <ToolbarItem
         {...toolbarItemSharedProps}
+        as='a'
         href='https://www.facebook.com/groups/tacomagooners'
       >
         <ImFacebook />
