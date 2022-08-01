@@ -1,5 +1,5 @@
 type Time = {
-  status: number;
+  status: string;
   starting_at: {
     date_time: string;
     date: string;
