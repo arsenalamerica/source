@@ -1,0 +1,16 @@
+._ {
+  display: flex;
+  justify-content: space-between;
+  aspect-ratio: 1/1;
+  background-color: rgb(0 0 0 / 10%);
+
+  .Team {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+    gap: 1em;
+  }
+}

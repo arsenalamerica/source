@@ -22,6 +22,7 @@
     "swr": "1.3.0"
   },
   "devDependencies": {
+    "@bjeco/blocks": "0.0.4",
     "@bjeco/prettier-config": "*",
     "@types/node": "18.6.3",
     "@types/react": "18.0.15",

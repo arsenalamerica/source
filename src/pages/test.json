@@ -103,6 +103,7 @@
           { "fixture_id": 18535041, "tvstation": "Diema Sport 2" },
           { "fixture_id": 18535041, "tvstation": "Eleven Sports (Por)" },
           { "fixture_id": 18535041, "tvstation": "Optus Sport (Aus)" },
+          { "fixture_id": 18535041, "tvstation": "Setanta Sports (Ukr)" },
           {
             "fixture_id": 18535041,
             "tvstation": "Sky Sport Premier League (Ger)"
@@ -1381,8 +1382,8 @@
           "league_id": 8,
           "season_id": 19734,
           "stage_id": 77457864,
-          "start": "2022-10-01",
-          "end": "2022-10-02"
+          "start": "2022-09-30",
+          "end": "2022-10-01"
         }
       },
       "stage": {

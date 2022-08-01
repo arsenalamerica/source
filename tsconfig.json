@@ -14,11 +14,12 @@
     "skipLibCheck": true,
     "strict": false,
     "target": "es5",
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "@components": ["src/components/index.ts"],
-      "@hooks": ["src/hooks/index.ts"],
-      "@utils": ["src/utils/index.ts"]
+      "@components": ["components/index.ts"],
+      "@hooks": ["hooks/index.ts"],
+      "@utils": ["utils/index.ts"],
+      "@customTypes/*": ["types/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "next-env.d.ts"],
