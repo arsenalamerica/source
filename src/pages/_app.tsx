@@ -7,6 +7,7 @@ import { AnimatePresence } from 'framer-motion';
 import { HeadingLevel } from 'ariakit/heading';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { Boundaries } from '@bjeco/blocks';
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   const router = useRouter();
@@ -36,7 +37,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   }, []);
 
   return (
-    <>
+    <Boundaries>
       <Head>
         <title>Tacoma Gooners</title>
       </Head>
@@ -48,7 +49,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
           <Component {...pageProps} />
         </AnimatePresence>
       </HeadingLevel>
-    </>
+    </Boundaries>
   );
 };
 
