@@ -9,11 +9,23 @@
       "group_id": null,
       "aggregate_id": null,
       "venue_id": 201,
-      "referee_id": null,
+      "referee_id": 14532,
       "localteam_id": 51,
       "visitorteam_id": 19,
       "winner_team_id": null,
-      "weather_report": null,
+      "weather_report": {
+        "code": "clouds",
+        "type": "few clouds",
+        "icon": "https://cdn.sportmonks.com/images/weather/02d.png",
+        "temperature": { "temp": 71.26, "unit": "fahrenheit" },
+        "temperature_celcius": { "temp": 21.8, "unit": "celcius" },
+        "clouds": "17%",
+        "humidity": "34%",
+        "pressure": 1023,
+        "wind": { "speed": "9.22 m/s", "degree": 360 },
+        "coordinates": { "lat": 51.5085, "lon": -0.1257 },
+        "updated_at": "2022-08-05T18:15:10.292123Z"
+      },
       "commentaries": false,
       "attendance": null,
       "pitch": null,
@@ -21,8 +33,8 @@
       "neutral_venue": false,
       "winning_odds_calculated": false,
       "formations": {
-        "localteam_formation": null,
-        "visitorteam_formation": null
+        "localteam_formation": "4-2-3-1",
+        "visitorteam_formation": "3-4-1-2"
       },
       "scores": {
         "localteam_score": 0,
@@ -52,9 +64,9 @@
       "coaches": { "localteam_coach_id": 460451, "visitorteam_coach_id": 307 },
       "standings": { "localteam_position": 7, "visitorteam_position": 2 },
       "assistants": {
-        "first_assistant_id": null,
-        "second_assistant_id": null,
-        "fourth_official_id": null
+        "first_assistant_id": 12794,
+        "second_assistant_id": 12798,
+        "fourth_official_id": 14814
       },
       "leg": "1/1",
       "colors": null,
@@ -92,28 +104,1381 @@
           "is_placeholder": false
         }
       },
-      "lineup": { "data": [] },
+      "lineup": {
+        "data": [
+          {
+            "team_id": 51,
+            "fixture_id": 18535041,
+            "player_id": 185723,
+            "player_name": "Vicente Guaita",
+            "number": 13,
+            "position": "G",
+            "additional_position": null,
+            "formation_position": 1,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 51,
+            "fixture_id": 18535041,
+            "player_id": 1202,
+            "player_name": "Nathaniel Clyne",
+            "number": 17,
+            "position": "D",
+            "additional_position": null,
+            "formation_position": 2,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 51,
+            "fixture_id": 18535041,
+            "player_id": 25284,
+            "player_name": "Joachim Andersen",
+            "number": 16,
+            "position": "D",
+            "additional_position": null,
+            "formation_position": 3,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 51,
+            "fixture_id": 18535041,
+            "player_id": 4536500,
+            "player_name": "Marc Guéhi",
+            "number": 6,
+            "position": "D",
+            "additional_position": null,
+            "formation_position": 4,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 51,
+            "fixture_id": 18535041,
+            "player_id": 4598710,
+            "player_name": "Tyrick Mitchell",
+            "number": 3,
+            "position": "D",
+            "additional_position": null,
+            "formation_position": 5,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 51,
+            "fixture_id": 18535041,
+            "player_id": 927,
+            "player_name": "Jeffrey Schlupp",
+            "number": 15,
+            "position": "M",
+            "additional_position": null,
+            "formation_position": 6,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 51,
+            "fixture_id": 18535041,
+            "player_id": 7643,
+            "player_name": "Eberechi Eze",
+            "number": 10,
+            "position": "M",
+            "additional_position": null,
+            "formation_position": 9,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 51,
+            "fixture_id": 18535041,
+            "player_id": 5640926,
+            "player_name": "Cheick Doucouré",
+            "number": 28,
+            "position": "M",
+            "additional_position": null,
+            "formation_position": 7,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 51,
+            "fixture_id": 18535041,
+            "player_id": 1038,
+            "player_name": "Jordan Ayew",
+            "number": 9,
+            "position": "M",
+            "additional_position": null,
+            "formation_position": 8,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 51,
+            "fixture_id": 18535041,
+            "player_id": 1108,
+            "player_name": "Wilfried Zaha",
+            "number": 11,
+            "position": "M",
+            "additional_position": null,
+            "formation_position": 10,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 51,
+            "fixture_id": 18535041,
+            "player_id": 96792,
+            "player_name": "Odsonne Édouard",
+            "number": 22,
+            "position": "A",
+            "additional_position": null,
+            "formation_position": 11,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 19,
+            "fixture_id": 18535041,
+            "player_id": 9438,
+            "player_name": "Aaron Ramsdale",
+            "number": 1,
+            "position": "G",
+            "additional_position": null,
+            "formation_position": 1,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 19,
+            "fixture_id": 18535041,
+            "player_id": 97811,
+            "player_name": "Gabriel Magalhães",
+            "number": 6,
+            "position": "D",
+            "additional_position": null,
+            "formation_position": 4,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 19,
+            "fixture_id": 18535041,
+            "player_id": 3259,
+            "player_name": "Ben White",
+            "number": 4,
+            "position": "D",
+            "additional_position": null,
+            "formation_position": 2,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 19,
+            "fixture_id": 18535041,
+            "player_id": 17544737,
+            "player_name": "William Saliba",
+            "number": 12,
+            "position": "D",
+            "additional_position": null,
+            "formation_position": 3,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 19,
+            "fixture_id": 18535041,
+            "player_id": 1887,
+            "player_name": "Granit Xhaka",
+            "number": 34,
+            "position": "M",
+            "additional_position": null,
+            "formation_position": 7,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 19,
+            "fixture_id": 18535041,
+            "player_id": 186370,
+            "player_name": "Thomas Partey",
+            "number": 5,
+            "position": "M",
+            "additional_position": null,
+            "formation_position": 6,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 19,
+            "fixture_id": 18535041,
+            "player_id": 26603,
+            "player_name": "Oleksandr Zinchenko",
+            "number": 35,
+            "position": "M",
+            "additional_position": null,
+            "formation_position": 8,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 19,
+            "fixture_id": 18535041,
+            "player_id": 26823,
+            "player_name": "Martin Ødegaard",
+            "number": 8,
+            "position": "A",
+            "additional_position": null,
+            "formation_position": 9,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 19,
+            "fixture_id": 18535041,
+            "player_id": 16827155,
+            "player_name": "Bukayo Saka",
+            "number": 7,
+            "position": "M",
+            "additional_position": null,
+            "formation_position": 5,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 19,
+            "fixture_id": 18535041,
+            "player_id": 5329,
+            "player_name": "Gabriel Jesus",
+            "number": 9,
+            "position": "A",
+            "additional_position": null,
+            "formation_position": 10,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          },
+          {
+            "team_id": 19,
+            "fixture_id": 18535041,
+            "player_id": 10959356,
+            "player_name": "Gabriel Martinelli",
+            "number": 11,
+            "position": "A",
+            "additional_position": null,
+            "formation_position": 11,
+            "posx": null,
+            "posy": null,
+            "captain": null,
+            "type": "lineup",
+            "stats": {
+              "shots": { "shots_total": null, "shots_on_goal": null },
+              "goals": {
+                "scored": 0,
+                "assists": 0,
+                "conceded": 0,
+                "owngoals": 0,
+                "team_conceded": 0
+              },
+              "fouls": { "drawn": null, "committed": null },
+              "cards": { "yellowcards": 0, "redcards": 0, "yellowredcards": 0 },
+              "passing": {
+                "total_crosses": null,
+                "crosses_accuracy": null,
+                "passes": null,
+                "accurate_passes": null,
+                "passes_accuracy": null,
+                "key_passes": null
+              },
+              "dribbles": {
+                "attempts": null,
+                "success": null,
+                "dribbled_past": null
+              },
+              "duels": { "total": null, "won": null },
+              "other": {
+                "aerials_won": null,
+                "punches": null,
+                "offsides": null,
+                "saves": null,
+                "inside_box_saves": null,
+                "pen_scored": 0,
+                "pen_missed": 0,
+                "pen_saved": null,
+                "pen_committed": null,
+                "pen_won": null,
+                "hit_woodwork": null,
+                "tackles": null,
+                "blocks": null,
+                "interceptions": null,
+                "clearances": null,
+                "dispossesed": null,
+                "minutes_played": 0
+              },
+              "rating": null
+            }
+          }
+        ]
+      },
       "tvstations": {
         "data": [
           { "fixture_id": 18535041, "tvstation": "1xBet" },
           { "fixture_id": 18535041, "tvstation": "1xBet.kz" },
           { "fixture_id": 18535041, "tvstation": "1xStavka.ru" },
+          { "fixture_id": 18535041, "tvstation": "Arena Sport (BiH)" },
           { "fixture_id": 18535041, "tvstation": "Arena Sport (Cro)" },
+          { "fixture_id": 18535041, "tvstation": "Arena Sport (Ser)" },
+          { "fixture_id": 18535041, "tvstation": "beIN Sports 3 (Tur)" },
+          { "fixture_id": 18535041, "tvstation": "Betsafe" },
+          { "fixture_id": 18535041, "tvstation": "Betsson" },
+          { "fixture_id": 18535041, "tvstation": "C+ France" },
+          { "fixture_id": 18535041, "tvstation": "C+ Sport (Fra)" },
+          { "fixture_id": 18535041, "tvstation": "Canal+ (FRA)" },
           { "fixture_id": 18535041, "tvstation": "CANAL+ Sport (Fra)" },
+          { "fixture_id": 18535041, "tvstation": "Cytavision Sports" },
+          { "fixture_id": 18535041, "tvstation": "DAZN (ESP)" },
           { "fixture_id": 18535041, "tvstation": "Diema Sport 2" },
+          { "fixture_id": 18535041, "tvstation": "Digi Sport 1 (Rom)" },
           { "fixture_id": 18535041, "tvstation": "Eleven Sports (Por)" },
+          { "fixture_id": 18535041, "tvstation": "ESPN (BRA)" },
+          { "fixture_id": 18535041, "tvstation": "Match 4 (Hun)" },
+          { "fixture_id": 18535041, "tvstation": "Nordicbet" },
+          { "fixture_id": 18535041, "tvstation": "Nova Sports (Hel)" },
           { "fixture_id": 18535041, "tvstation": "Optus Sport (Aus)" },
+          { "fixture_id": 18535041, "tvstation": "Play Sports (BEL)" },
+          { "fixture_id": 18535041, "tvstation": "Play Sports 1 (BEL)" },
+          { "fixture_id": 18535041, "tvstation": "Prima Sport" },
+          { "fixture_id": 18535041, "tvstation": "See (Den)" },
           { "fixture_id": 18535041, "tvstation": "Setanta Sports (Ukr)" },
+          { "fixture_id": 18535041, "tvstation": "Setanta Sports Eurasia" },
+          { "fixture_id": 18535041, "tvstation": "Sky Go (DEU)" },
+          { "fixture_id": 18535041, "tvstation": "Sky Sport (Ger)" },
           {
             "fixture_id": 18535041,
             "tvstation": "Sky Sport Premier League (Ger)"
           },
+          { "fixture_id": 18535041, "tvstation": "Sky Sport Top event (Ger)" },
+          { "fixture_id": 18535041, "tvstation": "Sky Sports (GBR)" },
+          { "fixture_id": 18535041, "tvstation": "Star+ (ARG)" },
+          { "fixture_id": 18535041, "tvstation": "Star+ (BRA)" },
           { "fixture_id": 18535041, "tvstation": "SuperSport" },
+          { "fixture_id": 18535041, "tvstation": "V Sport Premium (Swe)" },
           { "fixture_id": 18535041, "tvstation": "Viaplay (Den)" },
           { "fixture_id": 18535041, "tvstation": "Viaplay (Fin)" },
+          { "fixture_id": 18535041, "tvstation": "Viaplay (Ned)" },
+          { "fixture_id": 18535041, "tvstation": "Viaplay (NLD)" },
           { "fixture_id": 18535041, "tvstation": "Viaplay (Nor)" },
           { "fixture_id": 18535041, "tvstation": "Viaplay (Pol)" },
-          { "fixture_id": 18535041, "tvstation": "Viaplay (Swe)" }
+          { "fixture_id": 18535041, "tvstation": "Viaplay (Swe)" },
+          { "fixture_id": 18535041, "tvstation": "Viaplay Denmark (DNK)" }
         ]
       },
       "league": {
@@ -128,8 +1493,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -160,6 +1525,15 @@
           "sort_order": 1,
           "has_standings": true,
           "has_outgroup_matches": 0
+        }
+      },
+      "referee": {
+        "data": {
+          "id": 14532,
+          "common_name": "A. Taylor",
+          "fullname": "Anthony Taylor",
+          "firstname": "Anthony",
+          "lastname": "Taylor"
         }
       },
       "venue": {
@@ -273,8 +1647,10 @@
           { "fixture_id": 18535051, "tvstation": "1xBet" },
           { "fixture_id": 18535051, "tvstation": "1xBet.kz" },
           { "fixture_id": 18535051, "tvstation": "1xStavka.ru" },
+          { "fixture_id": 18535051, "tvstation": "CANAL+ Sport 2 (Pol)" },
           { "fixture_id": 18535051, "tvstation": "Viaplay (Den)" },
           { "fixture_id": 18535051, "tvstation": "Viaplay (Fin)" },
+          { "fixture_id": 18535051, "tvstation": "Viaplay (Ned)" },
           { "fixture_id": 18535051, "tvstation": "Viaplay (Nor)" },
           { "fixture_id": 18535051, "tvstation": "Viaplay (Pol)" },
           { "fixture_id": 18535051, "tvstation": "Viaplay (Swe)" },
@@ -293,8 +1669,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -446,8 +1822,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -599,8 +1975,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -752,8 +2128,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -905,8 +2281,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -1058,8 +2434,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -1211,8 +2587,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -1364,8 +2740,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -1382,8 +2758,8 @@
           "league_id": 8,
           "season_id": 19734,
           "stage_id": 77457864,
-          "start": "2022-09-30",
-          "end": "2022-10-01"
+          "start": "2022-10-01",
+          "end": "2022-10-03"
         }
       },
       "stage": {
@@ -1517,8 +2893,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -1670,8 +3046,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -1823,8 +3199,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -1976,8 +3352,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -2129,8 +3505,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -2282,8 +3658,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -2435,8 +3811,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -2588,8 +3964,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -2741,8 +4117,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -2894,8 +4270,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -3047,8 +4423,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -3200,8 +4576,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -3353,8 +4729,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -3506,8 +4882,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -3659,8 +5035,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -3812,8 +5188,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -3965,8 +5341,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -4118,8 +5494,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -4271,8 +5647,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -4424,8 +5800,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -4577,8 +5953,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -4730,8 +6106,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -4883,8 +6259,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -5036,8 +6412,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -5189,8 +6565,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -5342,8 +6718,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -5495,8 +6871,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -5648,8 +7024,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
@@ -5801,8 +7177,8 @@
           "is_cup": false,
           "is_friendly": false,
           "current_season_id": 19734,
-          "current_round_id": null,
-          "current_stage_id": null,
+          "current_round_id": 274668,
+          "current_stage_id": 77457864,
           "live_standings": true,
           "coverage": {
             "predictions": true,
