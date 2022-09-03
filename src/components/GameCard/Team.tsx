@@ -14,7 +14,7 @@ export const Team = ({ teamData }: TeamProps): JSX.Element => {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={logo_path} alt={name} />
 
-      {name}
+      <h2>{name}</h2>
     </div>
   );
 };

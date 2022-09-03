@@ -1,16 +1,36 @@
 ._ {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-evenly;
   aspect-ratio: 1/1;
   background-color: rgb(0 0 0 / 10%);
+  text-align: center;
 
-  .Team {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-    background-color: green;
-    gap: 1em;
+  h2,
+  p {
+    margin: 0;
+    line-height: 1;
+  }
+
+  p {
+    font-family: ars-reg, sans-serif;
+    text-transform: uppercase;
+  }
+
+  .Logo {
+    width: 25%;
+    margin: 0 auto;
+  }
+
+  .MainBilling {
+    margin: 0 10%;
+
+    p {
+      font-size: 3em;
+    }
+  }
+
+  .GameTime {
+    margin: 0 25%;
   }
 }

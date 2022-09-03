@@ -1,19 +1,27 @@
 import Head from 'next/head';
 import { Main, GameCard } from '../components';
 import { Title, Placeholder } from '@bjeco/blocks';
-import test from './test.json';
+import useSWR from 'swr';
+import { find, pathEq } from 'ramda';
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const GameCardPage = (): JSX.Element => {
+  const { data, error } = useSWR('/api/fixtures', fetcher);
+
+  if (error) return <>An error has occurred.</>;
+  if (!data) return <>Loading...</>;
+
+  const nextGame = find(pathEq(['time', 'status'], 'NS'))(data.data);
+
   return (
     <>
       <Head>
         <title>Game Card</title>
       </Head>
       <Main>
-        <Title>Game Card</Title>
-        <p>This is the game card page.</p>
-        <GameCard {...test.data[0]} />
-        <Placeholder data={test.data[0]} />
+        <GameCard {...nextGame} />
+        {/* <Placeholder data={nextGame} /> */}
       </Main>
     </>
   );

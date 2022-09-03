@@ -26,3 +26,25 @@ body,
   width: 100%;
   height: 100%;
 }
+
+@font-face {
+  font-family: ars-bold;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/ars-bold.woff2') format('woff2'),
+    url('/fonts/ars-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: ars-reg;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/ars-reg.woff2') format('woff2'),
+    url('/fonts/ars-reg.woff') format('woff');
+}
+
+h1,
+h2 {
+  font-family: ars-bold, sans-serif;
+  text-transform: uppercase;
+}
