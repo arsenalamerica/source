@@ -1,10 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
+
 import { useLayoutEffect } from 'react';
 import styles from './GameCard.module.scss';
 import TeamData from '@customTypes/TeamData';
 import Time from '@customTypes/Time';
 import VenueData from '@customTypes/VenueData';
 import { Textfit } from 'react-textfit';
-import { Team } from './Team';
 
 export interface GameCardProps {
   localTeam: TeamData;
@@ -80,6 +81,7 @@ export const GameCard = ({
       </svg>
 
       <div className={styles.MainBilling}>
+        <img src={localTeam.data.logo_path} alt={localTeam.data.name} />
         <Textfit mode='single' max={200}>
           <h2>
             {localTeam.data.name}
@@ -92,6 +94,7 @@ export const GameCard = ({
             {visitorTeam.data.name}
           </h2>
         </Textfit>
+        <img src={visitorTeam.data.logo_path} alt={localTeam.data.name} />
       </div>
 
       <div className={styles.GameTime}>
