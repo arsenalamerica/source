@@ -3898,6 +3898,13 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"process@npm:^0.11.10":
+  version: 0.11.10
+  resolution: "process@npm:0.11.10"
+  checksum: bfcce49814f7d172a6e6a14d5fa3ac92cc3d0c3b9feb1279774708a719e19acd673995226351a082a9ae99978254e320ccda4240ddc474ba31a76c79491ca7c3
+  languageName: node
+  linkType: hard
+
 "promise-inflight@npm:^1.0.1":
   version: 1.0.1
   resolution: "promise-inflight@npm:1.0.1"
@@ -3915,7 +3922,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.8.1":
+"prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -3944,6 +3951,13 @@ fsevents@~2.3.2:
   version: 4.0.1
   resolution: "quick-lru@npm:4.0.1"
   checksum: bea46e1abfaa07023e047d3cf1716a06172c4947886c053ede5c50321893711577cb6119360f810cc3ffcd70c4d7db4069c3cee876b358ceff8596e062bd1154
+  languageName: node
+  linkType: hard
+
+"ramda@npm:0.28.0":
+  version: 0.28.0
+  resolution: "ramda@npm:0.28.0"
+  checksum: 44ea6e5010bba70151b6a92d8114a91915e8b5a16105cce65fae58c9d7386b812c429645e35f21141d7087568550ce383bc10ee1a65cdec951f4b69ea457e6a4
   languageName: node
   linkType: hard
 
@@ -3983,6 +3997,19 @@ fsevents@~2.3.2:
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
+  languageName: node
+  linkType: hard
+
+"react-textfit@npm:1.1.1":
+  version: 1.1.1
+  resolution: "react-textfit@npm:1.1.1"
+  dependencies:
+    process: ^0.11.10
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: ^15.0.0 || ^16.0.0
+    react-dom: ^15.0.0 || ^16.0.0
+  checksum: 938d0530ab269cd5f832ee7c659aecbe3685ea27c88635f53bc4ab60df4b6c43dd0ce3f54dfcaafacbfc65379490fbecd04a3f9c6bbc3481038f45f62e2f7c88
   languageName: node
   linkType: hard
 
@@ -4933,9 +4960,11 @@ resolve@^2.0.0-next.3:
     next: 12.2.5
     normalize.css: 8.0.1
     prettier: 2.7.1
+    ramda: 0.28.0
     react: 18.2.0
     react-dom: 18.2.0
     react-icons: 4.4.0
+    react-textfit: 1.1.1
     sass: 1.54.8
     stylelint: 14.11.0
     stylelint-config-css-modules: 4.1.0
