@@ -81,11 +81,16 @@ export const GameCard = ({
 
       <div className={styles.MainBilling}>
         <Textfit mode='single' max={200}>
-          <h2>{localTeam.data.name}</h2>
+          <h2>
+            {localTeam.data.name}
+            <span>{localTeam.data.id !== 19 && ' vs'}</span>
+          </h2>
         </Textfit>
-        <p>vs</p>
         <Textfit mode='single' max={200}>
-          <h2>{visitorTeam.data.name}</h2>
+          <h2>
+            <span>{visitorTeam.data.id !== 19 && 'vs '}</span>
+            {visitorTeam.data.name}
+          </h2>
         </Textfit>
       </div>
 

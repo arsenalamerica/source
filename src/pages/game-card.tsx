@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Main, GameCard } from '../components';
-import { Title, Placeholder } from '@bjeco/blocks';
+// import { Title, Placeholder } from '@bjeco/blocks';
 import useSWR from 'swr';
 import { find, pathEq } from 'ramda';
 
