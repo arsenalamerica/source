@@ -19,10 +19,8 @@ const GameCardPage = (): JSX.Element => {
       <Head>
         <title>Game Card</title>
       </Head>
-      <Main>
-        <GameCard {...nextGame} />
-        {/* <Placeholder data={nextGame} /> */}
-      </Main>
+      <GameCard {...nextGame} />
+      {/* <Placeholder data={nextGame} /> */}
     </>
   );
 };
