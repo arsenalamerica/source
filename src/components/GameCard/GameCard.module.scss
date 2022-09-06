@@ -1,4 +1,4 @@
-$margin: 3rem;
+$margin: 6vw;
 
 ._ {
   position: relative;
@@ -8,7 +8,7 @@ $margin: 3rem;
   aspect-ratio: 1/1;
   background-color: rgb(0 0 0 / 5%);
   background-image: url('./bg.svg');
-  background-size: 12.75em;
+  background-size: 20vw;
   text-align: center;
 
   h2 {
@@ -40,7 +40,7 @@ $margin: 3rem;
   .MainBilling {
     z-index: 10;
     overflow: hidden;
-    padding: 1rem ($margin * 3);
+    padding: 2vw ($margin * 4);
     margin-top: $margin;
     background-color: #fff;
     box-shadow: 0 0 1rem rgb(0 0 0 / 15%);
