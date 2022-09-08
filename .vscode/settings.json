@@ -9,16 +9,6 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "autoSnippet.snippets": [
-    {
-      "pattern": "**/[A-Z]*.js",
-      "snippet": "React Component"
-    },
-    {
-      "pattern": "**/index.js",
-      "snippet": "Export Index"
-    }
-  ],
   "cssModules.camelCase": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true
@@ -26,6 +16,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
+  "editor.stickyScroll.enabled": true,
   "editor.tabSize": 2,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
@@ -41,13 +32,6 @@
   "emmet.triggerExpansionOnTab": true,
   "git.autofetch": true,
   "prettier.requireConfig": true,
-  "jest.coverageColors": {
-    "covered": "rgba(9, 156, 65, 1)",
-    "uncovered": "rgba(0, 0, 0, 1)",
-    "partially-covered": "rgba(235, 198, 52, 1)"
-  },
-  "jest.jestCommandLine": "yarn test",
-  "jest.showCoverageOnLoad": true,
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#a01a24",
     "activityBar.activeBorder": "#ffffff",
