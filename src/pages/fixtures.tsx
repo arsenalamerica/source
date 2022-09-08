@@ -1,7 +1,6 @@
-import { Fragment } from 'react';
 import Head from 'next/head';
 import { Main, FixtureCard } from '../components';
-import { Title, Placeholder } from '@bjeco/blocks';
+import { Title } from '@bjeco/blocks';
 import useSWR from 'swr';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
