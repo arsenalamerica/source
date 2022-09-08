@@ -14,7 +14,7 @@ const FixturePage = (): JSX.Element => {
   return (
     <>
       <Head>
-        <title>Fixtures</title>
+        <title>Fixture</title>
       </Head>
       <Main>
         <Title>Fixture</Title>
