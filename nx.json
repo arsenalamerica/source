@@ -34,5 +34,13 @@
       }
     }
   },
-  "defaultProject": "tacomagooners"
+  "defaultProject": "tacomagooners",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "accessToken": "NjU5NDAyN2ItMjRkMy00YWM0LWI2MWQtOTVlMTVhMGNjYTRlfHJlYWQtd3JpdGU="
+      }
+    }
+  }
 }
