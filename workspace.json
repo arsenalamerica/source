@@ -3,5 +3,6 @@
   "projects": {
     "tacomagooners": "apps/tacomagooners",
     "tacomagooners-e2e": "apps/tacomagooners-e2e"
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

@@ -1,5 +1,5 @@
 {
-  "root": "apps/tacomagooners",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/tacomagooners",
   "projectType": "application",
   "targets": {
@@ -12,7 +12,10 @@
         "outputPath": "dist/apps/tacomagooners"
       },
       "configurations": {
-        "production": {}
+        "production": {},
+        "development": {
+          "outputPath": "apps/tacomagooners"
+        }
       }
     },
     "serve": {
@@ -25,8 +28,13 @@
         "production": {
           "buildTarget": "tacomagooners:build:production",
           "dev": false
+        },
+        "development": {
+          "buildTarget": "tacomagooners:build:development",
+          "dev": true
         }
-      }
+      },
+      "defaultConfiguration": "development"
     },
     "export": {
       "executor": "@nrwl/next:export",
@@ -38,7 +46,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/tacomagooners"],
       "options": {
-        "jestConfig": "apps/tacomagooners/jest.config.js",
+        "jestConfig": "apps/tacomagooners/jest.config.ts",
         "passWithNoTests": true
       }
     },
