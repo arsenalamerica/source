@@ -3,23 +3,12 @@
   "affected": {
     "defaultBase": "main"
   },
-  "cli": {
-    "defaultCollection": "@nrwl/next"
-  },
   "implicitDependencies": {
     "package.json": {
       "dependencies": "*",
       "devDependencies": "*"
     },
     ".eslintrc.json": "*"
-  },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
   },
   "generators": {
     "@nrwl/react": {
@@ -41,6 +30,12 @@
       "options": {
         "accessToken": "NjU5NDAyN2ItMjRkMy00YWM0LWI2MWQtOTVlMTVhMGNjYTRlfHJlYWQtd3JpdGU="
       }
+    }
+  },
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
     }
   }
 }
