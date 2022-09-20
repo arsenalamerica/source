@@ -14,7 +14,7 @@ module.exports = {
       },
     },
     {
-      files: ['src/pages/_app.scss'],
+      files: ['apps/tacomagooners/pages/_app.scss'],
       rules: {
         'selector-id-pattern': '__next',
       },

@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "tacomagooners": "apps/tacomagooners",
+    "tacomagooners-e2e": "apps/tacomagooners-e2e"
+  }
+}

@@ -1,3 +1,3 @@
 # tacomagooners
 
-![Tacoma Gooners](./public/tacomaGooners.svg)
+![Tacoma Gooners](apps/tacomagooners/public/tacomaGooners.svg)
