@@ -32,6 +32,10 @@
   "emmet.triggerExpansionOnTab": true,
   "git.autofetch": true,
   "prettier.requireConfig": true,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": ["css", "scss"],
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#a01a24",
     "activityBar.activeBorder": "#ffffff",

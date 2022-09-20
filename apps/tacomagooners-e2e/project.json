@@ -1,0 +1,28 @@
+{
+  "root": "apps/tacomagooners-e2e",
+  "sourceRoot": "apps/tacomagooners-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/tacomagooners-e2e/cypress.json",
+        "devServerTarget": "tacomagooners:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "tacomagooners:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/tacomagooners-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["tacomagooners"]
+}

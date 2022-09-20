@@ -1,0 +1,90 @@
+$margin: 6vw;
+
+._ {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  aspect-ratio: 1/1;
+  background-color: rgb(0 0 0 / 5%);
+  background-image: url('./bg.svg');
+  background-size: 20vw;
+  text-align: center;
+
+  h2 {
+    margin: 0;
+    // text-shadow: 0 0.05em 0.15em rgb(0 0 0 / 0.3);
+    letter-spacing: -0.03em;
+    line-height: 1;
+
+    span {
+      font-family: ars-reg, sans-serif;
+      font-size: 0.75em;
+      font-weight: 400;
+    }
+  }
+
+  .Logo,
+  .GameTime {
+    position: absolute;
+    z-index: 10;
+  }
+
+  .Logo {
+    top: $margin;
+    left: $margin;
+    width: 30%;
+    filter: drop-shadow(0 0 1rem rgb(0 0 0 / 15%));
+  }
+
+  .MainBilling {
+    z-index: 10;
+    overflow: hidden;
+    padding: 2vw ($margin * 4);
+    margin-top: $margin;
+    background-color: #fff;
+    box-shadow: 0 0 1rem rgb(0 0 0 / 15%);
+    color: #da1f26;
+    transform: skewY(-10deg);
+
+    img {
+      position: absolute;
+      top: 50%;
+      height: 50%;
+      filter: drop-shadow(0 0.25em 0.5em rgb(0 0 0 / 10%));
+
+      &:first-child {
+        left: 0;
+        transform: translate(-50%, -50%);
+      }
+
+      &:last-child {
+        right: 0;
+        transform: translate(50%, -50%);
+      }
+    }
+  }
+
+  .GameTime {
+    right: $margin;
+    bottom: $margin;
+    width: 45%;
+    text-shadow: 0 0 1rem rgb(0 0 0 / 30%);
+
+    > *:first-child {
+      h2 {
+        font-family: ars-reg, sans-serif;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .Background {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
