@@ -6,6 +6,7 @@ import TeamData from '@customTypes/TeamData';
 import Time from '@customTypes/Time';
 import VenueData from '@customTypes/VenueData';
 import { Textfit } from 'react-textfit';
+import { shite } from '../../utils';
 
 export interface GameCardProps {
   localTeam: TeamData;
@@ -84,14 +85,14 @@ export const GameCard = ({
         <img src={localTeam.data.logo_path} alt={localTeam.data.name} />
         <Textfit mode='single' max={200}>
           <h2>
-            {localTeam.data.name}
+            {shite(localTeam.data.name)}
             <span>{localTeam.data.id !== 19 && ' vs'}</span>
           </h2>
         </Textfit>
         <Textfit mode='single' max={200}>
           <h2>
             <span>{visitorTeam.data.id !== 19 && 'vs '}</span>
-            {visitorTeam.data.name}
+            {shite(visitorTeam.data.name)}
           </h2>
         </Textfit>
         <img src={visitorTeam.data.logo_path} alt={localTeam.data.name} />
