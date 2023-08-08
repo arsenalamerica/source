@@ -1,14 +1,16 @@
 {
+  "name": "tacomagooners",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/tacomagooners",
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/next:build",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/next:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
-        "root": "apps/tacomagooners",
         "outputPath": "dist/apps/tacomagooners"
       },
       "configurations": {
@@ -19,7 +21,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/next:server",
+      "executor": "@nx/next:server",
       "options": {
         "buildTarget": "tacomagooners:build",
         "dev": true
@@ -37,24 +39,30 @@
       "defaultConfiguration": "development"
     },
     "export": {
-      "executor": "@nrwl/next:export",
+      "executor": "@nx/next:export",
       "options": {
         "buildTarget": "tacomagooners:build:production"
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/tacomagooners"],
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/tacomagooners"
+      ],
       "options": {
         "jestConfig": "apps/tacomagooners/jest.config.ts",
         "passWithNoTests": true
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/tacomagooners/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "apps/tacomagooners/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     }
   },

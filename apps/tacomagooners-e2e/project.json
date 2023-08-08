@@ -1,10 +1,11 @@
 {
+  "name": "tacomagooners-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/tacomagooners-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
-      "executor": "@nrwl/cypress:cypress",
+      "executor": "@nx/cypress:cypress",
       "options": {
         "cypressConfig": "apps/tacomagooners-e2e/cypress.json",
         "devServerTarget": "tacomagooners:serve"
@@ -16,13 +17,19 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/tacomagooners-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": [
+          "apps/tacomagooners-e2e/**/*.{js,ts}"
+        ]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["tacomagooners"]
+  "implicitDependencies": [
+    "tacomagooners"
+  ]
 }
