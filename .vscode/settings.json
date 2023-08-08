@@ -10,14 +10,12 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cssModules.camelCase": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "editor.stickyScroll.enabled": true,
-  "editor.tabSize": 2,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
@@ -30,7 +28,9 @@
     }
   },
   "emmet.triggerExpansionOnTab": true,
-  "git.autofetch": true,
+  "files.associations": {
+    "CODEOWNERS*": "plaintext"
+  },
   "prettier.requireConfig": true,
   "css.validate": false,
   "less.validate": false,

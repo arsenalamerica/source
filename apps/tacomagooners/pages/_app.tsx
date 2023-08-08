@@ -43,7 +43,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
       </Head>
       <HeadingLevel>
         <AnimatePresence
-          exitBeforeEnter
+          mode='wait'
           onExitComplete={() => window.scrollTo(0, 0)}
         >
           <Component {...pageProps} />

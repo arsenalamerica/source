@@ -21,7 +21,7 @@ export const GameCard = ({
   visitorTeam,
 }: GameCardProps): JSX.Element => {
   // Timestamp is unix, so we need to multiply by 1000
-  const date = new Date(time.starting_at.timestamp * 1000);
+  const date = new Date(time?.starting_at.timestamp ?? 0 * 1000);
 
   const gameDate = date.toLocaleDateString(undefined, {
     weekday: 'long',
@@ -82,20 +82,28 @@ export const GameCard = ({
       </svg>
 
       <div className={styles.MainBilling}>
-        <img src={localTeam.data.logo_path} alt={localTeam.data.name} />
-        <Textfit mode='single' max={200}>
-          <h2>
-            {shite(localTeam.data.name)}
-            <span>{localTeam.data.id !== 19 && ' vs'}</span>
-          </h2>
-        </Textfit>
-        <Textfit mode='single' max={200}>
-          <h2>
-            <span>{visitorTeam.data.id !== 19 && 'vs '}</span>
-            {shite(visitorTeam.data.name)}
-          </h2>
-        </Textfit>
-        <img src={visitorTeam.data.logo_path} alt={localTeam.data.name} />
+        {localTeam && (
+          <>
+            <img src={localTeam.data.logo_path} alt={localTeam.data.name} />
+            <Textfit mode='single' max={200}>
+              <h2>
+                {shite(localTeam.data.name)}
+                <span>{localTeam.data.id !== 19 && ' vs'}</span>
+              </h2>
+            </Textfit>
+          </>
+        )}
+        {visitorTeam && (
+          <>
+            <Textfit mode='single' max={200}>
+              <h2>
+                <span>{visitorTeam.data.id !== 19 && 'vs '}</span>
+                {shite(visitorTeam.data.name)}
+              </h2>
+            </Textfit>
+            <img src={visitorTeam.data.logo_path} alt={localTeam.data.name} />
+          </>
+        )}
       </div>
 
       <div className={styles.GameTime}>
