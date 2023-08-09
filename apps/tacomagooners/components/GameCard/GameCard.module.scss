@@ -1,21 +1,14 @@
-$margin: 6vw;
+$margin: 8vw;
 
 ._ {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   aspect-ratio: 1/1;
-  background-color: rgb(0 0 0 / 5%);
-  background-image: url('./bg.svg');
-  background-size: 20vw;
-  text-align: center;
+  background-color: white;
 
   h2 {
     margin: 0;
-    // text-shadow: 0 0.05em 0.15em rgb(0 0 0 / 0.3);
     letter-spacing: -0.03em;
-    line-height: 1;
+    text-shadow: 0 0.05em 0.15em rgb(0 0 0 / 30%);
 
     span {
       font-family: ars-reg, sans-serif;
@@ -25,51 +18,57 @@ $margin: 6vw;
   }
 
   .Logo,
-  .GameTime {
+  .GameTime,
+  .MainBilling {
     position: absolute;
     z-index: 10;
+    left: 33%;
+    transform: translateX(-50%);
+  }
+
+  .MainBilling,
+  .GameTime {
+    text-align: center;
+    text-shadow: 0 0 1rem rgb(0 0 0 / 30%);
   }
 
   .Logo {
     top: $margin;
-    left: $margin;
-    width: 30%;
+    width: 25%;
     filter: drop-shadow(0 0 1rem rgb(0 0 0 / 15%));
   }
 
-  .MainBilling {
-    z-index: 10;
-    overflow: hidden;
-    padding: 2vw ($margin * 4);
-    margin-top: $margin;
-    background-color: #fff;
-    box-shadow: 0 0 1rem rgb(0 0 0 / 15%);
-    color: #da1f26;
-    transform: skewY(-10deg);
+  .Badges {
+    position: absolute;
+    top: 50%;
+    right: 6%;
+    display: flex;
+    flex-direction: column;
+    gap: 10vw;
+    transform: translateY(-50%);
 
     img {
-      position: absolute;
-      top: 50%;
-      height: 50%;
-      filter: drop-shadow(0 0.25em 0.5em rgb(0 0 0 / 10%));
+      width: 20vw;
+    }
+  }
 
-      &:first-child {
-        left: 0;
-        transform: translate(-50%, -50%);
-      }
+  .MainBilling {
+    top: 50%;
+    width: 50%;
+    transform: translate(-50%, -40%);
 
-      &:last-child {
-        right: 0;
-        transform: translate(50%, -50%);
-      }
+    h2 {
+      line-height: 0.9;
     }
   }
 
   .GameTime {
-    right: $margin;
     bottom: $margin;
-    width: 45%;
-    text-shadow: 0 0 1rem rgb(0 0 0 / 30%);
+    width: 40%;
+
+    h2 {
+      line-height: 1;
+    }
 
     > *:first-child {
       h2 {
@@ -80,11 +79,6 @@ $margin: 6vw;
   }
 
   .Background {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    display: block;
   }
 }
