@@ -5,7 +5,6 @@ import styles from './GameCard.module.scss';
 import TeamData from '../../types/TeamData';
 import Time from '../../types/Time';
 import VenueData from '../../types/VenueData';
-import { Textfit } from 'react-textfit';
 import { shite } from '../../utils';
 
 export interface GameCardProps {
@@ -85,34 +84,26 @@ export const GameCard = ({
         {localTeam && (
           <>
             <img src={localTeam.data.logo_path} alt={localTeam.data.name} />
-            <Textfit mode='single' max={200}>
-              <h2>
-                {shite(localTeam.data.name)}
-                <span>{localTeam.data.id !== 19 && ' vs'}</span>
-              </h2>
-            </Textfit>
+            <h2>
+              {shite(localTeam.data.name)}
+              <span>{localTeam.data.id !== 19 && ' vs'}</span>
+            </h2>
           </>
         )}
         {visitorTeam && (
           <>
-            <Textfit mode='single' max={200}>
-              <h2>
-                <span>{visitorTeam.data.id !== 19 && 'vs '}</span>
-                {shite(visitorTeam.data.name)}
-              </h2>
-            </Textfit>
+            <h2>
+              <span>{visitorTeam.data.id !== 19 && 'vs '}</span>
+              {shite(visitorTeam.data.name)}
+            </h2>
             <img src={visitorTeam.data.logo_path} alt={localTeam.data.name} />
           </>
         )}
       </div>
 
       <div className={styles.GameTime}>
-        <Textfit mode='single' max={200}>
-          <h2>{gameDate}</h2>
-        </Textfit>
-        <Textfit mode='single' max={200}>
-          <h2>{gameTime} @ Doyle&apos;s</h2>
-        </Textfit>
+        <h2>{gameDate}</h2>
+        <h2>{gameTime} @ Doyle&apos;s</h2>
       </div>
     </div>
   );
