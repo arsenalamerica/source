@@ -4321,7 +4321,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ansi-styles@npm:^4.0.0, ansi-styles@npm:^4.1.0, ansi-styles@npm:^4.2.1":
+"ansi-styles@npm:^4.0.0, ansi-styles@npm:^4.1.0":
   version: 4.3.0
   resolution: "ansi-styles@npm:4.3.0"
   dependencies:
@@ -6198,7 +6198,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diff@npm:^4.0.1, diff@npm:^4.0.2":
+"diff@npm:^4.0.1":
   version: 4.0.2
   resolution: "diff@npm:4.0.2"
   checksum: f2c09b0ce4e6b301c221addd83bf3f454c0bc00caa3dd837cf6c127d6edf7223aa2bbe3b688feea110b7f262adbfc845b757c44c8a9f8c0c5b15d8fa9ce9d20d
@@ -6211,18 +6211,6 @@ __metadata:
   dependencies:
     path-type: ^4.0.0
   checksum: fa05e18324510d7283f55862f3161c6759a3f2f8dbce491a2fc14c8324c498286c54282c1f0e933cb930da8419b30679389499b919122952a4f8592362ef4615
-  languageName: node
-  linkType: hard
-
-"disparity@npm:^3.0.0":
-  version: 3.2.0
-  resolution: "disparity@npm:3.2.0"
-  dependencies:
-    ansi-styles: ^4.2.1
-    diff: ^4.0.2
-  bin:
-    disparity: bin/disparity
-  checksum: e8e14333ca7c6eb5a19c6ee1209468c79e59b9294f5875c2446ff4dbce5a8a5d0f2b3656df0014e89a7f06483b3f03a356ab880997745bdcf7b453c12de5f24d
   languageName: node
   linkType: hard
 
@@ -6920,19 +6908,6 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
   checksum: baae7377f0e25a0cc9b34dc333a3dc6ead9ee8365e445451eff554c3ca267a0a6cb88127fe90395c578ab1b92cfed246aef7dc8d2b48b603389e10181799e144
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-package-json@npm:0.1.4":
-  version: 0.1.4
-  resolution: "eslint-plugin-package-json@npm:0.1.4"
-  dependencies:
-    disparity: ^3.0.0
-    package-json-validator: ^0.6.3
-    requireindex: ^1.2.0
-  peerDependencies:
-    eslint: ">=4.7.0"
-  checksum: c4526a62f11885f0fc3bc37f07995e9dad57932b0a16473fa412d2c9902ccbb55e01e7015b0d74e021cd67ff9d1a2a180d575ca032f7de1bfe155c0440f5a2e7
   languageName: node
   linkType: hard
 
@@ -10458,13 +10433,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimist@npm:~0.0.1":
-  version: 0.0.10
-  resolution: "minimist@npm:0.0.10"
-  checksum: f7b2cb17af165d042bb3d2803f5e6c38d137f0c36a62230fdb643058c25b56749d2c335b17d4de0b0f08f19cb868cac40df207ff7a4c59fd0771e8762e9b783c
-  languageName: node
-  linkType: hard
-
 "minipass-collect@npm:^1.0.2":
   version: 1.0.2
   resolution: "minipass-collect@npm:1.0.2"
@@ -11184,16 +11152,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"optimist@npm:~0.6.0":
-  version: 0.6.1
-  resolution: "optimist@npm:0.6.1"
-  dependencies:
-    minimist: ~0.0.1
-    wordwrap: ~0.0.2
-  checksum: 191ab2b119b2908a229065119349d9cbd295217a8777febd2812fc7b95c5f31f5f6ecb4fd0222351466cb33af8410299373229e78dd96713ed5348fcebfb96f4
-  languageName: node
-  linkType: hard
-
 "optionator@npm:^0.8.1":
   version: 0.8.3
   resolution: "optionator@npm:0.8.3"
@@ -11278,17 +11236,6 @@ __metadata:
   version: 2.2.0
   resolution: "p-try@npm:2.2.0"
   checksum: f8a8e9a7693659383f06aec604ad5ead237c7a261c18048a6e1b5b85a5f8a067e469aa24f5bc009b991ea3b058a87f5065ef4176793a200d4917349881216cae
-  languageName: node
-  linkType: hard
-
-"package-json-validator@npm:^0.6.3":
-  version: 0.6.3
-  resolution: "package-json-validator@npm:0.6.3"
-  dependencies:
-    optimist: ~0.6.0
-  bin:
-    pjv: ./bin/pjv
-  checksum: 43ca92cbf84676ac8c39ebb4d0beec5bba545099ad9e60d98a92b293d4913f20d4c874f813b3bdab3517d58011eae427df759a7f67b3e464b41c5b6024410dea
   languageName: node
   linkType: hard
 
@@ -12068,7 +12015,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"requireindex@npm:^1.1.0, requireindex@npm:^1.2.0":
+"requireindex@npm:^1.1.0":
   version: 1.2.0
   resolution: "requireindex@npm:1.2.0"
   checksum: 50d8b10a1ff1fdf6aea7a1870bc7bd238b0fb1917d8d7ca17fd03afc38a65dcd7a8a4eddd031f89128b5f0065833d5c92c4fef67f2c04e8624057fe626c9cf94
@@ -13386,7 +13333,6 @@ __metadata:
     eslint-plugin-import: 2.28.0
     eslint-plugin-json-format: 2.0.1
     eslint-plugin-jsx-a11y: 6.7.1
-    eslint-plugin-package-json: 0.1.4
     eslint-plugin-react: 7.33.2
     eslint-plugin-react-hooks: 4.6.0
     eslint-plugin-storybook: 0.6.13
@@ -14410,13 +14356,6 @@ __metadata:
   version: 1.2.3
   resolution: "word-wrap@npm:1.2.3"
   checksum: 30b48f91fcf12106ed3186ae4fa86a6a1842416df425be7b60485de14bec665a54a68e4b5156647dec3a70f25e84d270ca8bc8cd23182ed095f5c7206a938c1f
-  languageName: node
-  linkType: hard
-
-"wordwrap@npm:~0.0.2":
-  version: 0.0.3
-  resolution: "wordwrap@npm:0.0.3"
-  checksum: dfc2d3512e857ae4b3bc2e8d4e5d2c285c28a4b87cd1d81c977ce9a1a99152d355807e046851a3d61148f39d877fbb889352e07b65a9cbdd2256aa928e159026
   languageName: node
   linkType: hard
 
