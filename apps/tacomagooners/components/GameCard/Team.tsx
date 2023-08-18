@@ -1,5 +1,4 @@
 import styles from './GameCard.module.scss';
-import Image from 'next/image';
 import TeamData from '../../types/TeamData';
 
 export interface TeamProps {
