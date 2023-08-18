@@ -1,5 +1,5 @@
 {
-  "*.{css,scss,sass,less}": ["stylelint --fix", "prettier --list-different"],
-  "*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --list-different"],
-  "*.{md,mdx,html}": ["prettier --list-different"]
+  "*.{css,scss,sass,less}": ["stylelint --fix", "prettier --write"],
+  "*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"],
+  "*.{md,mdx,html}": ["prettier --write"]
 }
