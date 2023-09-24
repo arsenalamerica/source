@@ -1,0 +1,32 @@
+name: Reusable NX Target Job
+
+on:
+  workflow_call:
+    inputs:
+      git-ref:
+        required: false
+        type: string
+
+jobs:
+  nx-targets:
+    name: NX ${{ matrix.target }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        target: [lint, build, test, e2e]
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout [main]
+        with:
+          ref: ${{ inputs.git-ref }}
+          fetch-depth: 0
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'yarn'
+          node-version-file: '.nvmrc'
+      - run: yarn install
+      - run: npx nx-cloud start-ci-run
+      - run: npx nx affected --target=${{matrix.target}} --parallel --max-parallel=4
+      - run: npx nx-cloud stop-all-agents
