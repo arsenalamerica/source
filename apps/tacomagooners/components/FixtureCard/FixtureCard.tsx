@@ -2,7 +2,6 @@ import styles from './FixtureCard.module.scss';
 import { HeadingLevel } from 'ariakit';
 import FixtureCardTeam from './FixtureCardTeam';
 import FixtureCardWeather from './FixtureCardWeather';
-import { Placeholder } from '@bjeco/blocks';
 
 const FixtureCard = ({
   id,

@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test",
-    "e2e": "nx e2e tacomagooners-e2e",
+    "build": "nx run-many --all --target=build --parallel=3",
+    "test": "nx run-many --all --target=test --parallel=3",
+    "lint": "nx run-many --all --target=lint --parallel=3",
+    "e2e": "nx run-many --all --target=e2e",
+    "start": "nx serve tacomagooners",
     "nx-latest": "nx migrate latest",
     "nx-migrate": "yarn install && nx migrate --run-migrations",
     "postinstall": "husky install"
@@ -26,7 +27,6 @@
       "last 1 safari version"
     ]
   },
-  "prettier": "@bjeco/prettier-config",
   "resolutions": {
     "glob-parent": "5.1.2",
     "nth-check": "2.0.1",
@@ -53,7 +53,6 @@
   "devDependencies": {
     "@babel/core": "7.22.9",
     "@bjeco/blocks": "0.0.4",
-    "@bjeco/prettier-config": "latest",
     "@nrwl/js": "16.9.0",
     "@nx/cypress": "16.9.0",
     "@nx/eslint-plugin": "16.9.0",
