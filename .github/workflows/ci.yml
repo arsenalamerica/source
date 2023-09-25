@@ -1,23 +1,30 @@
 name: CI
+
 on:
   push:
     branches:
       - main
   pull_request:
 
-env:
-  NX_CLOUD_DISTRIBUTED_EXECUTION: true
-
 jobs:
   main:
-    if: ${{ github.event_name != 'pull_request' }}
-    uses: ./.github/workflows/nx-targets.yml
-
-  pr:
-    if: ${{ github.event_name == 'pull_request' }}
-    uses: ./.github/workflows/nx-targets.yml
+    name: Nx Cloud - Main Job
+    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.13.0
     with:
-      git-ref: ${{ github.event.pull_request.head.ref }}
+      main-branch-name: main
+      number-of-agents: 3
+      init-commands: |
+        yarn nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
+      parallel-commands: |
+        yarn nx-cloud record -- yarn nx format:check
+      parallel-commands-on-agents: |
+        yarn nx affected --target=lint --parallel=3
+        yarn nx affected --target=test --parallel=3 --ci --code-coverage
+        yarn nx affected --target=e2e --parallel=3
+        yarn nx affected --target=build --parallel=3
 
   agents:
-    uses: ./.github/workflows/nx-agents.yml
+    name: Nx Cloud - Agents
+    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.13.0
+    with:
+      number-of-agents: 3
