@@ -1902,15 +1902,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bjeco/prettier-config@npm:latest":
-  version: 0.1.6
-  resolution: "@bjeco/prettier-config@npm:0.1.6"
-  dependencies:
-    prettier: 2.0.5
-  checksum: 569ad7df1c95be47e3b1bbf1ac50d7490d8bf9fadf03fa6b0261674e93011ac718aef22795d177b2ebc7340f9158eabcea90ecc01ebe12e26a27351b8d441d6c
-  languageName: node
-  linkType: hard
-
 "@colors/colors@npm:1.5.0":
   version: 1.5.0
   resolution: "@colors/colors@npm:1.5.0"
@@ -3342,7 +3333,6 @@ __metadata:
   dependencies:
     "@babel/core": 7.22.9
     "@bjeco/blocks": 0.0.4
-    "@bjeco/prettier-config": latest
     "@nrwl/js": 16.9.0
     "@nx/cypress": 16.9.0
     "@nx/eslint-plugin": 16.9.0
@@ -11439,15 +11429,6 @@ __metadata:
   version: 1.1.2
   resolution: "prelude-ls@npm:1.1.2"
   checksum: c4867c87488e4a0c233e158e4d0d5565b609b105d75e4c05dc760840475f06b731332eb93cc8c9cecb840aa8ec323ca3c9a56ad7820ad2e63f0261dadcb154e4
-  languageName: node
-  linkType: hard
-
-"prettier@npm:2.0.5":
-  version: 2.0.5
-  resolution: "prettier@npm:2.0.5"
-  bin:
-    prettier: bin-prettier.js
-  checksum: 7f89d2f5d1a1a15a7bf200556b8c5395913d0119fe52a3fba51ab116695d584652d37fdb7d86e0919bfe36b22649afcf222eaca00a1065eb486b7b4cf3062eff
   languageName: node
   linkType: hard
 
