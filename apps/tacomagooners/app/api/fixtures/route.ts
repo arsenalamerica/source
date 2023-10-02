@@ -1,3 +1,4 @@
+import { NextResponse } from 'next/server';
 import { getFetchUrl } from '@arsenalamerica/utils';
 
 const TEAM_ID = 19;
@@ -41,5 +42,5 @@ export async function GET() {
   });
   const data = await res.json();
 
-  return Response.json({ ...data });
+  return NextResponse.json({ ...data });
 }
