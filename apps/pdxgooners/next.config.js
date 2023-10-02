@@ -12,6 +12,12 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
+  poweredByHeader: false,
+  productionBrowserSourceMaps: true,
+  reactStrictMode: true,
+  images: {
+    domains: ['cdn.sportmonks.com'],
+  },
 };
 
 const plugins = [
