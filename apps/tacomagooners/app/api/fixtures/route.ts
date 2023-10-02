@@ -1,7 +1,7 @@
 import { getFetchUrl } from '@arsenalamerica/utils';
 
 const TEAM_ID = 19;
-const api_token = process.env.MONK_TOKEN;
+const api_token = process.env.MONK_TOKEN || '';
 
 // Use the current month to determine when the API data switches to next season
 const d = new Date();

@@ -1,9 +1,11 @@
+'use client';
+
 import Head from 'next/head';
 import { Main } from '@arsenalamerica/components';
 import { Title } from '@bjeco/blocks';
 import useSWR from 'swr';
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const FixturePage = (): JSX.Element => {
   const { data, error } = useSWR('/api/fixtures', fetcher);

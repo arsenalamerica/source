@@ -52,4 +52,5 @@ const twitter = async (req, res) => {
   return res.status(200).json({ data: tweetData });
 };
 
-export default twitter;
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+export async function GET(request) {}

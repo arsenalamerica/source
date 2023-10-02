@@ -5,8 +5,7 @@
     "allowJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["node", "jest"],
-    "strict": false,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "resolveJsonModule": true,
@@ -17,18 +16,21 @@
         "name": "next"
       }
     ],
-    "strictNullChecks": true
+    "types": ["jest", "node"]
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
-    "next-env.d.ts",
     "../../apps/tacomagooners/.next/types/**/*.ts",
-    "../../libs/hooks/src/lib/useTwitter.ts",
-    "../../libs/types/src/lib/LeagueData.ts",
-    "../../libs/utils/src/lib/data.ts"
+    "../../dist/apps/tacomagooners/.next/types/**/*.ts",
+    "next-env.d.ts"
   ],
-  "exclude": ["node_modules", "jest.config.ts"]
+  "exclude": [
+    "node_modules",
+    "jest.config.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts"
+  ]
 }
