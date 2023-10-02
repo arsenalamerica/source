@@ -4,7 +4,7 @@
     "default": {
       "runner": "nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "cacheableOperations": ["build", "lint", "stylelint", "test", "e2e"],
         "accessToken": "NjU5NDAyN2ItMjRkMy00YWM0LWI2MWQtOTVlMTVhMGNjYTRlfHJlYWQtd3JpdGU="
       }
     }
@@ -21,6 +21,7 @@
       "inputs": ["default", "^production"]
     },
     "lint": {
+      "dependsOn": ["stylelint"],
       "inputs": [
         "default",
         "{workspaceRoot}/.eslintrc.json",
@@ -48,6 +49,9 @@
     "@nx/react": {
       "application": {
         "babel": true
+      },
+      "library": {
+        "unitTestRunner": "jest"
       }
     },
     "@nx/next": {

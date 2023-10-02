@@ -6,9 +6,7 @@
   "targets": {
     "build": {
       "executor": "@nx/next:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/tacomagooners"
@@ -46,23 +44,23 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/tacomagooners"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/tacomagooners"],
       "options": {
         "jestConfig": "apps/tacomagooners/jest.config.ts",
         "passWithNoTests": true
       }
     },
+    "stylelint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx stylelint apps/tacomagooners/**/*.{css,scss}"
+      }
+    },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/tacomagooners/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["apps/tacomagooners/**/*.{ts,tsx,js,jsx}"]
       }
     }
   },

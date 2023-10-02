@@ -40,5 +40,15 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# yarn - Not using Zero Installs
+# https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 # Next.js
 .next
