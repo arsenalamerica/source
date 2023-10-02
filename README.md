@@ -1,5 +1,3 @@
-# tacomagooners
+# @arsenalamerica/source
 
-[![CI](https://github.com/brianespinosa/tacomagooners/actions/workflows/ci.yml/badge.svg)](https://github.com/brianespinosa/tacomagooners/actions/workflows/ci.yml)
-
-![Tacoma Gooners](apps/tacomagooners/public/tacomaGooners.svg)
+[![CI](https://github.com/arsenalamerica/source/actions/workflows/ci.yml/badge.svg)](https://github.com/arsenalamerica/source/actions/workflows/ci.yml)
