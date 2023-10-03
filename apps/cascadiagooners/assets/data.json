@@ -1,0 +1,24 @@
+{
+  "fathom-id": "NVUJYCUW",
+  "domain": "cascadiagooners.com",
+  "name": "Cascadia Gooners",
+  "pub": {
+    "name": "The Atlantic Crossing Pub",
+    "address": "6508 Roosevelt Way NE, Seattle, WA 98115",
+    "website": "https://www.theatlanticcrossing.com/"
+  },
+  "social": [
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/groups/cascadiagooners"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/cascadiagooners/"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/cascadiagooners"
+    }
+  ]
+}

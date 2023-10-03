@@ -131,6 +131,7 @@ __metadata:
     react-textfit: 1.1.1
     regenerator-runtime: 0.13.11
     sass: 1.64.1
+    simple-icons: 9.16.1
     stylelint: 15.10.2
     stylelint-config-css-modules: 4.2.0
     stylelint-config-idiomatic-order: 9.0.0
@@ -13193,6 +13194,13 @@ __metadata:
   version: 4.1.0
   resolution: "signal-exit@npm:4.1.0"
   checksum: 64c757b498cb8629ffa5f75485340594d2f8189e9b08700e69199069c8e3070fb3e255f7ab873c05dc0b3cec412aea7402e10a5990cb6a050bd33ba062a6c549
+  languageName: node
+  linkType: hard
+
+"simple-icons@npm:9.16.1":
+  version: 9.16.1
+  resolution: "simple-icons@npm:9.16.1"
+  checksum: 04fc5ef80a3203ed4ac69e7bb85996ce113a99eef890c233c40a2f0d15fff2e82cadab9e3d83e9c468097cc7b70372beb861ca6f53d2430bb4a6a31c209296d1
   languageName: node
   linkType: hard
 
