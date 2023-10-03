@@ -1,5 +1,5 @@
 import './global.scss';
-import data from '../data.json';
+import data from '../assets/data.json';
 import { FathomNext } from '@arsenalamerica/components';
 import { Metadata } from 'next';
 
