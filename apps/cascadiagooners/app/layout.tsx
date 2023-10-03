@@ -1,8 +1,14 @@
 import './global.scss';
-import data from '../data.json';
+import data from '../assets/data.json';
+import { FathomNext } from '@arsenalamerica/components';
+import { Metadata } from 'next';
 
-export const metadata = {
-  title: data.name,
+export const metadata: Metadata = {
+  title: {
+    template: '%s | ' + data.name,
+    default: data.name,
+  },
+  metadataBase: new URL('https://' + data.domain),
 };
 
 export default function RootLayout({
@@ -12,6 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <FathomNext
+        fathomId={data['fathom-id']}
+        includedDomains={[data.domain]}
+      />
       <body>{children}</body>
     </html>
   );

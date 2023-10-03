@@ -1,10 +1,14 @@
-import styles from './page.module.scss';
-import data from '../data.json';
+import data from '../assets/data.json';
+import { ReactComponent as Logo } from '../assets/logo.svg';
+import { Main } from '@arsenalamerica/components';
+import { SocialLinks } from '@arsenalamerica/components';
 
 export default async function Index() {
   return (
-    <div className={styles.page}>
-      <h1>{data.name}</h1>
-    </div>
+    <Main variant="landing">
+      <h1 className="screen-reader-only">{data.name}</h1>
+      <Logo title={data.name} role="img" />
+      <SocialLinks links={data.social} />
+    </Main>
   );
 }

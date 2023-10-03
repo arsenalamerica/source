@@ -1,0 +1,31 @@
+._ {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  gap: 5vmin;
+  list-style: none;
+  text-align: center;
+
+  li {
+    a {
+      display: block;
+      outline: none;
+
+      svg {
+        width: 8vmin;
+        height: 8vmin;
+        fill: #ccc;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        svg {
+          fill: #fff;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
