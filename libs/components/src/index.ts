@@ -1,3 +1,4 @@
+export * from './lib/NextGame/NextGame';
 export * from './lib/ExternalLink';
 export * from './lib/FathomNext';
 export * from './lib/FixtureCard';

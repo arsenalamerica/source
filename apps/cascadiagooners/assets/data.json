@@ -5,7 +5,8 @@
   "pub": {
     "name": "The Atlantic Crossing Pub",
     "address": "6508 Roosevelt Way NE, Seattle, WA 98115",
-    "website": "https://www.theatlanticcrossing.com/"
+    "website": "https://www.theatlanticcrossing.com/",
+    "replayTime": "7:00 AM"
   },
   "social": [
     {
