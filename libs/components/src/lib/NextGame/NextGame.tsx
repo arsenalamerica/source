@@ -21,7 +21,7 @@ export function NextGame({ pub, ...rest }: NextGameProps) {
 
   // Get the next game
   // TODO: Make this a query parameter on the API or a separate route
-  const upcoming = data.data.find(
+  const upcoming = data?.data?.find(
     ({ state_id }: { state_id: number }) => state_id === 1,
   );
 
