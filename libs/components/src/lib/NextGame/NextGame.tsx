@@ -16,12 +16,19 @@ export interface NextGameProps {
 export function NextGame({ pub, ...rest }: NextGameProps) {
   const { data, error, isLoading } = useSWR('/api/fixtures');
 
-  if (error) return 'An error has occurred.';
+  if (error) {
+    console.error(error);
+    return <div className={styles._}>An error has occurred.</div>;
+  }
   if (isLoading) return <div className={styles._}>Loading...</div>;
+  if (!data.data) {
+    console.log(data);
+    return null;
+  }
 
   // Get the next game
   // TODO: Make this a query parameter on the API or a separate route
-  const upcoming = data?.data?.find(
+  const upcoming = data.data.find(
     ({ state_id }: { state_id: number }) => state_id === 1,
   );
 
