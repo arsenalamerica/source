@@ -1,0 +1,13 @@
+{
+  "name": "@arsenalamerica/nx-next-icons",
+  "version": "0.0.1",
+  "dependencies": {
+    "favicons": "7.1.4",
+    "svg2png": "4.1.1",
+    "@swc/helpers": "~0.5.2"
+  },
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "executors": "./executors.json"
+}

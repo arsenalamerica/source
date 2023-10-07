@@ -4,6 +4,13 @@
   "sourceRoot": "apps/tacomagooners",
   "projectType": "application",
   "targets": {
+    "icons": {
+      "executor": "@arsenalamerica/nx-next-icons:favicons",
+      "options": {
+        "svgLogoPath": "{projectRoot}/assets/logo.svg",
+        "iconOutputDir": "{projectRoot}/public"
+      }
+    },
     "build": {
       "executor": "@nx/next:build",
       "outputs": ["{options.outputPath}"],

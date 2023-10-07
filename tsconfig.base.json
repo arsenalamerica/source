@@ -17,6 +17,7 @@
     "paths": {
       "@arsenalamerica/components": ["libs/components/src/index.ts"],
       "@arsenalamerica/hooks": ["libs/hooks/src/index.ts"],
+      "@arsenalamerica/nx-next-icons": ["libs/nx-next-icons/src/index.ts"],
       "@arsenalamerica/types": ["libs/types/src/index.ts"],
       "@arsenalamerica/utils": ["libs/utils/src/index.ts"]
     }

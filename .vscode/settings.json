@@ -51,5 +51,6 @@
     "sideBar.foreground": "#ffffff",
     "sideBarSectionHeader.background": "#c4222e",
     "sideBarSectionHeader.foreground": "#ffffff"
-  }
+  },
+  "eslint.validate": ["json"]
 }
