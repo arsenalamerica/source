@@ -11,7 +11,7 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build", "icons"],
+      "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },
     "test": {
