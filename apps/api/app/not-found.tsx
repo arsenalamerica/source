@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import notFound from './404.jpeg';
+
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -5,10 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function NotFound() {
-  return (
-    <main>
-      <h2>Not Found</h2>
-      <p>This is not the page you&apos;re looking for...</p>
-    </main>
-  );
+  return <Image src={notFound} alt="Not Found" />;
 }
