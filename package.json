@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "api": "nx serve api --port=3333",
     "build": "nx run-many --all --target=build --parallel=3",
     "test": "nx run-many --all --target=test --parallel=3",
     "lint": "nx run-many --all --target=lint --parallel=3",
