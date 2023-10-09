@@ -43,6 +43,13 @@
         }
       }
     },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx serve api", "nx serve vancouverarsenal"],
+        "parallel": true
+      }
+    },
     "export": {
       "executor": "@nx/next:export",
       "options": {
