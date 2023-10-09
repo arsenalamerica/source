@@ -27,6 +27,7 @@
       },
       "configurations": {
         "development": {
+          "port": 3333,
           "buildTarget": "api:build:development",
           "dev": true
         },

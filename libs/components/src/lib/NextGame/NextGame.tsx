@@ -14,7 +14,7 @@ export interface NextGameProps {
 }
 
 export function NextGame({ pub, ...rest }: NextGameProps) {
-  const { data, error, isLoading } = useSWR('/api/fixtures');
+  const { data, error, isLoading } = useSWR('fixtures');
 
   if (error) {
     console.error(error);

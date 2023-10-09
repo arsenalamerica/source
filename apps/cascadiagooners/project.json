@@ -43,6 +43,13 @@
         }
       }
     },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx serve api", "nx serve cascadiagooners"],
+        "parallel": true
+      }
+    },
     "export": {
       "executor": "@nx/next:export",
       "options": {
