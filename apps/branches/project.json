@@ -56,6 +56,12 @@
         }
       }
     },
+    "stylelint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx stylelint apps/branches/**/*.{css,scss}"
+      }
+    },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
