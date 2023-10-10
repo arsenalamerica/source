@@ -7,6 +7,9 @@
         "cacheableOperations": ["build", "lint", "stylelint", "test", "e2e"],
         "accessToken": "NjU5NDAyN2ItMjRkMy00YWM0LWI2MWQtOTVlMTVhMGNjYTRlfHJlYWQtd3JpdGU="
       }
+    },
+    "vercel": {
+      "runner": "nx/tasks-runners/default"
     }
   },
   "targetDefaults": {
