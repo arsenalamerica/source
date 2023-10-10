@@ -9,7 +9,11 @@
       }
     },
     "vercel": {
-      "runner": "nx/tasks-runners/default"
+      "runner": "@vercel/remote-nx",
+      "options": {
+        "cacheableOperations": ["build", "lint", "stylelint", "test", "e2e"],
+        "teamId": "team_3FcuJksDBvOKgDoo28ETlJjx"
+      }
     }
   },
   "targetDefaults": {
