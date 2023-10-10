@@ -2,22 +2,21 @@ import { NextRequest, NextResponse } from 'next/server';
 
 // TODO: Get all domains from asset.json files for each application
 const DOMAINS = [
-  'cascadiagooners.com',
-  'pdxgooners.com',
+  'test.cascadiagooners.com',
+  'test.pdxgooners.com',
   'test.tacomagooners.com',
-  'vancouverarsenal.com',
+  'test.vancouverarsenal.com',
 ];
 
 export function middleware(request: NextRequest) {
   const url = request.nextUrl;
-  console.log(url);
 
   // Check for local development
   const isLocal = url.hostname === 'localhost';
 
   // Get the hostname from the URL, or if we are local, from the 'site' query parameter
   const siteDomain = isLocal
-    ? request.nextUrl.searchParams.get('site') || ''
+    ? request.nextUrl.searchParams.get('site') || url.hostname
     : url.hostname;
 
   // Check if the domain is one of our branch sites
@@ -36,6 +35,8 @@ export function middleware(request: NextRequest) {
     // return NextResponse.rewrite(
     //   new URL(`/site${path === '/' ? '' : path}`, request.url),
     // );
+  } else {
+    console.warn('Not a branch site:', siteDomain);
   }
 }
 
