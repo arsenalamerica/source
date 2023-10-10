@@ -4,12 +4,13 @@ import { NextRequest, NextResponse } from 'next/server';
 const DOMAINS = [
   'cascadiagooners.com',
   'pdxgooners.com',
-  'tacomagooners.com',
+  'test.tacomagooners.com',
   'vancouverarsenal.com',
 ];
 
 export function middleware(request: NextRequest) {
   const url = request.nextUrl;
+  console.log(url);
 
   // Check for local development
   const isLocal = url.hostname === 'localhost';
