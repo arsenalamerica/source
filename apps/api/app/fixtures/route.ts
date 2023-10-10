@@ -5,15 +5,6 @@ const TEAM_ID = 19;
 // const TV_STATION_COUNTRY_ID = 3483;
 const api_token = process.env.MONK_TOKEN || '';
 
-// TODO: Get all domains from asset.json files for each application
-const DOMAINS = [
-  '*.vercel.app',
-  'cascadiagooners.com',
-  'pdxgooners.com',
-  'tacomagooners.com',
-  'vancouverarsenal.com',
-];
-
 const url = `https://api.sportmonks.com/v3/football/fixtures/between/${season.start}/${season.end}/${TEAM_ID}`;
 const params = {
   include: [
@@ -39,16 +30,5 @@ export async function GET() {
   );
   const data = await res.json();
 
-  return NextResponse.json(
-    { ...data },
-    {
-      headers: {
-        'Access-Control-Allow-Origin':
-          process.env.NODE_ENV === 'development'
-            ? '*'
-            : DOMAINS.map((domain) => 'https://' + domain).join(', '),
-        'Access-Control-Allow-Methods': 'GET',
-      },
-    },
-  );
+  return NextResponse.json({ ...data });
 }
