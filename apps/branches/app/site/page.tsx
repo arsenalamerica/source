@@ -3,7 +3,7 @@ import { headers } from 'next/headers';
 /* eslint-disable-next-line */
 export interface HomeProps {}
 
-export function Home(props: HomeProps) {
+export default function Home(props: HomeProps) {
   const headersList = headers();
 
   headersList.forEach((key, value) => console.log([key, value]));
@@ -15,5 +15,3 @@ export function Home(props: HomeProps) {
     </div>
   );
 }
-
-export default Home;
