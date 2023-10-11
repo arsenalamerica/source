@@ -1,0 +1,24 @@
+{
+  "fathom-id": "VLVXAOCQ",
+  "domain": "vancouverarsenal.com",
+  "name": "Vancouver Arsenal",
+  "pub": {
+    "name": "Cinema Public House",
+    "address": "901 Granville St, Vancouver, BC V6Z 1L3",
+    "website": "http://www.cineplex.com/Restaurants/CinemaPublicHouse/Home/"
+  },
+  "social": [
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/VancouverArsenal"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/vancouverarsenal"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/vancouverarse"
+    }
+  ]
+}

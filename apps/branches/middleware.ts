@@ -16,27 +16,20 @@ export function middleware(request: NextRequest) {
 
   // Get the hostname from the URL, or if we are local, from the 'site' query parameter
   const siteDomain = isLocal
-    ? request.nextUrl.searchParams.get('site') || url.hostname
+    ? request.nextUrl.searchParams.get('domain') || url.hostname
     : url.hostname;
 
   // Check if the domain is one of our branch sites
   const isBranchSite = DOMAINS.includes(siteDomain);
 
-  const searchParams = request.nextUrl.searchParams.toString();
-
-  // Get the pathname of the request (e.g. /, /about, /blog/first-post)
-  const path = `${url.pathname}${
-    searchParams.length > 0 ? `?${searchParams}` : ''
-  }`;
-
   if (isBranchSite) {
-    return NextResponse.rewrite(new URL(`/${siteDomain}${path}`, request.url));
-
-    // return NextResponse.rewrite(
-    //   new URL(`/site${path === '/' ? '' : path}`, request.url),
-    // );
+    return NextResponse.rewrite(
+      new URL(`/${siteDomain}${url.pathname}`, request.url),
+    );
   } else {
     console.warn('Not a branch site:', siteDomain);
+    // Keep the url at the base path for non-branch sites so we show our 404 page
+    return NextResponse.rewrite(new URL(`/`, request.url));
   }
 }
 

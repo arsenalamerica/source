@@ -18,6 +18,13 @@
         "production": {}
       }
     },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx serve api", "nx serve branches"],
+        "parallel": true
+      }
+    },
     "serve": {
       "executor": "@nx/next:server",
       "defaultConfiguration": "development",
