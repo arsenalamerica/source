@@ -1,12 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { branches } from '@arsenalamerica/data';
 
-// TODO: Get all domains from asset.json files for each application
-const DOMAINS = [
-  'test.cascadiagooners.com',
-  'test.pdxgooners.com',
-  'test.tacomagooners.com',
-  'test.vancouverarsenal.com',
-];
+const DOMAINS = Object.keys(branches);
 
 export function middleware(request: NextRequest) {
   const url = request.nextUrl;
