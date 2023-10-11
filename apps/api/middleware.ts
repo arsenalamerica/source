@@ -20,6 +20,7 @@ export function middleware(request: NextRequest) {
   // or we are in development mode, allow the cross-origin request
   if (
     DOMAINS.map((domain) => 'https://' + domain).includes(origin) ||
+    DOMAINS.map((domain) => 'https://test.' + domain).includes(origin) ||
     origin.endsWith('.vercel.app') ||
     process.env.NODE_ENV === 'development'
   ) {
