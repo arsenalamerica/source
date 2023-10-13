@@ -1,19 +1,14 @@
 'use client';
 
+import { useContext } from 'react';
 import useSWR from 'swr';
 import styles from './NextGame.module.scss';
 import { dateFromEpoch, timeFromEpoch } from '@arsenalamerica/utils';
+import { BranchContext } from '../BranchContext/BranchContext';
 
-export interface NextGameProps {
-  pub: {
-    name: string;
-    address: string;
-    website: string;
-    replayTime?: string;
-  };
-}
-
-export function NextGame({ pub, ...rest }: NextGameProps) {
+export function NextGame() {
+  const branch = useContext(BranchContext);
+  const pub = branch.data.pub;
   const { data, error, isLoading } = useSWR('fixtures');
 
   if (error) {
@@ -45,23 +40,25 @@ export function NextGame({ pub, ...rest }: NextGameProps) {
   console.log(new Date('1/1/2000 ' + fixtureTime));
 
   const adjustedFixtureTime = isReplay
-    ? pub.replayTime + ' (replay)'
+    ? pub?.replayTime + ' (replay)'
     : fixtureTime;
 
   return (
-    <div {...rest} className={styles._}>
+    <div className={styles._}>
       <h2>Next Match Viewing</h2>
       <h3>{fixtureName}</h3>
       <p>
         {fixtureDate} {adjustedFixtureTime}
       </p>
-      <address>
-        <a href={pub.website}>
-          {pub.name}
-          <br />
-          {pub.address.replace(',', '\n')}
-        </a>
-      </address>
+      {pub && (
+        <address>
+          <a href={pub.website}>
+            {pub.name}
+            <br />
+            {pub.address.replace(',', '\n')}
+          </a>
+        </address>
+      )}
 
       {/* <pre>{JSON.stringify(upcoming, null, 2)}</pre>; */}
     </div>
