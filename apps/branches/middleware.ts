@@ -8,6 +8,8 @@ export function middleware(request: NextRequest) {
 
   // Check for local development
   const isLocal = url.hostname === 'localhost';
+  // Check if we are on a preview deployment
+  const isPreview = url.hostname.endsWith('vercel.app');
 
   // Get the hostname from the URL, or if we are local, from the 'site' query parameter
   const siteDomain = isLocal
@@ -20,6 +22,11 @@ export function middleware(request: NextRequest) {
   if (isBranchSite) {
     return NextResponse.rewrite(
       new URL(`/${siteDomain}${url.pathname}`, request.url),
+    );
+  } else if (isPreview) {
+    // Set the first branch site as the default build preview domain
+    return NextResponse.rewrite(
+      new URL(`/${DOMAINS[0]}${url.pathname}`, request.url),
     );
   } else {
     console.warn('Not a branch site:', siteDomain);

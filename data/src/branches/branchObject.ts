@@ -3,17 +3,18 @@ export interface BranchObject {
     'fathom-id': string;
     domain: string;
     name: string;
-    pub: {
+    pub?: {
       name: string;
       address: string;
       website: string;
+      replayTime?: string;
     };
-    social: {
+    social?: {
       name: string;
       url: string;
     }[];
   };
-  Logo: React.FunctionComponent<
+  Logo?: React.FunctionComponent<
     React.SVGProps<SVGSVGElement> & { title?: string }
   >;
 }
