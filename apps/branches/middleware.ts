@@ -8,11 +8,14 @@ export function middleware(request: NextRequest) {
 
   // Check for local development
   const isLocal = url.hostname === 'localhost';
+  // Check if we are on a preview deployment
+  const isPreview = url.hostname.endsWith('vercel.app');
 
   // Get the hostname from the URL, or if we are local, from the 'site' query parameter
-  const siteDomain = isLocal
-    ? request.nextUrl.searchParams.get('domain') || url.hostname
-    : url.hostname;
+  const siteDomain =
+    isLocal || isPreview
+      ? request.nextUrl.searchParams.get('domain') || url.hostname
+      : url.hostname;
 
   // Check if the domain is one of our branch sites
   const isBranchSite = DOMAINS.includes(siteDomain);
