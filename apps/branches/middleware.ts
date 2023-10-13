@@ -12,10 +12,9 @@ export function middleware(request: NextRequest) {
   const isPreview = url.hostname.endsWith('vercel.app');
 
   // Get the hostname from the URL, or if we are local, from the 'site' query parameter
-  const siteDomain =
-    isLocal || isPreview
-      ? request.nextUrl.searchParams.get('domain') || url.hostname
-      : url.hostname;
+  const siteDomain = isLocal
+    ? request.nextUrl.searchParams.get('domain') || url.hostname
+    : url.hostname;
 
   // Check if the domain is one of our branch sites
   const isBranchSite = DOMAINS.includes(siteDomain);
@@ -23,6 +22,11 @@ export function middleware(request: NextRequest) {
   if (isBranchSite) {
     return NextResponse.rewrite(
       new URL(`/${siteDomain}${url.pathname}`, request.url),
+    );
+  } else if (isPreview) {
+    // Set the first branch site as the default build preview domain
+    return NextResponse.rewrite(
+      new URL(`/${DOMAINS[0]}${url.pathname}`, request.url),
     );
   } else {
     console.warn('Not a branch site:', siteDomain);
