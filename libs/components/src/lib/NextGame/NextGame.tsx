@@ -8,7 +8,6 @@ import { BranchContext } from '../BranchContext/BranchContext';
 
 export function NextGame() {
   const branch = useContext(BranchContext);
-  const pub = branch.data.pub;
   const { data, error, isLoading } = useSWR('fixtures');
 
   if (error) {
@@ -33,14 +32,13 @@ export function NextGame() {
   const fixtureTime = timeFromEpoch(starting_at_timestamp);
   const fakeDate = '1/1/2000 ';
 
-  const isReplay = pub?.replayTime
-    ? new Date(fakeDate + pub.replayTime) > new Date(fakeDate + fixtureTime)
+  const isReplay = branch.pub?.replayTime
+    ? new Date(fakeDate + branch.pub.replayTime) >
+      new Date(fakeDate + fixtureTime)
     : false;
 
-  console.log(new Date('1/1/2000 ' + fixtureTime));
-
   const adjustedFixtureTime = isReplay
-    ? pub?.replayTime + ' (replay)'
+    ? branch.pub?.replayTime + ' (replay)'
     : fixtureTime;
 
   return (
@@ -50,12 +48,12 @@ export function NextGame() {
       <p>
         {fixtureDate} {adjustedFixtureTime}
       </p>
-      {pub && (
+      {branch.pub && (
         <address>
-          <a href={pub.website}>
-            {pub.name}
+          <a href={branch.pub.website}>
+            {branch.pub.name}
             <br />
-            {pub.address.replace(',', '\n')}
+            {branch.pub.address.replace(',', '\n')}
           </a>
         </address>
       )}

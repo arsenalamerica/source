@@ -3,12 +3,14 @@
 import styles from './GameCard.module.scss';
 import { useContext } from 'react';
 import { BranchContext } from '../BranchContext/BranchContext';
+import { branchLogo } from '@arsenalamerica/data';
 import useSWR from 'swr';
 import { shite, dateFromEpoch, timeFromEpoch } from '@arsenalamerica/utils';
 import { Textfit } from 'react-textfit';
 
 export function GameCard() {
-  const { Logo } = useContext(BranchContext);
+  const branch = useContext(BranchContext);
+  const Logo = branchLogo[branch.domain];
   const { data, error, isLoading } = useSWR('fixtures');
 
   // console.log({ isLoading }, { error }, { data });

@@ -1,26 +1,34 @@
-'use client';
-
 import './global.scss';
+import type { Metadata } from 'next';
 import { FathomNext, BranchProvider } from '@arsenalamerica/components';
-import { branches } from '@arsenalamerica/data';
+import { branchData } from '@arsenalamerica/data';
 
 export interface LayoutProps {
   children: React.ReactNode;
   params: { domain: string };
 }
 
-export default function Layout({ children, params }: LayoutProps) {
-  const branchObject = branches[params.domain];
+export async function generateMetadata({
+  params,
+}: LayoutProps): Promise<Metadata> {
+  const branch = branchData[params.domain];
 
-  const data = branchObject.data;
+  return {
+    title: branch.name,
+    description: `Welcome to ${branch.name}!`,
+  };
+}
+
+export default function Layout({ children, params }: LayoutProps) {
+  const branch = branchData[params.domain];
 
   return (
-    <BranchProvider branch={branchObject}>
+    <BranchProvider branch={branch}>
       <FathomNext
-        fathomId={data['fathom-id']}
-        includedDomains={[data.domain]}
+        fathomId={branch['fathom-id']}
+        includedDomains={[branch.domain]}
       />
-      <h1 className="screen-reader-only">{data.name}</h1>
+      <h1 className="screen-reader-only">{branch.name}</h1>
       {children}
     </BranchProvider>
   );
