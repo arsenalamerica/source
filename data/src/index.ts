@@ -1,2 +1,2 @@
-export { default as branches } from './branches';
-export type { BranchObject } from './branches/branchObject';
+export { default as branches, branchData, branchLogo } from './branches';
+export type { BranchData, BranchLogo } from './branches/types';
