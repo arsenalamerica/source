@@ -1,0 +1,20 @@
+{
+  "fathom-id": "LCDACJCE",
+  "domain": "boisegooners.com",
+  "name": "Boise Gooners",
+  "pub": {
+    "name": "Liga Boise",
+    "address": "204 N Capitol Blvd Suite 10, Boise, ID 83702",
+    "website": "https://www.ligaboise.com/"
+  },
+  "social": [
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/groups/boisegooners"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/boisegooners/"
+    }
+  ]
+}

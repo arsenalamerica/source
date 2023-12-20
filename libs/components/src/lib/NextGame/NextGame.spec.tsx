@@ -1,20 +1,14 @@
 import { render } from '@testing-library/react';
 
-import { NextGame, NextGameProps } from './NextGame';
+import { NextGameComponent } from './NextGameComponent';
 import SWRProvider from '../Main/SWRProvider';
 
-const PUB_INFO: NextGameProps['pub'] = {
-  name: 'The Pub',
-  address: '123 Fake Street',
-  website: 'https://www.thepub.com',
-};
-
 // TODO: set up React Testing Library providers so this is not part of the test itself
-describe('NextGame', () => {
+describe('NextGameComponent', () => {
   it('should render successfully', () => {
     const { baseElement } = render(
       <SWRProvider>
-        <NextGame pub={PUB_INFO} />
+        <NextGameComponent />
       </SWRProvider>,
     );
     expect(baseElement).toBeTruthy();

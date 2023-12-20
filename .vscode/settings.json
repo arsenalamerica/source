@@ -12,7 +12,7 @@
   "cssModules.camelCase": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": true
+    "source.fixAll.stylelint": "explicit"
   },
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
