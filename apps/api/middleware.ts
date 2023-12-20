@@ -1,13 +1,8 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { branchData } from '@arsenalamerica/data';
 
-// TODO: Get all domains from asset.json files for each application
-const DOMAINS = [
-  'cascadiagooners.com',
-  'pdxgooners.com',
-  'tacomagooners.com',
-  'vancouverarsenal.com',
-];
+const DOMAINS = Object.keys(branchData);
 
 export function middleware(request: NextRequest) {
   // Get the current response
