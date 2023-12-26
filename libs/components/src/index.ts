@@ -6,5 +6,4 @@ export * from './lib/GameCard';
 export * from './lib/Logo';
 export * from './lib/Main';
 export * from './lib/NextGame/NextGame';
-export * from './lib/SocialBar';
 export * from './lib/SocialLinks';

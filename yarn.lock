@@ -72,7 +72,7 @@ __metadata:
     "@ariakit/react": 0.3.3
     "@babel/core": 7.22.9
     "@babel/preset-react": ^7.14.5
-    "@bjeco/blocks": 0.0.4
+    "@bjeco/blocks": 1.0.0
     "@nrwl/js": 16.9.0
     "@nx/cypress": 16.9.0
     "@nx/devkit": 16.10.0
@@ -2075,17 +2075,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bjeco/blocks@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@bjeco/blocks@npm:0.0.4"
+"@bjeco/blocks@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@bjeco/blocks@npm:1.0.0"
   dependencies:
-    ariakit: 2.0.0-next.36
-    clsx: 1.2.1
-    react-error-boundary: 3.1.4
+    "@ariakit/react": 0.3.3
+    clsx: 2.0.0
+    fathom-client: 3.5.0
+    react-error-boundary: 4.0.11
   peerDependencies:
-    react: "*"
-    react-dom: "*"
-  checksum: 6a8959ea0523d6da0ccb5fc71368bdcf8154dce3ea78fd345916f4927ec557cdcaf618759b56f04d634db226d2843b296b52fd1dcdd7ccdf523ff45c15680b5b
+    next: ^13
+    react: ^18
+    react-dom: ^18
+  checksum: f8c0057c1884fa446eb82cb8d5ff90f4dd44dadb3114fc27f7453ffe2f3360e132081eed945cc7bab6edca0dbe619294a37610f790df85742aa4b4ed5cfde09b
   languageName: node
   linkType: hard
 
@@ -5147,28 +5149,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ariakit-utils@npm:0.17.0-next.23":
-  version: 0.17.0-next.23
-  resolution: "ariakit-utils@npm:0.17.0-next.23"
-  peerDependencies:
-    react: ^17.0.0 || ^18.0.0
-  checksum: 67c0b54dafbd46d03df31958bd6c1174404e905c75ca2121261b7faec3bf746628f2f79d972be48f6173ab3b5dd8a38f6d80b04a67899e9c170f6c9dea4547db
-  languageName: node
-  linkType: hard
-
-"ariakit@npm:2.0.0-next.36":
-  version: 2.0.0-next.36
-  resolution: "ariakit@npm:2.0.0-next.36"
-  dependencies:
-    "@floating-ui/dom": ^1.0.0
-    ariakit-utils: 0.17.0-next.23
-  peerDependencies:
-    react: ^17.0.0 || ^18.0.0
-    react-dom: ^17.0.0 || ^18.0.0
-  checksum: d8eb6898bd4c7d8ec6ae7a387e59a751082a2d9c7b2f0f9706f562afbda1de514d25b51c5b8653c37be93b0177d4a709fc48d1fca4588afe7a2fd139f664213d
-  languageName: node
-  linkType: hard
-
 "array-buffer-byte-length@npm:^1.0.0":
   version: 1.0.0
   resolution: "array-buffer-byte-length@npm:1.0.0"
@@ -6246,13 +6226,6 @@ __metadata:
   version: 1.0.4
   resolution: "clone@npm:1.0.4"
   checksum: d06418b7335897209e77bdd430d04f882189582e67bd1f75a04565f3f07f5b3f119a9d670c943b6697d0afb100f03b866b3b8a1f91d4d02d72c4ecf2bb64b5dd
-  languageName: node
-  linkType: hard
-
-"clsx@npm:1.2.1":
-  version: 1.2.1
-  resolution: "clsx@npm:1.2.1"
-  checksum: 30befca8019b2eb7dbad38cff6266cf543091dae2825c856a62a8ccf2c3ab9c2907c4d12b288b73101196767f66812365400a227581484a05f968b0307cfaf12
   languageName: node
   linkType: hard
 
@@ -13370,14 +13343,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-error-boundary@npm:3.1.4":
-  version: 3.1.4
-  resolution: "react-error-boundary@npm:3.1.4"
+"react-error-boundary@npm:4.0.11":
+  version: 4.0.11
+  resolution: "react-error-boundary@npm:4.0.11"
   dependencies:
     "@babel/runtime": ^7.12.5
   peerDependencies:
     react: ">=16.13.1"
-  checksum: f36270a5d775a25c8920f854c0d91649ceea417b15b5bc51e270a959b0476647bb79abb4da3be7dd9a4597b029214e8fe43ea914a7f16fa7543c91f784977f1b
+  checksum: b3c157fea4e8f78411e9aa0fbf5241f6907b66ede1cd8b7bb22faaeb0339ebeb3dc8e63bf90ef3f740bfa8fd994ca6edf975089cd371b664ad6c2735e7512d38
   languageName: node
   linkType: hard
 
