@@ -30,6 +30,26 @@ body,
   height: 100%;
 }
 
+.loading {
+  border-radius: 5px;
+  animation: 1.5s shine linear infinite;
+  // background: #eee;
+  background: linear-gradient(
+    110deg,
+    rgb(0 0 0 / 8%) 8%,
+    rgb(0 0 0 / 2%) 18%,
+    rgb(0 0 0 / 8%) 33%
+  );
+  background-size: 200% 100%;
+  color: transparent;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
 .screen-reader-only:not(:focus, :active) {
   position: absolute;
   overflow: hidden;

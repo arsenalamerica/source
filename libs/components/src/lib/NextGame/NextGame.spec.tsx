@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-
+import { Boundaries } from '@bjeco/blocks';
 import { NextGameComponent } from './NextGameComponent';
 import SWRProvider from '../Main/SWRProvider';
 
@@ -8,7 +8,9 @@ describe('NextGameComponent', () => {
   it('should render successfully', () => {
     const { baseElement } = render(
       <SWRProvider>
-        <NextGameComponent />
+        <Boundaries>
+          <NextGameComponent />
+        </Boundaries>
       </SWRProvider>,
     );
     expect(baseElement).toBeTruthy();

@@ -5,19 +5,17 @@ import useSWR from 'swr';
 import styles from './NextGame.module.scss';
 import { dateFromEpoch, timeFromEpoch } from '@arsenalamerica/utils';
 import { BranchContext } from '../BranchContext/BranchContext';
-import NextGameError from './NextGameError';
+import { useErrorBoundary } from 'react-error-boundary';
 import NextGameLoading from './NextGameLoading';
 
 export function NextGameComponent() {
+  const { showBoundary } = useErrorBoundary();
   const branch = useContext(BranchContext);
-  const { data, error, isLoading } = useSWR('fixtures/next');
+  const { data, error } = useSWR('fixtures/next');
 
-  // TODO: Update boundaries component to expose imperative hook to throw these errors instead of returning them here
   if (error) {
-    console.error(error);
-    return <NextGameError />;
+    showBoundary(error);
   }
-  if (isLoading) return <NextGameLoading />;
   if (!data.data) {
     console.log(data);
     return null;
@@ -26,8 +24,15 @@ export function NextGameComponent() {
   // Get the next game
   const upcoming = data.data[0];
 
-  const { name: fixtureName, starting_at_timestamp } = upcoming;
+  const {
+    name: fixtureName,
+    starting_at_timestamp,
+    placeholder: isPlaceholder,
+  } = upcoming;
 
+  if (isPlaceholder) {
+    return <NextGameLoading />;
+  }
   const fixtureDate = dateFromEpoch(starting_at_timestamp);
   const fixtureTime = timeFromEpoch(starting_at_timestamp);
   const fakeDate = '1/1/2000 ';
