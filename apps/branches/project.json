@@ -21,7 +21,11 @@
     "start": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["nx serve api", "nx serve branches"],
+        "commands": [
+          "nx serve api",
+          "nx serve branches",
+          "open http://localhost:4200/?domain=tacomagooners.com"
+        ],
         "parallel": true
       }
     },
