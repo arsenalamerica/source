@@ -11,7 +11,7 @@ import { Textfit } from 'react-textfit';
 export function GameCard() {
   const branch = useContext(BranchContext);
   const Logo = branchLogo[branch.domain];
-  const { data, error, isLoading } = useSWR('fixtures');
+  const { data, error, isLoading } = useSWR('fixtures/next');
 
   // console.log({ isLoading }, { error }, { data });
 
@@ -25,10 +25,7 @@ export function GameCard() {
   }
 
   // Get the next game
-  // TODO: Make this a query parameter on the API or a separate route
-  const upcoming = data.data.find(
-    ({ state_id }: { state_id: number }) => state_id === 1,
-  );
+  const upcoming = data.data[0];
 
   const { starting_at_timestamp } = upcoming;
 
@@ -38,8 +35,6 @@ export function GameCard() {
   const visitorTeam = upcoming.participants.find(
     ({ meta }: { meta: { location: string } }) => meta.location === 'away',
   );
-
-  console.log(visitorTeam);
 
   const fixtureDate = dateFromEpoch(starting_at_timestamp);
   const fixtureTime = timeFromEpoch(starting_at_timestamp);
