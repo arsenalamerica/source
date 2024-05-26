@@ -6,7 +6,7 @@ updates:
     rebase-strategy: 'auto'
     directory: '/'
     schedule:
-      interval: 'weekly'
+      interval: 'daily'
     assignees:
       - 'brianespinosa'
     open-pull-requests-limit: 5
