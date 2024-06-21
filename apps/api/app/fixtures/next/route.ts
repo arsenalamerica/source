@@ -21,11 +21,18 @@ const fetchParams = new URLSearchParams({ api_token, ...params }).toString();
 fetchUrl.search = fetchParams;
 
 export async function GET() {
-  const res = await fetch(
-    fetchUrl,
-    { next: { revalidate: 15 * 60 } }, // Revalidate every 15 minutes
-  );
-  const data = await res.json();
-
-  return NextResponse.json({ ...data });
+  try {
+    const res = await fetch(
+      fetchUrl,
+      { next: { revalidate: 15 * 60 } }, // Revalidate every 15 minutes
+    );
+    const data = await res.json();
+    return NextResponse.json({ season, ...data });
+  } catch (error) {
+    return NextResponse.json({
+      season,
+      status: 500,
+      error,
+    });
+  }
 }
