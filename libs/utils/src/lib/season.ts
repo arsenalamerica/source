@@ -4,7 +4,7 @@ const currentMonth = d.getMonth();
 const currentYear = d.getFullYear();
 
 // NOTE: currentMonth starts at index 0. Switch the season over in June (index 5)
-const seasonYearStart = currentMonth > 5 ? currentYear : currentYear - 1;
+const seasonYearStart = currentMonth > 4 ? currentYear : currentYear - 1;
 const seasonYearEnd = seasonYearStart + 1;
 
 const seasonStartDate = `${seasonYearStart}-07-01`;
