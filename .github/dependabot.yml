@@ -1,4 +1,5 @@
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+# Editing this file should manually trigger Dependabot to run again
 
 version: 2
 updates:
