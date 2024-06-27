@@ -1,22 +1,14 @@
-import Link from 'next/link';
+// import Link from 'next/link';
+import { SWRProvider } from '@arsenalamerica/components';
+
 export interface HomeProps {
   params: { domain: string };
 }
 
 export default function Home({ params }: HomeProps) {
   return (
-    <div>
-      <h1>Welcome to {params.domain}!</h1>
-      <h2>Cool path</h2>
-      <Link
-        href={{
-          pathname: '/',
-          query: params,
-        }}
-      >
-        Home
-      </Link>
-
+    <SWRProvider>
+      <h2>League Table</h2>
       <div className="w-full">
         <header className="bg-primary text-primary-foreground py-4 px-6">
           <h1 className="text-2xl font-bold">Premier League</h1>
@@ -90,6 +82,6 @@ export default function Home({ params }: HomeProps) {
           </table>
         </div>
       </div>
-    </div>
+    </SWRProvider>
   );
 }
