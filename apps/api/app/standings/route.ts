@@ -1,3 +1,4 @@
+import { StandingData } from '@arsenalamerica/types';
 import { NextResponse } from 'next/server';
 
 // This League ID is for the Premier League and we can use it to make the table live results once the season starts
@@ -25,7 +26,7 @@ export async function GET() {
     );
     const data = await res.json();
 
-    const cleanData = data.data.map(
+    const cleanData: StandingData = data.data.map(
       ({ details, ...rest }: { details: [] }) => ({
         ...rest,
         stats: Object.fromEntries(

@@ -1,0 +1,50 @@
+export type StandingData = {
+  data: {
+    id: number;
+    participant_id: number;
+    sport_id: number;
+    league_id: number;
+    season_id: number;
+    stage_id: number;
+    group_id: number;
+    round_id: number;
+    standing_rule_id: number;
+    position: number;
+    result: string;
+    points: number;
+    participant: {
+      id: number;
+      sport_id: number;
+      country_id: number;
+      venue_id: number;
+      name: string;
+      short_code: string;
+      image_path: string;
+    };
+    form: [];
+    stats: {
+      'overall-matches-played': number;
+      'overall-won': number;
+      'overall-draw': number;
+      'overall-lost': number;
+      'overall-goals-for': number;
+      'overall-goals-against': number;
+      'home-matches-played': number;
+      'home-won': number;
+      'home-draw': number;
+      'home-lost': number;
+      'home-scored': number;
+      'home-conceded': number;
+      'away-matches-played': number;
+      'away-won': number;
+      'away-draw': number;
+      'away-lost': number;
+      'away-scored': number;
+      'away-conceded': number;
+      'goal-difference': number;
+      'home-points': number;
+      'away-points': number;
+      'overall-points': number;
+    };
+  }[];
+};

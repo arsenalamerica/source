@@ -1,11 +1,7 @@
 'use client';
 
-import { GameCard, SWRProvider } from '@arsenalamerica/components';
+import { GameCard } from '@arsenalamerica/components';
 
 export default function GameCardPage() {
-  return (
-    <SWRProvider>
-      <GameCard />
-    </SWRProvider>
-  );
+  return <GameCard />;
 }

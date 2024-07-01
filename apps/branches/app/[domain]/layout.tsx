@@ -1,6 +1,11 @@
 import './global.scss';
 import type { Metadata } from 'next';
-import { FathomNext, BranchProvider } from '@arsenalamerica/components';
+import {
+  FathomNext,
+  BranchProvider,
+  SWRProvider,
+  NavBar,
+} from '@arsenalamerica/components';
 import { branchData } from '@arsenalamerica/data';
 
 export interface LayoutProps {
@@ -29,7 +34,8 @@ export default function Layout({ children, params }: LayoutProps) {
         includedDomains={[branch.domain]}
       />
       <h1 className="screen-reader-only">{branch.name}</h1>
-      {children}
+      <NavBar />
+      <SWRProvider>{children}</SWRProvider>
     </BranchProvider>
   );
 }
