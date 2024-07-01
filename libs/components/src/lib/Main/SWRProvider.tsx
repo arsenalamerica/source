@@ -76,6 +76,8 @@ const FIXTURES_NEXT_PLACEHOLDER = {
   ],
 };
 
+const STANDINGS_PLACEHOLDER = Array.from({ length: 20 });
+
 export default function SWRProvider({ children, ...rest }: SWRProviderProps) {
   return (
     <SWRConfig
@@ -86,7 +88,10 @@ export default function SWRProvider({ children, ...rest }: SWRProviderProps) {
             res.json(),
           ),
         suspense: true,
-        fallback: { 'fixtures/next': FIXTURES_NEXT_PLACEHOLDER },
+        fallback: {
+          'fixtures/next': FIXTURES_NEXT_PLACEHOLDER,
+          standings: STANDINGS_PLACEHOLDER,
+        },
       }}
     >
       {children}

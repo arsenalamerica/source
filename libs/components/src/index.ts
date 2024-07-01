@@ -1,9 +1,11 @@
+export * from './lib/NavBar/NavBar';
 export * from './lib/BranchContext/BranchContext';
 export * from './lib/ExternalLink';
 export * from './lib/FathomNext';
 export * from './lib/FixtureCard';
 export * from './lib/GameCard';
+export { LeagueTable } from './lib/LeagueTable/LeagueTable';
 export * from './lib/Logo';
 export * from './lib/Main';
-export * from './lib/NextGame/NextGame';
+export { NextGame } from './lib/NextGame/NextGame';
 export * from './lib/SocialLinks';
