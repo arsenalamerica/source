@@ -4,6 +4,13 @@
   "sourceRoot": "data/src",
   "projectType": "library",
   "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "data",
+        "commands": ["npx @svgr/cli --out-dir src/branches -- src/branches"]
+      }
+    },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
