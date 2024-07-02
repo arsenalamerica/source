@@ -137,7 +137,6 @@ __metadata:
     ramda: 0.29.0
     react: 18.2.0
     react-dom: 18.2.0
-    react-favicon: 2.0.5
     react-icons: 4.4.0
     react-textfit: 1.1.1
     regenerator-runtime: 0.13.11
@@ -13031,17 +13030,6 @@ __metadata:
   peerDependencies:
     react: ">=16.13.1"
   checksum: b3c157fea4e8f78411e9aa0fbf5241f6907b66ede1cd8b7bb22faaeb0339ebeb3dc8e63bf90ef3f740bfa8fd994ca6edf975089cd371b664ad6c2735e7512d38
-  languageName: node
-  linkType: hard
-
-"react-favicon@npm:2.0.5":
-  version: 2.0.5
-  resolution: "react-favicon@npm:2.0.5"
-  dependencies:
-    prop-types: ^15.8.1
-  peerDependencies:
-    react: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 0c8c49dbfa3ee1187f2694a5f938069333a7fb07f4dcb402e9c141a2d34caa3268e4910e5170af8b889286826ce5c2a23b1a1d103bed42d1d06846056252d23a
   languageName: node
   linkType: hard
 
