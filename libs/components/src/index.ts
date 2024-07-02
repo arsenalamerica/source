@@ -5,7 +5,6 @@ export * from './lib/FathomNext';
 export * from './lib/FixtureCard';
 export * from './lib/GameCard';
 export { LeagueTable } from './lib/LeagueTable/LeagueTable';
-export * from './lib/Logo';
 export * from './lib/Main';
 export { NextGame } from './lib/NextGame/NextGame';
 export * from './lib/SocialLinks';

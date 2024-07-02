@@ -1,0 +1,5 @@
+# For our generated icons
+Allow: /icon/*
+
+# For our generated OG images
+Allow: /opengraph-image/*
