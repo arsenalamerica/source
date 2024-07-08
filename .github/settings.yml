@@ -1,0 +1,18 @@
+# https://github.com/brianespinosa/.github
+_extends: brianespinosa/.github
+
+repository:
+  # The name of the repository. Changing this will rename the repository
+  name: source
+
+  # A short description of the repository that will show up on GitHub
+  description: Arsenal America branch microsites
+
+  # A URL with more information about the repository
+  homepage: <url>
+
+  # A comma-separated list of topics to set on the repository
+  topics: react, nextjs, typescript, multi-tenant, microsites
+
+  # Either `true` to make the repository private, or `false` to make it public.
+  private: false
