@@ -1,5 +1,5 @@
-# https://github.com/brianespinosa/.github
-_extends: brianespinosa/.github
+# https://github.com/arsenalamerica/.github
+_extends: .github
 
 repository:
   # The name of the repository. Changing this will rename the repository
