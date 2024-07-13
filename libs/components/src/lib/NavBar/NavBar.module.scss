@@ -1,3 +1,5 @@
+$navbar-spacing: 0.625em;
+
 ._ {
   position: fixed;
   bottom: 0;
@@ -6,10 +8,10 @@
   max-width: calc(100% - 2em);
   align-items: center;
   justify-content: center;
-  padding: 1em;
-  border-radius: 2em;
+  padding: $navbar-spacing;
+  border-radius: 1em;
   margin: 1em;
-  background-color: #da1f26;
+  background-color: #c2011720;
   box-shadow: 0 1em 1em 0.5em #00000030;
   overflow-x: auto;
   transform: translateX(-50%);
@@ -18,29 +20,8 @@
     display: flex;
     width: 100%;
     max-width: 1200px;
-    align-content: center;
     align-items: center;
-    justify-content: center;
-    gap: 1em;
-  }
-
-  a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.5em 2.5em;
-    border-radius: 1em;
-
-    &:hover {
-      background-color: #00000010;
-    }
-
-    &:active {
-      background-color: #00000020;
-    }
-
-    &:global(.active) {
-      background-color: #00000030;
-    }
+    gap: $navbar-spacing;
+    place-content: center center;
   }
 }

@@ -1,3 +1,40 @@
+// Set your brand colors
+$purple: #8a4d76;
+$pink: #fa7c91;
+$brown: #757763;
+$beige-light: #d0d1cd;
+$beige-lighter: #eff0eb;
+
+// Override global Sass variables from the /utilities folder
+@use 'bulma/sass/utilities' with (
+  $cssvars-prefix: 'ars-',
+  $family-primary: '"Nunito", sans-serif',
+  $primary: #da1f26,
+  $link: #da1f26
+);
+
+// Override Sass variables from the /form folder
+// @use 'bulma/sass/form' with (
+//   $input-shadow: none
+// );
+
+// Import the components you need
+@forward 'bulma/sass/base';
+@forward 'bulma/sass/elements/button';
+@forward 'bulma/sass/elements/icon';
+// @forward 'bulma/sass/elements/content';
+// @forward 'bulma/sass/elements/notification';
+// @forward 'bulma/sass/elements/progress';
+// @forward 'bulma/sass/elements/tag';
+// @forward 'bulma/sass/layout/footer';
+
+// Import the themes so that all CSS variables have a value
+@forward 'bulma/sass/themes';
+
+:root {
+  overscroll-behavior: none;
+}
+
 * {
   box-sizing: border-box;
 }
