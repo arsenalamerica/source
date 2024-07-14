@@ -10,7 +10,7 @@
       "runner": "nx-cloud",
       "options": {
         "cacheableOperations": ["build", "lint", "stylelint", "test", "e2e"],
-        "accessToken": "NjU5NDAyN2ItMjRkMy00YWM0LWI2MWQtOTVlMTVhMGNjYTRlfHJlYWQtd3JpdGU="
+        "accessToken": "M2NkMjFlNjYtMzQ5Yy00ZGQzLWFiYjgtNWY2Y2RhYWExZTkzfHJlYWQtd3JpdGU="
       }
     },
     "vercel": {
@@ -29,9 +29,7 @@
     "test": {
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     },
-    "e2e": {
-      "inputs": ["default", "^production"]
-    },
+    "e2e": { "inputs": ["default", "^production"] },
     "lint": {
       "dependsOn": ["stylelint"],
       "inputs": [
@@ -58,11 +56,6 @@
     "sharedGlobals": []
   },
   "generators": {
-    "@nx/next": {
-      "application": {
-        "style": "scss",
-        "linter": "eslint"
-      }
-    }
+    "@nx/next": { "application": { "style": "scss", "linter": "eslint" } }
   }
 }
