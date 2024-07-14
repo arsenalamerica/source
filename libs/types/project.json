@@ -9,7 +9,9 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/types/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["libs/types/**/*.{ts,tsx,js,jsx}"],
+        "fix": true,
+        "maxWarnings": 0
       }
     }
   }

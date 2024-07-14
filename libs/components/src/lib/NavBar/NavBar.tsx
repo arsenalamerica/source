@@ -1,8 +1,6 @@
 'use client';
 
 import * as Ariakit from '@ariakit/react';
-import Link from 'next/link';
-import { useSearchParams, usePathname } from 'next/navigation';
 import styles from './NavBar.module.scss';
 import { NavBarItem } from './NavBarItem';
 import { NavLink } from '../NavLink/NavLink';
@@ -13,8 +11,6 @@ import { faTrophy, faHome } from '@fortawesome/free-solid-svg-icons';
 export interface NavBarProps {}
 
 export function NavBar(props: NavBarProps) {
-  const searchParams = useSearchParams();
-
   const ACTIVE_CLASS = 'is-dark';
 
   const ITEMS = [
