@@ -6,24 +6,51 @@ on:
       - main
   pull_request:
 
+# Needed for nx-set-shas when run on the main branch
+permissions:
+  actions: read
+  contents: read
+
 jobs:
   main:
-    name: Nx Cloud - Main Job
-    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.13.0
-    with:
-      main-branch-name: main
-      number-of-agents: 3
-      init-commands: |
-        yarn nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
-      # parallel-commands: |
-      #   yarn nx-cloud record -- yarn nx format:check
-      parallel-commands-on-agents: |
-        yarn nx affected --target=lint --parallel=3
-        yarn nx affected --target=test --parallel=3 --ci --code-coverage
-        # yarn nx affected --target=build --parallel=3
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
 
-  agents:
-    name: Nx Cloud - Agents
-    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.13.0
-    with:
-      number-of-agents: 3
+      - run: yarn install --immutable
+
+      # This line enables distribution
+      # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
+      - run: npx nx-cloud start-ci-run --distribute-on=".nx/workflows/dynamic-changesets.yml" --with-env-vars="MONK_TOKEN" --stop-agents-after="test"
+
+      - uses: nrwl/nx-set-shas@v4
+
+      - run: npx nx-cloud record -- nx format:check
+      - run: npx nx affected -t lint test
+
+  # main:
+  #   name: Nx Cloud - Main Job
+  #   uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.15.0
+  #   with:
+  #     main-branch-name: main
+  #     number-of-agents: 3
+  #     init-commands: |
+  #       yarn nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
+  #     # parallel-commands: |
+  #     #   yarn nx-cloud record -- yarn nx format:check
+  #     parallel-commands-on-agents: |
+  #       yarn nx affected --target=lint --parallel=3
+  #       yarn nx affected --target=test --parallel=3 --ci --code-coverage
+  #       # yarn nx affected --target=build --parallel=3
+
+  # agents:
+  #   name: Nx Cloud - Agents
+  #   uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.15.0
+  #   with:
+  #     number-of-agents: 3
