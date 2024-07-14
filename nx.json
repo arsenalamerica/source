@@ -9,7 +9,8 @@
     "default": {
       "runner": "@vercel/remote-nx",
       "options": {
-        "cacheableOperations": ["build", "lint", "stylelint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "stylelint", "test", "e2e"],
+        "accessToken": "M2NkMjFlNjYtMzQ5Yy00ZGQzLWFiYjgtNWY2Y2RhYWExZTkzfHJlYWQtd3JpdGU="
       }
     },
     "vercel": {
@@ -27,9 +28,7 @@
     "test": {
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     },
-    "e2e": {
-      "inputs": ["default", "^production"]
-    },
+    "e2e": { "inputs": ["default", "^production"] },
     "lint": {
       "dependsOn": ["stylelint"],
       "inputs": [
@@ -56,11 +55,6 @@
     "sharedGlobals": []
   },
   "generators": {
-    "@nx/next": {
-      "application": {
-        "style": "scss",
-        "linter": "eslint"
-      }
-    }
+    "@nx/next": { "application": { "style": "scss", "linter": "eslint" } }
   }
 }
