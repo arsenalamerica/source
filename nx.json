@@ -10,7 +10,8 @@
       "runner": "nx-cloud",
       "options": {
         "cacheableOperations": ["build", "lint", "stylelint", "test", "e2e"],
-        "accessToken": "M2NkMjFlNjYtMzQ5Yy00ZGQzLWFiYjgtNWY2Y2RhYWExZTkzfHJlYWQtd3JpdGU="
+        "accessToken": "M2NkMjFlNjYtMzQ5Yy00ZGQzLWFiYjgtNWY2Y2RhYWExZTkzfHJlYWQtd3JpdGU=",
+        "cacheDirectory": "/tmp/nx-cache"
       }
     },
     "vercel": {
