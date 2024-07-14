@@ -3,6 +3,8 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/branches-e2e/src",
   "projectType": "application",
+  "tags": [],
+  "implicitDependencies": ["branches"],
   "targets": {
     "e2e": {
       "executor": "@nx/cypress:cypress",
@@ -18,15 +20,11 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": ["apps/branches-e2e/**/*.{js,ts}"],
         "fix": true,
         "maxWarnings": 0
       }
     }
-  },
-  "tags": [],
-  "implicitDependencies": ["branches"]
+  }
 }
