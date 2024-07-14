@@ -57,11 +57,20 @@
         }
       }
     },
+
+    "stylelint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx stylelint apps/branches/**/*.{css,scss}"
+      }
+    },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/api/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/api/**/*.{ts,tsx,js,jsx}"],
+        "fix": true,
+        "maxWarnings": 0
       }
     }
   },

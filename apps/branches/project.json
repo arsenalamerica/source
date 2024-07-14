@@ -77,7 +77,9 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/branches/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/branches/**/*.{ts,tsx,js,jsx}"],
+        "fix": true,
+        "maxWarnings": 0
       }
     }
   },
