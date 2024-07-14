@@ -1,7 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "workspaceLayout": {
-    "projectNameAndRootFormat": "derived",
     "appsDir": "apps",
     "libsDir": "libs"
   },
@@ -25,17 +24,30 @@
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },
-    "test": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+    "e2e": {
+      "inputs": ["default", "^production"]
     },
-    "e2e": { "inputs": ["default", "^production"] },
-    "lint": {
+    "@nx/jest:jest": {
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
+      "cache": true,
+      "options": {
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "@nx/eslint:lint": {
       "dependsOn": ["stylelint"],
       "inputs": [
         "default",
         "{workspaceRoot}/.eslintrc.json",
         "{workspaceRoot}/.eslintignore"
-      ]
+      ],
+      "cache": true
     }
   },
   "namedInputs": {
@@ -55,6 +67,30 @@
     "sharedGlobals": []
   },
   "generators": {
-    "@nx/next": { "application": { "style": "scss", "linter": "eslint" } }
-  }
+    "@nx/next": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint",
+        "projectNameAndRootFormat": "derived"
+      },
+      "library": {
+        "projectNameAndRootFormat": "derived"
+      },
+      "pipe": {
+        "nameAndDirectoryFormat": "derived"
+      }
+    },
+    "@nx/react": {
+      "application": {
+        "projectNameAndRootFormat": "derived"
+      },
+      "library": {
+        "projectNameAndRootFormat": "derived"
+      },
+      "component": {
+        "nameAndDirectoryFormat": "derived"
+      }
+    }
+  },
+  "useInferencePlugins": false
 }

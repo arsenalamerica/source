@@ -6,10 +6,8 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": ["libs/types/**/*.{ts,tsx,js,jsx}"],
         "fix": true,
         "maxWarnings": 0
       }
