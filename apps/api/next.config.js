@@ -1,10 +1,5 @@
 //@ts-check
 
-// This fallback is needed for local development due to the company firewall settings and CA certificates.
-if (process.env.NODE_ENV === 'development') {
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-}
-
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { composePlugins, withNx } = require('@nx/next');
 
