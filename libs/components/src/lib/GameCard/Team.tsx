@@ -1,4 +1,5 @@
 import styles from './GameCard.module.scss';
+
 import { TeamData } from '@arsenalamerica/types';
 
 export interface TeamProps {

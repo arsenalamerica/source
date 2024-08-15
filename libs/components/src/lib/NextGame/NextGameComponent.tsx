@@ -1,11 +1,15 @@
 'use client';
 
-import { useContext } from 'react';
-import useSWR from 'swr';
 import styles from './NextGame.module.scss';
-import { dateFromEpoch, timeFromEpoch } from '@arsenalamerica/utils';
-import { BranchContext } from '../BranchContext/BranchContext';
+
+import { useContext } from 'react';
 import { useErrorBoundary } from 'react-error-boundary';
+import useSWR from 'swr';
+
+import { dateFromEpoch, timeFromEpoch } from '@arsenalamerica/utils';
+
+import { BranchContext } from '../BranchContext/BranchContext';
+
 import NextGameLoading from './NextGameLoading';
 
 export function NextGameComponent() {

@@ -1,8 +1,11 @@
 'use client';
 
 import styles from './Main.module.scss';
-import { HeadingLevel } from '@ariakit/react';
+
 import clsx from 'clsx';
+
+import { HeadingLevel } from '@ariakit/react';
+
 import SWRProvider from './SWRProvider';
 
 export interface MainProps {

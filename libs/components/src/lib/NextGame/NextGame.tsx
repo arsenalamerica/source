@@ -1,7 +1,8 @@
 'use client';
 
-import { Boundaries } from '@bjeco/blocks';
 import { isDevelopment } from '@arsenalamerica/utils';
+import { Boundaries } from '@bjeco/blocks';
+
 import NextGameComponent from './NextGameComponent';
 import NextGameError from './NextGameError';
 import NextGameLoading from './NextGameLoading';

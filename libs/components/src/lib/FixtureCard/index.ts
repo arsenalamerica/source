@@ -1,1 +1,1 @@
-export { default as FixtureCard } from './FixtureCard';
+export * from './FixtureCard';

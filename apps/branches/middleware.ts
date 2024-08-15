@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+
 import { branches } from '@arsenalamerica/data';
 
 const DOMAINS = Object.keys(branches);

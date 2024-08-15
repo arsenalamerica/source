@@ -1,8 +1,10 @@
 import styles from './Toolbar.module.scss';
-import clsx from 'clsx';
+
 import React from 'react';
-import { ToolbarItem, ToolbarItemProps } from './ToolbarItem';
+import clsx from 'clsx';
+
 import { ToolbarContainer, ToolbarContainerProps } from './ToolbarContainer';
+import { ToolbarItem, ToolbarItemProps } from './ToolbarItem';
 
 export interface ToolbarProps extends ToolbarContainerProps {
   items: ToolbarItemProps[];

@@ -9,11 +9,13 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "css.validate": false,
   "cssModules.camelCase": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
     "source.fixAll.stylelint": "explicit"
   },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "emmet.includeLanguages": {
@@ -28,12 +30,19 @@
     }
   },
   "emmet.triggerExpansionOnTab": true,
+  "eslint.enable": true,
+  "eslint.validate": [
+    "json",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "files.associations": {
     "CODEOWNERS*": "plaintext"
   },
-  "prettier.requireConfig": true,
-  "css.validate": false,
   "less.validate": false,
+  "prettier.requireConfig": true,
   "scss.validate": false,
   "stylelint.validate": ["css", "scss"],
   "workbench.colorCustomizations": {
@@ -44,13 +53,12 @@
     "activityBar.inactiveForeground": "#a01a24",
     "activityBarBadge.background": "#ffffff",
     "activityBarBadge.foreground": "#da1f26",
-    "list.hoverBackground": "#a01a24",
     "list.activeSelectionBackground": "#da1f26",
     "list.activeSelectionForeground": "#ffffff",
+    "list.hoverBackground": "#a01a24",
     "list.hoverForeground": "#fff",
     "sideBar.foreground": "#ffffff",
     "sideBarSectionHeader.background": "#c4222e",
     "sideBarSectionHeader.foreground": "#ffffff"
-  },
-  "eslint.validate": ["json"]
+  }
 }
