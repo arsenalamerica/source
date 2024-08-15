@@ -2,7 +2,7 @@
 
 import { forwardRef } from 'react';
 import Link, { LinkProps } from 'next/link';
-import { useSearchParams, usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 interface NavLinkProps extends LinkProps {
   activeClassName?: string;

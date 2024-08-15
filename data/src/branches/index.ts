@@ -2,9 +2,8 @@ import boisegooners from './boisegooners';
 import cascadiagooners from './cascadiagooners';
 import pdxgooners from './pdxgooners';
 import tacomagooners from './tacomagooners';
-import vancouverarsenal from './vancouverarsenal';
-
 import { BranchData, BranchLogo } from './types';
+import vancouverarsenal from './vancouverarsenal';
 
 const exportAllHelper = (branchObject: { data: BranchData }) => ({
   [branchObject.data.domain]: branchObject,

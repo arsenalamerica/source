@@ -1,8 +1,10 @@
-import React from 'react';
 import styles from './SocialLinks.module.scss';
-import { ExternalLink } from '../ExternalLink';
+
+import React from 'react';
 import clsx from 'clsx';
 import * as icons from 'simple-icons';
+
+import { ExternalLink } from '../ExternalLink';
 
 export interface SocialLinksProperties
   extends React.HTMLAttributes<HTMLUListElement> {

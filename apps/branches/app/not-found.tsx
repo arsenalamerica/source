@@ -1,8 +1,9 @@
 import './404.scss';
-import Image from 'next/image';
-import notFound from './404.jpeg';
 
 import { Metadata } from 'next';
+import Image from 'next/image';
+
+import notFound from './404.jpeg';
 
 export const metadata: Metadata = {
   title: 'Not Found',

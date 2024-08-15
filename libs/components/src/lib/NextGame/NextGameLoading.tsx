@@ -1,8 +1,10 @@
 'use client';
 
-import { useContext } from 'react';
-import { BranchContext } from '../BranchContext/BranchContext';
 import styles from './NextGame.module.scss';
+
+import { useContext } from 'react';
+
+import { BranchContext } from '../BranchContext/BranchContext';
 
 export function NextGameError() {
   const branch = useContext(BranchContext);

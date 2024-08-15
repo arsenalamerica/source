@@ -1,6 +1,7 @@
-import * as Ariakit from '@ariakit/react';
-import clsx from 'clsx';
 import React from 'react';
+import clsx from 'clsx';
+
+import * as Ariakit from '@ariakit/react';
 
 export interface NavBarItemProps extends Ariakit.ToolbarItemProps {
   label?: string;

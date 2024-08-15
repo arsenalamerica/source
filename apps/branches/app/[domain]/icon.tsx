@@ -1,5 +1,5 @@
-import { ImageResponse } from '@vercel/og';
 import { branchLogo } from '@arsenalamerica/data';
+import { ImageResponse } from '@vercel/og';
 
 // Route segment config
 export const runtime = 'edge';

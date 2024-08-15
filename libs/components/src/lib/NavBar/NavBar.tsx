@@ -1,11 +1,14 @@
 'use client';
 
-import * as Ariakit from '@ariakit/react';
 import styles from './NavBar.module.scss';
-import { NavBarItem } from './NavBarItem';
-import { NavLink } from '../NavLink/NavLink';
+
+import * as Ariakit from '@ariakit/react';
+import { faHome, faTrophy } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrophy, faHome } from '@fortawesome/free-solid-svg-icons';
+
+import { NavLink } from '../NavLink/NavLink';
+
+import { NavBarItem } from './NavBarItem';
 
 /* eslint-disable-next-line */
 export interface NavBarProps {}
@@ -29,6 +32,16 @@ export function NavBar(props: NavBarProps) {
           preserveQueryParams
           activeClassName={ACTIVE_CLASS}
           href="/table"
+        />
+      ),
+    },
+    {
+      label: 'Fixtures',
+      render: (
+        <NavLink
+          preserveQueryParams
+          activeClassName={ACTIVE_CLASS}
+          href="/fixtures"
         />
       ),
     },
