@@ -1,9 +1,12 @@
 'use client';
 
-import useSWR from 'swr';
 import styles from './LeagueTable.module.scss';
+
 import { useErrorBoundary } from 'react-error-boundary';
+import useSWR from 'swr';
+
 import { StandingData } from '@arsenalamerica/types';
+
 import LeagueTableLoading from './LeagueTableLoading';
 
 export function LeagueTableComponent() {

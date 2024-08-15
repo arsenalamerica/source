@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+
 import { season } from '@arsenalamerica/utils';
 
 const TEAM_ID = 19;

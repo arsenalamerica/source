@@ -1,34 +1,34 @@
+$fixture-card-border: 1px solid #ccc;
+$fixture-card-padding: 1em;
+$fixture-card-border-radius: 0.5em;
+$fixture-card-shadow: 0 0 1rem rgb(0 0 0 / 30%);
+
 ._ {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1em;
-  border: 1px solid #ccc;
-  border-radius: 0.5em;
+  border: $fixture-card-border;
+  border-radius: $fixture-card-border-radius;
   margin: 1em auto;
-  gap: 2em;
+  box-shadow: $fixture-card-shadow;
 
-  .Team,
-  .Weather {
+  .Details,
+  .Metadata {
     display: flex;
-    flex-direction: column;
     align-items: center;
-  }
-
-  .Team {
-    width: 100%;
-    max-width: 7em;
-    gap: 1em;
+    justify-content: space-around;
+    padding: $fixture-card-padding;
+    gap: 2 * $fixture-card-padding;
     text-align: center;
   }
 
-  .Score {
-    font-family: ars-bold, sans-serif;
-    font-size: 3em;
-    font-weight: bold;
+  .Details {
+    .Score {
+      font-family: ars-bold, sans-serif;
+      font-size: 2em;
+      text-transform: uppercase;
+    }
   }
 
-  .Weather {
-    justify-content: center;
+  .Metadata {
+    justify-content: space-between;
+    border-top: $fixture-card-border;
   }
 }

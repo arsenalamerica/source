@@ -1,7 +1,8 @@
 'use client';
 
-import { Boundaries } from '@bjeco/blocks';
 import { isDevelopment } from '@arsenalamerica/utils';
+import { Boundaries } from '@bjeco/blocks';
+
 import LeagueTableComponent from './LeagueTableComponent';
 import LeagueTableError from './LeagueTableError';
 import LeagueTableLoading from './LeagueTableLoading';

@@ -12,6 +12,16 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sportmonks.com',
+        port: '',
+        pathname: '/images/**',
+      },
+    ],
+  },
 };
 
 const plugins = [

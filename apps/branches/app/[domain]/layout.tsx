@@ -1,10 +1,12 @@
 import './global.scss';
+
 import type { Metadata } from 'next';
+
 import {
-  FathomNext,
   BranchProvider,
-  SWRProvider,
+  FathomNext,
   NavBar,
+  SWRProvider,
 } from '@arsenalamerica/components';
 import { branchData } from '@arsenalamerica/data';
 

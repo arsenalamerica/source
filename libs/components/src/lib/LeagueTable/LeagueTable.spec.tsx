@@ -1,7 +1,9 @@
-import { render } from '@testing-library/react';
 import { Boundaries } from '@bjeco/blocks';
-import { LeagueTableComponent } from './LeagueTableComponent';
+import { render } from '@testing-library/react';
+
 import SWRProvider from '../Main/SWRProvider';
+
+import { LeagueTableComponent } from './LeagueTableComponent';
 
 // TODO: set up React Testing Library providers so this is not part of the test itself
 describe('LeagueTableComponent', () => {

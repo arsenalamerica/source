@@ -1,5 +1,6 @@
-import { StandingData } from '@arsenalamerica/types';
 import { NextResponse } from 'next/server';
+
+import { StandingData } from '@arsenalamerica/types';
 
 // This League ID is for the Premier League and we can use it to make the table live results once the season starts
 // const LEAGUE_ID = 8;

@@ -1,81 +1,57 @@
 'use client';
-
 import styles from './FixtureCard.module.scss';
-import { HeadingLevel } from '@ariakit/react';
-import FixtureCardTeam from './FixtureCardTeam';
-import FixtureCardWeather from './FixtureCardWeather';
 
-/* eslint-disable-next-line */
+import { FixtureCardTeam } from './FixtureCardTeam';
+import { Entity } from './types';
+
 export interface FixtureCardProps {
-  id: string;
-  localTeam?: {
-    data: {
-      name: string;
-      logo_path: string;
-    };
-  };
-  scores?: {
-    localteam_score: number;
-    visitorteam_score: number;
-  };
-  visitorTeam?: {
-    data: {
-      name: string;
-      logo_path: string;
-    };
-  };
-  time?: {
-    status: string;
-  };
-  weather_report?: {
-    code: string;
-    type: string;
-    icon: string;
-    temperature: {
-      temp: number;
-      unit: string;
-    };
-    wind: {
-      speed: number;
-      unit: string;
-      direction: string;
-    };
-    humidity: number;
-    cloudcover: number;
-    pressure: {
-      value: number;
-      unit: string;
-    };
-  };
+  awayScore: number;
+  awayTeam: Entity;
+  competition: Entity;
+  date: string;
+  elapsed: string;
+  homeScore: number;
+  homeTeam: Entity;
+  location: string;
 }
 
-const FixtureCard = ({
-  id,
-  localTeam,
-  scores,
-  visitorTeam,
-  weather_report,
-  ...rest
-}: FixtureCardProps): JSX.Element => {
-  const isStarted = rest?.time?.status !== 'NS';
-
-  return (
-    <HeadingLevel>
-      <section className={styles._}>
-        {isStarted && (
-          <div className={styles.Score}>{scores?.localteam_score}</div>
-        )}
-        <FixtureCardTeam team={localTeam?.data} />
-        <div>vs</div>
-        <FixtureCardTeam team={visitorTeam?.data} />
-        {isStarted && (
-          <div className={styles.Score}>{scores?.visitorteam_score}</div>
-        )}
-        {weather_report && <FixtureCardWeather {...weather_report} />}
-      </section>
-      {/* <Placeholder data={rest} /> */}
-    </HeadingLevel>
-  );
+const HOME_TEAM = {
+  name: 'Arsenal',
+  image: 'https://cdn.sportmonks.com/images/soccer/teams/19/19.png',
 };
 
-export default FixtureCard;
+const AWAY_TEAM = {
+  name: 'Liverpool',
+  image: 'https://cdn.sportmonks.com/images/soccer/teams/8/8.png',
+};
+
+export function FixtureCard({
+  awayScore,
+  awayTeam = AWAY_TEAM,
+  competition,
+  date,
+  elapsed,
+  homeScore,
+  homeTeam = HOME_TEAM,
+  location,
+  ...rest
+}: FixtureCardProps) {
+  return (
+    <article className={styles._}>
+      {/* <h2>Hidden Game Title</h2> */}
+      <section className={styles.Details}>
+        <FixtureCardTeam {...homeTeam} />
+        <div className={styles.Separator}>
+          <div className={styles.Date}>7:00am</div>
+          <div className={styles.Score}>1-2</div>
+          <div className={styles.Elapsed}>65'</div>
+        </div>
+        <FixtureCardTeam {...awayTeam} />
+      </section>
+      <footer className={styles.Metadata}>
+        <div>Competition</div>
+        <div>Location</div>
+      </footer>
+    </article>
+  );
+}

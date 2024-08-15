@@ -1,5 +1,6 @@
-import * as Ariakit from '@ariakit/react';
 import clsx from 'clsx';
+
+import * as Ariakit from '@ariakit/react';
 
 export interface ToolbarItemProps extends Ariakit.ToolbarItemProps {
   label?: string;

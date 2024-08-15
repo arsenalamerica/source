@@ -1,5 +1,6 @@
-import { render } from '@testing-library/react';
 import { useSearchParams } from 'next/navigation';
+
+import { render } from '@testing-library/react';
 
 import NavBar from './NavBar';
 

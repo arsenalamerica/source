@@ -1,12 +1,16 @@
 'use client';
 
 import styles from './GameCard.module.scss';
+
 import { useContext } from 'react';
-import { BranchContext } from '../BranchContext/BranchContext';
-import { branchLogo } from '@arsenalamerica/data';
-import useSWR from 'swr';
-import { shite, dateFromEpoch, timeFromEpoch } from '@arsenalamerica/utils';
 import { Textfit } from 'react-textfit';
+import useSWR from 'swr';
+
+import { branchLogo } from '@arsenalamerica/data';
+import { dateFromEpoch, shite, timeFromEpoch } from '@arsenalamerica/utils';
+
+import { BranchContext } from '../BranchContext/BranchContext';
+
 import { TeamLogo } from './TeamLogo';
 
 export function GameCard() {

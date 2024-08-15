@@ -1,6 +1,8 @@
-import * as Ariakit from '@ariakit/react';
-import clsx from 'clsx';
 import styles from './Toolbar.module.scss';
+
+import clsx from 'clsx';
+
+import * as Ariakit from '@ariakit/react';
 
 export type ToolbarContainerProps = Ariakit.ToolbarProps;
 

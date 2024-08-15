@@ -151,6 +151,7 @@ __metadata:
     eslint-plugin-jsx-a11y: 6.9.0
     eslint-plugin-react: 7.35.0
     eslint-plugin-react-hooks: 4.6.2
+    eslint-plugin-simple-import-sort: 12.1.1
     eslint-plugin-storybook: 0.8.0
     express: 4.19.2
     fathom-client: 3.7.2
@@ -7984,6 +7985,15 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
   checksum: 7bb7bdbec4ec628e1f139edbfa25f11ef6db8c92e9970866838bcb6d4dea471519dc0e5a0b3bd763afd1a8715fd54fe7f5317387580ff1e92eeb87eeba13bacf
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-simple-import-sort@npm:12.1.1":
+  version: 12.1.1
+  resolution: "eslint-plugin-simple-import-sort@npm:12.1.1"
+  peerDependencies:
+    eslint: ">=5.0.0"
+  checksum: 6d73e43ecf6221c1952e0cc820e6867e3e1fe973575e23d438d1d3de52284ceb2a01d31e20a76de11feb158bbba98f113150a676cc5526a8b3a5844d63ca37f8
   languageName: node
   linkType: hard
 

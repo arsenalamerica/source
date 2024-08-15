@@ -1,7 +1,9 @@
-import { render } from '@testing-library/react';
 import { Boundaries } from '@bjeco/blocks';
-import { NextGameComponent } from './NextGameComponent';
+import { render } from '@testing-library/react';
+
 import SWRProvider from '../Main/SWRProvider';
+
+import { NextGameComponent } from './NextGameComponent';
 
 // TODO: set up React Testing Library providers so this is not part of the test itself
 describe('NextGameComponent', () => {
