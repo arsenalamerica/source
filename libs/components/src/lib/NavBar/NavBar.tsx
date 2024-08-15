@@ -35,16 +35,16 @@ export function NavBar(props: NavBarProps) {
         />
       ),
     },
-    {
-      label: 'Fixtures',
-      render: (
-        <NavLink
-          preserveQueryParams
-          activeClassName={ACTIVE_CLASS}
-          href="/fixtures"
-        />
-      ),
-    },
+    // {
+    //   label: 'Fixtures',
+    //   render: (
+    //     <NavLink
+    //       preserveQueryParams
+    //       activeClassName={ACTIVE_CLASS}
+    //       href="/fixtures"
+    //     />
+    //   ),
+    // },
   ];
 
   return (
