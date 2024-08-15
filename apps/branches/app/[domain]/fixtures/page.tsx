@@ -1,12 +1,12 @@
-import { FixtureCard, FixtureCardProps } from '@arsenalamerica/components';
+// import { FixtureCard, FixtureCardProps } from '@arsenalamerica/components';
 
-const fixtureData: FixtureCardProps = {};
+// const fixtureData: FixtureCardProps = {};
 
 export default function FixturesPage() {
   return (
     <>
       <h1>Fixtures</h1>
-      <FixtureCard {...fixtureData} />
+      {/* <FixtureCard {...fixtureData} /> */}
       <div className="box">
         <div className="columns">
           <div className="column">
