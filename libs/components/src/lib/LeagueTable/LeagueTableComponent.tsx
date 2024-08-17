@@ -49,7 +49,7 @@ export function LeagueTableComponent() {
                   src={team.participant.image_path}
                   alt={team.participant.name}
                 />{' '}
-                {team.participant.name}
+                <span>{team.participant.name}</span>
               </td>
               <td>{team.stats['overall-matches-played']}</td>
               <td>{team.stats['overall-won']}</td>

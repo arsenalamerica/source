@@ -29,7 +29,7 @@ $beige-lighter: #eff0eb;
 @forward 'bulma/sass/themes';
 
 :root {
-  overscroll-behavior: none;
+  overscroll-behavior-x: none;
 }
 
 * {
