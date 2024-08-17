@@ -24,6 +24,7 @@
     td {
       padding: 0.625em;
       text-align: center;
+      vertical-align: middle;
       white-space: nowrap;
 
       span {
@@ -40,20 +41,23 @@
 
     td:first-child,
     th:first-child {
-      overflow: hidden;
-      width: 40vw;
+      width: 12vw;
       line-height: 2em;
-      text-align: left;
-      text-overflow: ellipsis;
 
       span {
-        min-width: 50%;
+        position: absolute;
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
       }
 
       img {
-        width: 2em;
-        height: 2em;
-        margin: 0 0.5em -0.625em 0;
+        width: 1.75em;
+        height: 1.75em;
+        margin: 0 0 -0.625em;
 
         &:global(.loading) {
           border-radius: 2em;
@@ -61,7 +65,26 @@
       }
 
       @media screen and (width > 725px) {
-        width: 35vw;
+        overflow: hidden;
+        width: 40vw;
+        text-align: left;
+        text-overflow: ellipsis;
+
+        span {
+          position: initial;
+          overflow: inital;
+          width: initial;
+          height: initial;
+          clip: initial;
+          clip-path: initial;
+          white-space: initial;
+        }
+
+        img {
+          width: 2em;
+          height: 2em;
+          margin: 0 0.5em -0.125rem 0;
+        }
       }
 
       @media screen and (width > 1024px) {
