@@ -24,11 +24,16 @@ export function FixtureCard({
     { dateStyle: 'medium' },
   );
 
+  const localTeam = participants.find((team) => team.meta.location === 'home');
+  const visitorTeam = participants.find(
+    (team) => team.meta.location === 'away',
+  );
+
   return (
     <article className={styles._}>
       <h2 className="screen-reader-only">{name}</h2>
       <section className={styles.Details}>
-        <FixtureCardTeam {...participants[0]} />
+        {localTeam && <FixtureCardTeam {...localTeam} />}
         <div className={styles.Separator}>
           <div className={styles.Date}>{gameDate + ' @ ' + gameTime}</div>
           <div className={styles.Score}>
@@ -36,7 +41,7 @@ export function FixtureCard({
           </div>
           <div className={styles.Elapsed}>65'</div>
         </div>
-        <FixtureCardTeam {...participants[1]} />
+        {visitorTeam && <FixtureCardTeam {...visitorTeam} />}
       </section>
       <footer className={styles.Metadata}>
         <div>
