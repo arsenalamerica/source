@@ -2,7 +2,6 @@ import styles from './GameCard.module.scss';
 
 import { branchLogo } from '@arsenalamerica/data';
 import { FixtureEntity } from '@arsenalamerica/sportmonks';
-import { dateFromEpoch, timeFromEpoch } from '@arsenalamerica/utils';
 
 import { GameCardBilling } from './GameCardBilling';
 import { GameCardTime } from './GameCardTime';
@@ -18,9 +17,6 @@ export function GameCard({
   const localTeam = participants[0];
   const visitorTeam = participants[1];
 
-  const fixtureDate = dateFromEpoch(starting_at_timestamp);
-  const fixtureTime = timeFromEpoch(starting_at_timestamp);
-
   return (
     <div className={styles._}>
       {Logo && <Logo className={styles.Logo} />}
@@ -29,7 +25,7 @@ export function GameCard({
         <TeamLogo teamId={visitorTeam.id} name={visitorTeam.name} />
       </div>
       <GameCardBilling localTeam={localTeam} visitorTeam={visitorTeam} />
-      <GameCardTime fixtureDate={fixtureDate} fixtureTime={fixtureTime} />
+      <GameCardTime starting_at_timestamp={starting_at_timestamp} />
       <svg
         className={styles.Background}
         xmlns="http://www.w3.org/2000/svg"
