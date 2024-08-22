@@ -48,7 +48,8 @@
     "react-textfit": "1.1.1",
     "simple-icons": "9.16.1",
     "swr": "2.2.5",
-    "tslib": "2.6.3"
+    "tslib": "2.6.3",
+    "wretch": "2.9.0"
   },
   "devDependencies": {
     "@babel/core": "7.24.9",
@@ -116,6 +117,7 @@
     "nx-cloud": "19.0.0",
     "prettier": "3.3.3",
     "sass": "1.77.8",
+    "sharp": "0.33.5",
     "stylelint": "16.7.0",
     "stylelint-config-css-modules": "4.4.0",
     "stylelint-config-idiomatic-order": "10.0.0",

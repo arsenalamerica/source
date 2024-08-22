@@ -1,34 +1,40 @@
 import { NextResponse } from 'next/server';
 
+import { smFixtures } from '@arsenalamerica/sportmonks';
 import { season } from '@arsenalamerica/utils';
 
-const TEAM_ID = 19;
-const api_token = process.env.MONK_TOKEN || '';
+// const USA_COUNTRY_ID = 3483;
 
-const url = `https://api.sportmonks.com/v3/football/fixtures/between/${season.start}/${season.end}/${TEAM_ID}`;
-const params = {
-  include: [
-    ['league', ['name', 'image_path'].join()].join(':'),
-    ['participants', ['name', 'short_code', 'image_path'].join()].join(':'),
-    'scores',
-    ['venue', ['name', 'city_name'].join()].join(':'),
-  ].join(';'),
-  filters: [['fixtureStates', ['1'].join()].join(':')].join(';'),
-  per_page: ['1'].join(';'),
-};
-
-const fetchUrl = new URL(url);
-const fetchParams = new URLSearchParams({ api_token, ...params }).toString();
-fetchUrl.search = fetchParams;
+// https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
+export const revalidate = 60 * 60; // 1 hour
 
 export async function GET() {
   try {
-    const res = await fetch(
-      fetchUrl,
-      { next: { revalidate: 15 * 60 } }, // Revalidate every 15 minutes
-    );
-    const data = await res.json();
-    return NextResponse.json({ season, ...data });
+    const { data, ...rest } = await smFixtures(undefined, {
+      include: [
+        'league:name,image_path',
+        'participants:name,short_code,image_path',
+        // 'scores',
+        // 'tvStations',
+        'venue:name,city_name',
+      ].join(';'),
+      filters: ['fixtureStates:1'].join(';'),
+      per_page: ['1'].join(';'),
+    });
+
+    // const tvstations = await Promise.all(
+    //   data[0].tvstations
+    //     .filter(({ country_id }) => country_id === USA_COUNTRY_ID)
+    //     .map(async (tvstation) => {
+    //       const { data } = await smTvStation(tvstation.tvstation_id);
+    //       return { ...tvstation, ...data };
+    //     }),
+    // );
+    // data[0].tvstations = tvstations;
+
+    console.log(rest);
+
+    return NextResponse.json(data);
   } catch (error) {
     return NextResponse.json({
       season,

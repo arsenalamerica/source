@@ -1,47 +1,31 @@
 import { NextResponse } from 'next/server';
 
-import { StandingData } from '@arsenalamerica/types';
+import { smStandings } from '@arsenalamerica/sportmonks';
 
 // This League ID is for the Premier League and we can use it to make the table live results once the season starts
 // const LEAGUE_ID = 8;
-const api_token = process.env.MONK_TOKEN || '';
-
-const url = `https://api.sportmonks.com/v3/football/standings/seasons/23614`;
-const params = {
-  include: [
-    ['participant', ['name', 'short_code', 'image_path'].join()].join(':'),
-    'details.type',
-    'form',
-  ].join(';'),
-};
-
-const fetchUrl = new URL(url);
-const fetchParams = new URLSearchParams({ api_token, ...params }).toString();
-fetchUrl.search = fetchParams;
 
 export async function GET() {
   try {
-    const res = await fetch(
-      fetchUrl,
-      { next: { revalidate: 5 * 60 } }, // Revalidate every 5 minutes
-    );
-    const data = await res.json();
+    const { data, ...rest } = await smStandings(undefined, {
+      include: [
+        ['participant', ['name', 'short_code', 'image_path'].join()].join(':'),
+        'details.type',
+        'form',
+      ].join(';'),
+    });
 
-    const cleanData: StandingData = data.data.map(
-      ({ details, ...rest }: { details: [] }) => ({
-        ...rest,
-        stats: Object.fromEntries(
-          details.map(
-            ({ type, value }: { type: { code: string }; value: number }) => [
-              type.code,
-              value,
-            ],
-          ),
-        ),
-      }),
-    );
+    console.log(rest);
 
-    return NextResponse.json({ ...data, data: cleanData });
+    const cleanData = data.map(({ details, ...rest }) => ({
+      ...rest,
+      stats: Object.fromEntries(
+        details.map(({ type, value }) => [type.code, value]),
+      ),
+    }));
+    console.log(cleanData);
+
+    return NextResponse.json(cleanData);
   } catch (error) {
     return NextResponse.json({
       status: 500,

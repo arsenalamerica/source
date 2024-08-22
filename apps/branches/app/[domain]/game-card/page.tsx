@@ -1,7 +1,16 @@
-'use client';
-
 import { GameCard } from '@arsenalamerica/components';
+import { branchData } from '@arsenalamerica/data';
 
-export default function GameCardPage() {
-  return <GameCard />;
+import { getFixtureNext } from '../../../endpoints/fixtures';
+
+export default async function GameCardPage({
+  params,
+}: {
+  params: { domain: string };
+}) {
+  const branch = branchData[params.domain];
+
+  const [nextFixture] = await getFixtureNext();
+
+  return <GameCard {...nextFixture} branch={branch} />;
 }

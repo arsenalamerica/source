@@ -1,28 +1,18 @@
-'use client';
-
 import styles from './LeagueTable.module.scss';
 
-import { useErrorBoundary } from 'react-error-boundary';
-import useSWR from 'swr';
+import { StandingEntity } from '@arsenalamerica/sportmonks';
+// import { useErrorBoundary } from 'react-error-boundary';
 
-import { StandingData } from '@arsenalamerica/types';
+export function LeagueTableComponent({
+  standings,
+}: {
+  standings: StandingEntity[];
+}) {
+  // const { showBoundary } = useErrorBoundary();
 
-import LeagueTableLoading from './LeagueTableLoading';
-
-export function LeagueTableComponent() {
-  const { showBoundary } = useErrorBoundary();
-  const { data, error } = useSWR('standings');
-
-  if (error) {
-    showBoundary(error);
-  }
-  if (!data.data) {
-    // console.log(data);
-    return <LeagueTableLoading />;
-  }
-
-  // Get the list of standings
-  const standings: StandingData['data'] = data.data;
+  // if (error) {
+  //   showBoundary(error);
+  // }
 
   return (
     <div className={styles._}>

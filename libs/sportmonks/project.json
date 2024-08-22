@@ -1,0 +1,16 @@
+{
+  "name": "sportmonks",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sportmonks/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "fix": true,
+        "maxWarnings": 0
+      }
+    }
+  }
+}
