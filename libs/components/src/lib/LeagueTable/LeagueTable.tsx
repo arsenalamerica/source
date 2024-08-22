@@ -28,7 +28,7 @@ export function LeagueTable({ standings }: { standings: StandingEntity[] }) {
           </tr>
         </thead>
         <tbody>
-          {standings.map((team) => (
+          {standings?.map((team) => (
             <tr key={team.id}>
               <td>
                 <img

@@ -23,7 +23,6 @@ export async function GET() {
         details.map(({ type, value }) => [type.code, value]),
       ),
     }));
-    console.log(cleanData);
 
     return NextResponse.json(cleanData);
   } catch (error) {
