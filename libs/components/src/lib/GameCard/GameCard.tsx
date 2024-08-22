@@ -14,18 +14,26 @@ export function GameCard({
 }: { branch: { domain: string } } & FixtureEntity) {
   const Logo = branchLogo[branch.domain];
 
-  const localTeam = participants[0];
-  const visitorTeam = participants[1];
+  console.log(participants);
+
+  const localTeam = participants.find((team) => team.meta.location === 'home');
+  const visitorTeam = participants.find(
+    (team) => team.meta.location === 'away',
+  );
 
   return (
     <div className={styles._}>
       {Logo && <Logo className={styles.Logo} />}
-      <div className={styles.Badges}>
-        <TeamLogo teamId={localTeam.id} name={localTeam.name} />
-        <TeamLogo teamId={visitorTeam.id} name={visitorTeam.name} />
-      </div>
-      <GameCardBilling localTeam={localTeam} visitorTeam={visitorTeam} />
-      <GameCardTime starting_at_timestamp={starting_at_timestamp} />
+      {localTeam && visitorTeam && (
+        <>
+          <div className={styles.Badges}>
+            <TeamLogo teamId={localTeam.id} name={localTeam.name} />
+            <TeamLogo teamId={visitorTeam.id} name={visitorTeam.name} />
+          </div>
+          <GameCardBilling localTeam={localTeam} visitorTeam={visitorTeam} />
+          <GameCardTime starting_at_timestamp={starting_at_timestamp} />
+        </>
+      )}
       <svg
         className={styles.Background}
         xmlns="http://www.w3.org/2000/svg"
