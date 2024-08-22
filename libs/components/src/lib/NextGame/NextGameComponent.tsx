@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import { useErrorBoundary } from 'react-error-boundary';
 import useSWR from 'swr';
 
+import { shite } from '@arsenalamerica/utils';
 import { dateFromEpoch, timeFromEpoch } from '@arsenalamerica/utils';
 
 import { BranchContext } from '../BranchContext/BranchContext';
@@ -20,13 +21,13 @@ export function NextGameComponent() {
   if (error) {
     showBoundary(error);
   }
-  if (!data.data) {
+  if (!data[0]) {
     console.log(data);
     return null;
   }
 
   // Get the next game
-  const upcoming = data.data[0];
+  const upcoming = data[0];
 
   const {
     name: fixtureName,
@@ -53,7 +54,7 @@ export function NextGameComponent() {
   return (
     <div className={styles._}>
       <h2>Next Match Viewing</h2>
-      <h3>{fixtureName}</h3>
+      <h3>{shite(fixtureName)}</h3>
       <p>
         {fixtureDate} {adjustedFixtureTime}
       </p>
@@ -66,8 +67,6 @@ export function NextGameComponent() {
           </a>
         </address>
       )}
-
-      {/* <pre>{JSON.stringify(upcoming, null, 2)}</pre>; */}
     </div>
   );
 }

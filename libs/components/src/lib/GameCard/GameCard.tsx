@@ -1,45 +1,22 @@
-'use client';
-
 import styles from './GameCard.module.scss';
 
-import { useContext } from 'react';
-import { Textfit } from 'react-textfit';
-import useSWR from 'swr';
-
 import { branchLogo } from '@arsenalamerica/data';
-import { dateFromEpoch, shite, timeFromEpoch } from '@arsenalamerica/utils';
+import { FixtureEntity } from '@arsenalamerica/sportmonks';
+import { dateFromEpoch, timeFromEpoch } from '@arsenalamerica/utils';
 
-import { BranchContext } from '../BranchContext/BranchContext';
-
+import { GameCardBilling } from './GameCardBilling';
+import { GameCardTime } from './GameCardTime';
 import { TeamLogo } from './TeamLogo';
 
-export function GameCard() {
-  const branch = useContext(BranchContext);
+export function GameCard({
+  branch,
+  participants,
+  starting_at_timestamp,
+}: { branch: { domain: string } } & FixtureEntity) {
   const Logo = branchLogo[branch.domain];
-  const { data, error, isLoading } = useSWR('fixtures/next');
 
-  // console.log({ isLoading }, { error }, { data });
-
-  if (error) {
-    console.error(error);
-    return <div className={styles._}>An error has occurred.</div>;
-  }
-  if (isLoading) return <div className={styles._}>Loading...</div>;
-  if (!data.data) {
-    return <div>No Data</div>;
-  }
-
-  // Get the next game
-  const upcoming = data.data[0];
-
-  const { starting_at_timestamp } = upcoming;
-
-  const localTeam = upcoming.participants.find(
-    ({ meta }: { meta: { location: string } }) => meta.location === 'home',
-  );
-  const visitorTeam = upcoming.participants.find(
-    ({ meta }: { meta: { location: string } }) => meta.location === 'away',
-  );
+  const localTeam = participants[0];
+  const visitorTeam = participants[1];
 
   const fixtureDate = dateFromEpoch(starting_at_timestamp);
   const fixtureTime = timeFromEpoch(starting_at_timestamp);
@@ -47,33 +24,12 @@ export function GameCard() {
   return (
     <div className={styles._}>
       {Logo && <Logo className={styles.Logo} />}
-
       <div className={styles.Badges}>
-        <TeamLogo teamId={localTeam.id} />
-        <TeamLogo teamId={visitorTeam.id} />
+        <TeamLogo teamId={localTeam.id} name={localTeam.name} />
+        <TeamLogo teamId={visitorTeam.id} name={visitorTeam.name} />
       </div>
-      <div className={styles.MainBilling}>
-        <Textfit mode="single" max={500}>
-          <h2>
-            {shite(localTeam.name)}
-            <span>{localTeam.id !== 19 && ' vs'}</span>
-          </h2>
-        </Textfit>
-        <Textfit mode="single" max={500}>
-          <h2>
-            <span>{visitorTeam.id !== 19 && 'vs '}</span>
-            {shite(visitorTeam.name)}
-          </h2>
-        </Textfit>
-      </div>
-      <div className={styles.GameTime}>
-        <Textfit mode="single">
-          <h2>{fixtureDate}</h2>
-        </Textfit>
-        <Textfit mode="single">
-          <h2>{fixtureTime} @ Doyle&apos;s</h2>
-        </Textfit>
-      </div>
+      <GameCardBilling localTeam={localTeam} visitorTeam={visitorTeam} />
+      <GameCardTime fixtureDate={fixtureDate} fixtureTime={fixtureTime} />
       <svg
         className={styles.Background}
         xmlns="http://www.w3.org/2000/svg"

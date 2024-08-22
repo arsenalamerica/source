@@ -1,33 +1,23 @@
-// import { FixtureCard, FixtureCardProps } from '@arsenalamerica/components';
+import { FixtureCard } from '@arsenalamerica/components';
 
-// const fixtureData: FixtureCardProps = {};
+import { getFixtures } from '../../../endpoints/fixtures';
 
-export default function FixturesPage() {
+// https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
+export const revalidate = 900; // 15 minutes
+
+export default async function FixturesPage() {
+  const upcomingFixtures = await getFixtures();
+
   return (
     <>
-      <h1>Fixtures</h1>
       {/* <FixtureCard {...fixtureData} /> */}
-      <div className="box">
-        <div className="columns">
-          <div className="column">
-            <div className="is-flex is-flex-direction-column is-justify-content-center">
-              <div>Logo</div>
-              <div>Name</div>
-            </div>
-          </div>
-          <div className="column is-centered">Test</div>
-          <div className="column">
-            <div className="is-flex is-flex-direction-column">
-              <div>Logo</div>
-              <div>Name</div>
-            </div>
-          </div>
-        </div>
-        <div className="columns">
-          <div className="column">Competition</div>
-          <div className="column is-pulled-right">Location</div>
-        </div>
-      </div>
+      {upcomingFixtures.map((fixture) => {
+        const { id } = fixture;
+        return <FixtureCard key={id} {...fixture} />;
+      })}
+      <code>
+        <pre>{JSON.stringify(upcomingFixtures, null, 2)}</pre>
+      </code>
     </>
   );
 }

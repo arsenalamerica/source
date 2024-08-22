@@ -1,56 +1,54 @@
-'use client';
 import styles from './FixtureCard.module.scss';
 
+import Image from 'next/image';
+
+import { FixtureEntity } from '@arsenalamerica/sportmonks';
+import { shite } from '@arsenalamerica/utils';
+
 import { FixtureCardTeam } from './FixtureCardTeam';
-import { Entity } from './types';
-
-export interface FixtureCardProps {
-  awayScore: number;
-  awayTeam: Entity;
-  competition: Entity;
-  date: string;
-  elapsed: string;
-  homeScore: number;
-  homeTeam: Entity;
-  location: string;
-}
-
-const HOME_TEAM = {
-  name: 'Arsenal',
-  image: 'https://cdn.sportmonks.com/images/soccer/teams/19/19.png',
-};
-
-const AWAY_TEAM = {
-  name: 'Liverpool',
-  image: 'https://cdn.sportmonks.com/images/soccer/teams/8/8.png',
-};
 
 export function FixtureCard({
-  awayScore,
-  awayTeam = AWAY_TEAM,
-  competition,
-  date,
-  elapsed,
-  homeScore,
-  homeTeam = HOME_TEAM,
-  location,
-  ...rest
-}: FixtureCardProps) {
+  name,
+  participants,
+  starting_at_timestamp,
+  league,
+  scores,
+  venue,
+}: FixtureEntity) {
+  const gameTime = new Date(starting_at_timestamp * 1000).toLocaleTimeString(
+    [],
+    { timeStyle: 'short' },
+  );
+  const gameDate = new Date(starting_at_timestamp * 1000).toLocaleDateString(
+    [],
+    { dateStyle: 'medium' },
+  );
+
   return (
     <article className={styles._}>
-      {/* <h2>Hidden Game Title</h2> */}
+      <h2 className="screen-reader-only">{name}</h2>
       <section className={styles.Details}>
-        <FixtureCardTeam {...homeTeam} />
+        <FixtureCardTeam {...participants[0]} />
         <div className={styles.Separator}>
-          <div className={styles.Date}>7:00am</div>
-          <div className={styles.Score}>1-2</div>
+          <div className={styles.Date}>{gameDate + ' @ ' + gameTime}</div>
+          <div className={styles.Score}>
+            {scores[1]?.score.goals}-{scores[3]?.score.goals}
+          </div>
           <div className={styles.Elapsed}>65'</div>
         </div>
-        <FixtureCardTeam {...awayTeam} />
+        <FixtureCardTeam {...participants[1]} />
       </section>
       <footer className={styles.Metadata}>
-        <div>Competition</div>
-        <div>Location</div>
+        <div>
+          <Image
+            src={league.image_path}
+            alt={league.name + ' Logo'}
+            width={25}
+            height={25}
+          />
+          {league.name}
+        </div>
+        <div>{shite(venue.name)}</div>
       </footer>
     </article>
   );

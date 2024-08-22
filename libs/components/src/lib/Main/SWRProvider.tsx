@@ -2,15 +2,11 @@
 
 import { SWRConfig } from 'swr';
 
+import { API_BASE_URL } from '@arsenalamerica/utils';
+
 export interface SWRProviderProps {
   children?: React.ReactNode;
 }
-
-// TODO: Move this to a reusable location
-const API_BASE_URL =
-  process.env.NODE_ENV === 'production'
-    ? 'https://api.pnwarmory.com'
-    : 'http://localhost:3333';
 
 const FIXTURES_NEXT_PLACEHOLDER = {
   data: [

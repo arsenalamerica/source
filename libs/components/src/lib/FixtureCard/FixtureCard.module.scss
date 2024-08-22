@@ -20,6 +20,10 @@ $fixture-card-shadow: 0 0 1rem rgb(0 0 0 / 30%);
   }
 
   .Details {
+    > div {
+      width: 50%;
+    }
+
     .Score {
       font-family: ars-bold, sans-serif;
       font-size: 2em;
@@ -30,5 +34,11 @@ $fixture-card-shadow: 0 0 1rem rgb(0 0 0 / 30%);
   .Metadata {
     justify-content: space-between;
     border-top: $fixture-card-border;
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 0.25em;
+    }
   }
 }

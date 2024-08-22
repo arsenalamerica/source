@@ -1,11 +1,12 @@
-'use client';
-
 import { LeagueTable, Main } from '@arsenalamerica/components';
 
-export default function LeagueTablePage() {
+import { getStandings } from '../../../endpoints/standings';
+
+export default async function LeagueTablePage() {
+  const standings = await getStandings();
   return (
     <Main>
-      <LeagueTable />
+      <LeagueTable standings={standings} />
     </Main>
   );
 }
