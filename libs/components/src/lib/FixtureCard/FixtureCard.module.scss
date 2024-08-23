@@ -31,6 +31,19 @@ $fixture-card-shadow: 0 0 1rem rgb(0 0 0 / 30%);
     }
   }
 
+  .Team {
+    .TeamLogo {
+      width: 4em;
+      height: 4em;
+    }
+
+    .TeamName {
+      font-family: ars-bold, sans-serif;
+      font-size: 1.25em;
+      text-transform: uppercase;
+    }
+  }
+
   .Metadata {
     justify-content: space-between;
     border-top: $fixture-card-border;
