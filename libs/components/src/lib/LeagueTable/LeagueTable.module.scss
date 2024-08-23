@@ -54,7 +54,8 @@
         white-space: nowrap;
       }
 
-      svg {
+      svg,
+      img {
         width: 1.75em;
         height: 1.75em;
         margin: 0 0 -0.625em;
@@ -80,7 +81,8 @@
           white-space: initial;
         }
 
-        svg {
+        svg,
+        img {
           width: 2.75em;
           height: 2.75em;
           margin: 0 0.5em -0.2lh 0;
