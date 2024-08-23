@@ -1,21 +1,23 @@
 import styles from './FixtureCard.module.scss';
 
-import Image from 'next/image';
-
+import { EntityBase } from '@arsenalamerica/sportmonks';
 import { shite } from '@arsenalamerica/utils';
 
-import { Entity } from './types';
+import { TeamLogo } from '../TeamLogo';
 
-export function FixtureCardTeam({ name, image_path }: Entity) {
+export function FixtureCardTeam({
+  id,
+  name,
+  image_path,
+}: EntityBase): JSX.Element {
   const properName = shite(name);
   return (
     <div className={styles.Team}>
-      <Image
+      <TeamLogo
         className={styles.TeamLogo}
-        src={image_path}
-        alt={properName + ' Logo'}
-        width={50}
-        height={50}
+        teamId={id}
+        name={name}
+        fallback={image_path}
       />
       <div className={styles.TeamName}>{properName}</div>
     </div>
