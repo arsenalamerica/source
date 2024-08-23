@@ -1,3 +1,4 @@
+export * from './lib/TeamLogo/TeamLogo';
 export { LeagueTable } from './lib/LeagueTable/LeagueTable';
 export { NextGame } from './lib/NextGame/NextGame';
 export * from './lib/BranchContext/BranchContext';
