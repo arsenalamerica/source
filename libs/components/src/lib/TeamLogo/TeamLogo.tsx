@@ -86,15 +86,21 @@ export function TeamLogo({
   name,
   width = 24,
   height = 24,
+  fallback,
   ...rest
 }: {
   teamId: number;
   name?: string;
   width?: number;
   height?: number;
+  fallback: string;
 }): JSX.Element | null {
+  const altText = name + ' Logo';
+
   if (!TEAMS.has(teamId)) {
-    throw new Error(`Logo for ${teamId}:${name} not found`);
+    console.log(`Logo for ${teamId}:${name} not found`);
+
+    return <img {...rest} src={fallback} alt={altText} />;
   }
 
   return (
@@ -103,7 +109,7 @@ export function TeamLogo({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
       role="img"
-      aria-label={name + ' Logo'}
+      aria-label={altText}
       fill="currentColor"
       width={width}
       height={height}

@@ -28,8 +28,16 @@ export function GameCard({
       {localTeam && visitorTeam && (
         <>
           <div className={styles.Badges}>
-            <TeamLogo teamId={localTeam.id} name={localTeam.name} />
-            <TeamLogo teamId={visitorTeam.id} name={visitorTeam.name} />
+            <TeamLogo
+              teamId={localTeam.id}
+              name={localTeam.name}
+              fallback={localTeam.image_path}
+            />
+            <TeamLogo
+              teamId={visitorTeam.id}
+              name={visitorTeam.name}
+              fallback={visitorTeam.image_path}
+            />
           </div>
           <GameCardBilling localTeam={localTeam} visitorTeam={visitorTeam} />
           <GameCardTime starting_at_timestamp={starting_at_timestamp} />
