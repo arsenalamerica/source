@@ -37,6 +37,7 @@ export function LeagueTable({ standings }: { standings: StandingEntity[] }) {
                 <TeamLogo
                   teamId={team.participant.id}
                   name={shite(team.participant.name)}
+                  fallback={team.participant.image_path}
                 />
                 <span>{shite(team.participant.name)}</span>
               </td>
