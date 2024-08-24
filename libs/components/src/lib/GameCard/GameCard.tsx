@@ -15,7 +15,7 @@ export function GameCard({
 }: { branch: { domain: string } } & FixtureEntity) {
   const Logo = branchLogo[branch.domain];
 
-  console.log(participants);
+  // console.log(participants);
 
   const localTeam = participants.find((team) => team.meta.location === 'home');
   const visitorTeam = participants.find(

@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 
 import { smStandings } from '@arsenalamerica/sportmonks';
 
+import logger from '../logger';
+
 // This League ID is for the Premier League and we can use it to make the table live results once the season starts
 // const LEAGUE_ID = 8;
 
@@ -15,7 +17,7 @@ export async function GET() {
       ].join(';'),
     });
 
-    console.log(rest);
+    logger.info(rest);
 
     const cleanData = data.map(({ details, ...rest }) => ({
       ...rest,
@@ -26,6 +28,7 @@ export async function GET() {
 
     return NextResponse.json(cleanData);
   } catch (error) {
+    logger.error(error);
     return NextResponse.json({
       status: 500,
       error,

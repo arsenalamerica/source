@@ -11,7 +11,7 @@ export default async function FixturesPage() {
   return (
     <>
       {/* <FixtureCard {...fixtureData} /> */}
-      {upcomingFixtures.map((fixture) => {
+      {upcomingFixtures?.map((fixture) => {
         const { id } = fixture;
         return <FixtureCard key={id} {...fixture} />;
       })}
