@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 
 import { smTvStation } from '@arsenalamerica/sportmonks';
 
+import logger from '../../logger';
+
 // Setting aggressive caching for this route as this data will likely never change during a season
 
 // https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
@@ -23,10 +25,11 @@ export async function GET(
   try {
     const { data, ...rest } = await smTvStation(station_id);
 
-    console.log(rest);
+    logger.info(rest);
 
     return NextResponse.json(data);
   } catch (error) {
+    logger.error(error);
     return NextResponse.json({
       status: 500,
       error,

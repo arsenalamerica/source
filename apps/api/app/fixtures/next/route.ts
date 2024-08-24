@@ -3,6 +3,8 @@ import { NextResponse } from 'next/server';
 import { smFixtures } from '@arsenalamerica/sportmonks';
 import { season } from '@arsenalamerica/utils';
 
+import logger from '../../logger';
+
 // const USA_COUNTRY_ID = 3483;
 
 // https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
@@ -32,10 +34,11 @@ export async function GET() {
     // );
     // data[0].tvstations = tvstations;
 
-    console.log(rest);
+    logger.info(rest);
 
     return NextResponse.json(data);
   } catch (error) {
+    logger.error(error);
     return NextResponse.json({
       season,
       status: 500,

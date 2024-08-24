@@ -3,6 +3,8 @@ import { NextResponse } from 'next/server';
 import { smFixtures } from '@arsenalamerica/sportmonks';
 import { season } from '@arsenalamerica/utils';
 
+import logger from '../logger';
+
 export async function GET() {
   try {
     const { data, ...rest } = await smFixtures(undefined, {
@@ -16,10 +18,11 @@ export async function GET() {
       per_page: ['50'].join(';'),
     });
 
-    console.log(rest);
+    logger.info(rest);
 
     return NextResponse.json(data);
   } catch (error) {
+    logger.error(error);
     return NextResponse.json({
       season,
       status: 500,
