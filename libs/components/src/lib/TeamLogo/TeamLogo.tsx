@@ -23,7 +23,7 @@ export function TeamLogo({
   const altText = name + ' Logo';
 
   if (!teams.has(teamId)) {
-    console.log(`Logo for ${teamId}:${name} not found`);
+    console.warn(`Logo for ${teamId}:${name} not found`);
 
     return <img {...rest} src={fallback} alt={altText} />;
   }
