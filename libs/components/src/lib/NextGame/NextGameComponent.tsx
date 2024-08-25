@@ -22,7 +22,7 @@ export function NextGameComponent() {
     showBoundary(error);
   }
   if (!data[0]) {
-    console.log(data);
+    // console.log(data);
     return null;
   }
 
