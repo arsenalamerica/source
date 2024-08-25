@@ -22,31 +22,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ariakit/core@npm:0.3.2":
-  version: 0.3.2
-  resolution: "@ariakit/core@npm:0.3.2"
-  checksum: cf5d1c217a130ac1e2c0571aa4b5ab83460752adefddc0de0ad9abcf7c62018ba7564bcd46a54a675234f2f39a8e77b5a3cf21e7d3bdcf8501d67518c49b83d9
-  languageName: node
-  linkType: hard
-
 "@ariakit/core@npm:0.4.9":
   version: 0.4.9
   resolution: "@ariakit/core@npm:0.4.9"
   checksum: b406076ec0f74e64d0f36dd21b17978e545ffe1f93fdb0d7688c59f1d3b22a6f4e55a9b07de11aa6be631484c9eb2d2f420f24a00260434c71de1863c4112e58
-  languageName: node
-  linkType: hard
-
-"@ariakit/react-core@npm:0.3.3":
-  version: 0.3.3
-  resolution: "@ariakit/react-core@npm:0.3.3"
-  dependencies:
-    "@ariakit/core": 0.3.2
-    "@floating-ui/dom": ^1.0.0
-    use-sync-external-store: ^1.2.0
-  peerDependencies:
-    react: ^17.0.0 || ^18.0.0
-    react-dom: ^17.0.0 || ^18.0.0
-  checksum: ec7017321e380d10331f5addb38a9aacc574fae6bae1ebb05ba6bed3ac37138d929983cdf17e942c95a1c9b3c01836da69b65ed0d86d8bf1ab97eb8100443ffa
   languageName: node
   linkType: hard
 
@@ -61,18 +40,6 @@ __metadata:
     react: ^17.0.0 || ^18.0.0 || ^19.0.0
     react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
   checksum: 199e19acb361f1650fd6fde9dca59764346ee9302cb798f26443191b30df4b32d4493449ce073d8efbbb81dbcce92eb7fc89a2cc793fc5d7078c864ccb84c071
-  languageName: node
-  linkType: hard
-
-"@ariakit/react@npm:0.3.3":
-  version: 0.3.3
-  resolution: "@ariakit/react@npm:0.3.3"
-  dependencies:
-    "@ariakit/react-core": 0.3.3
-  peerDependencies:
-    react: ^17.0.0 || ^18.0.0
-    react-dom: ^17.0.0 || ^18.0.0
-  checksum: 14207635cb9b95cc741a113fcc15411e076019eb36427a98b6e204a891791d40a4728d183d2bcdf813857e2ada5157b36338bbc90e6178eb0e567a616e8aacff
   languageName: node
   linkType: hard
 
@@ -95,7 +62,7 @@ __metadata:
     "@ariakit/react": 0.4.10
     "@babel/core": 7.25.2
     "@babel/preset-react": 7.24.7
-    "@bjeco/blocks": 1.0.0
+    "@bjeco/blocks": 1.1.0
     "@fortawesome/fontawesome-free": 6.6.0
     "@fortawesome/fontawesome-svg-core": 6.6.0
     "@fortawesome/free-brands-svg-icons": 6.6.0
@@ -1825,19 +1792,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bjeco/blocks@npm:1.0.0":
-  version: 1.0.0
-  resolution: "@bjeco/blocks@npm:1.0.0"
+"@bjeco/blocks@npm:1.1.0":
+  version: 1.1.0
+  resolution: "@bjeco/blocks@npm:1.1.0"
   dependencies:
-    "@ariakit/react": 0.3.3
-    clsx: 2.0.0
-    fathom-client: 3.5.0
-    react-error-boundary: 4.0.11
+    "@ariakit/react": 0.4.10
+    clsx: 2.1.1
+    fathom-client: 3.7.2
+    react-error-boundary: 4.0.13
   peerDependencies:
-    next: ^13
-    react: ^18
-    react-dom: ^18
-  checksum: f8c0057c1884fa446eb82cb8d5ff90f4dd44dadb3114fc27f7453ffe2f3360e132081eed945cc7bab6edca0dbe619294a37610f790df85742aa4b4ed5cfde09b
+    next: "*"
+    react: "*"
+    react-dom: "*"
+  checksum: 71760954554dc9c04f869513d92e555ad485ffd44bf175129c5c78973910f16fd726d4ab826bdae7e45722dc307f86bf860c8e6c13c5fa8e4d420e860b8315a1
   languageName: node
   linkType: hard
 
@@ -6545,13 +6512,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:2.0.0":
-  version: 2.0.0
-  resolution: "clsx@npm:2.0.0"
-  checksum: a2cfb2351b254611acf92faa0daf15220f4cd648bdf96ce369d729813b85336993871a4bf6978ddea2b81b5a130478339c20d9d0b5c6fc287e5147f0c059276e
-  languageName: node
-  linkType: hard
-
 "clsx@npm:2.1.1":
   version: 2.1.1
   resolution: "clsx@npm:2.1.1"
@@ -8895,13 +8855,6 @@ __metadata:
   dependencies:
     reusify: ^1.0.4
   checksum: a8c5b26788d5a1763f88bae56a8ddeee579f935a831c5fe7a8268cea5b0a91fbfe705f612209e02d639b881d7b48e461a50da4a10cfaa40da5ca7cc9da098d88
-  languageName: node
-  linkType: hard
-
-"fathom-client@npm:3.5.0":
-  version: 3.5.0
-  resolution: "fathom-client@npm:3.5.0"
-  checksum: 16299bd50dc6bcc716a0d6c81fdad65272ff4f08d68695b64b00e19a04de14771c96ddc1205ce7c4220eddd0d3cf70c65ee9c8fb32b8b776ef155faf61e44479
   languageName: node
   linkType: hard
 
@@ -14496,14 +14449,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-error-boundary@npm:4.0.11":
-  version: 4.0.11
-  resolution: "react-error-boundary@npm:4.0.11"
+"react-error-boundary@npm:4.0.13":
+  version: 4.0.13
+  resolution: "react-error-boundary@npm:4.0.13"
   dependencies:
     "@babel/runtime": ^7.12.5
   peerDependencies:
     react: ">=16.13.1"
-  checksum: b3c157fea4e8f78411e9aa0fbf5241f6907b66ede1cd8b7bb22faaeb0339ebeb3dc8e63bf90ef3f740bfa8fd994ca6edf975089cd371b664ad6c2735e7512d38
+  checksum: 50398d080015d51d22c6f94c56f4ea336d10232d72345b36ee6f15b6b643666d20b072829b02f091a80e5af68fe67f68a62ef0d2b649dbd759ead929304449af
   languageName: node
   linkType: hard
 
