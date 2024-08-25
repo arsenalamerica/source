@@ -17,7 +17,7 @@ export function NavBarItem({
 }: NavBarItemProps) {
   return (
     <Ariakit.ToolbarItem
-      className={clsx(className, 'button is-link')}
+      className={clsx(className, 'button is-link icon-text')}
       {...rest}
     >
       {children || (
