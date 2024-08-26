@@ -2,8 +2,13 @@ import styles from './FixtureCard.module.scss';
 
 import Image from 'next/image';
 
-import { FixtureEntity } from '@arsenalamerica/sportmonks';
+import {
+  FixtureEntity,
+  REGULAR_TIME_ACTIVE_STATES,
+} from '@arsenalamerica/sportmonks';
 import { shite } from '@arsenalamerica/utils';
+
+import { Card } from '../Card';
 
 import { FixtureCardTeam } from './FixtureCardTeam';
 
@@ -13,7 +18,10 @@ export function FixtureCard({
   starting_at_timestamp,
   league,
   scores,
+  periods,
   venue,
+  state,
+  ...rest
 }: FixtureEntity) {
   const gameTime = new Date(starting_at_timestamp * 1000).toLocaleTimeString(
     [],
@@ -29,17 +37,30 @@ export function FixtureCard({
     (team) => team.meta.location === 'away',
   );
 
+  const currentScores = new Map(
+    scores
+      ?.filter((score) => score.description === 'CURRENT')
+      .map((score) => [score.score.participant, score.score.goals]) || [],
+  );
+
+  const isActive = new Set(REGULAR_TIME_ACTIVE_STATES).has(state.state);
+  const ticking = periods.find((period) => period.ticking);
+  const isFuture = state.state === 'NS';
+
   return (
-    <article className={styles._}>
+    <Card render={<section />} className={styles._}>
       <h2 className="screen-reader-only">{name}</h2>
       <section className={styles.Details}>
         {localTeam && <FixtureCardTeam {...localTeam} />}
         <div className={styles.Separator}>
-          <div className={styles.Date}>{gameDate + ' @ ' + gameTime}</div>
-          <div className={styles.Score}>
-            {scores[1]?.score.goals}-{scores[3]?.score.goals}
+          <div className={styles.Date}>
+            {isActive ? (ticking ? ticking.minutes : 'HT') : gameDate}
           </div>
-          <div className={styles.Elapsed}>65'</div>
+          <div className={styles.Score}>
+            {isFuture
+              ? gameTime
+              : currentScores.get('home') + '-' + currentScores.get('away')}
+          </div>
         </div>
         {visitorTeam && <FixtureCardTeam {...visitorTeam} />}
       </section>
@@ -55,6 +76,6 @@ export function FixtureCard({
         </div>
         <div>{shite(venue.name)}</div>
       </footer>
-    </article>
+    </Card>
   );
 }

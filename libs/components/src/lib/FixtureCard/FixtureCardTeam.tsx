@@ -5,11 +5,16 @@ import { shite } from '@arsenalamerica/utils';
 
 import { TeamLogo } from '../TeamLogo';
 
+interface FixtureCardTeamProps extends EntityBase {
+  short_code: string;
+}
+
 export function FixtureCardTeam({
   id,
   name,
   image_path,
-}: EntityBase): JSX.Element {
+  short_code,
+}: FixtureCardTeamProps) {
   const properName = shite(name);
   return (
     <div className={styles.Team}>
@@ -20,6 +25,7 @@ export function FixtureCardTeam({
         fallback={image_path}
       />
       <div className={styles.TeamName}>{properName}</div>
+      <div className={styles.TeamAbbr}>{short_code}</div>
     </div>
   );
 }

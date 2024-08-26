@@ -3,6 +3,7 @@ import styles from './LeagueTable.module.scss';
 import { StandingEntity } from '@arsenalamerica/sportmonks';
 import { shite } from '@arsenalamerica/utils';
 
+import { Card } from '../Card';
 import { TeamLogo } from '../TeamLogo';
 // import { useErrorBoundary } from 'react-error-boundary';
 
@@ -14,9 +15,8 @@ export function LeagueTable({ standings }: { standings: StandingEntity[] }) {
   // }
 
   return (
-    <div className={styles._}>
+    <Card className={styles._}>
       <table>
-        <caption>Premier League Table</caption>
         <thead>
           <tr>
             <th>Team</th>
@@ -57,6 +57,6 @@ export function LeagueTable({ standings }: { standings: StandingEntity[] }) {
         </tbody>
       </table>
       {/* <pre>{JSON.stringify(standings, null, 2)}</pre> */}
-    </div>
+    </Card>
   );
 }

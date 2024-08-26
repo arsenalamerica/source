@@ -10,6 +10,7 @@ import { shite } from '@arsenalamerica/utils';
 import { dateFromEpoch, timeFromEpoch } from '@arsenalamerica/utils';
 
 import { BranchContext } from '../BranchContext/BranchContext';
+import { Card } from '../Card/Card';
 
 import NextGameLoading from './NextGameLoading';
 
@@ -52,7 +53,7 @@ export function NextGameComponent() {
     : fixtureTime;
 
   return (
-    <div className={styles._}>
+    <Card className={styles._}>
       <h2>Next Match Viewing</h2>
       <h3>{shite(fixtureName)}</h3>
       <p>
@@ -67,7 +68,7 @@ export function NextGameComponent() {
           </a>
         </address>
       )}
-    </div>
+    </Card>
   );
 }
 

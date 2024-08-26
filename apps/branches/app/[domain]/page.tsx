@@ -7,6 +7,7 @@ import {
   Main,
   NextGame,
   SocialLinks,
+  SWRProvider,
 } from '@arsenalamerica/components';
 import { branchLogo } from '@arsenalamerica/data';
 
@@ -21,7 +22,10 @@ export default function Home() {
   return (
     <Main variant="landing">
       {Logo && <Logo title={branch.name} role="img" />}
-      <NextGame />
+      <SWRProvider>
+        <NextGame />
+      </SWRProvider>
+
       {branch.social && <SocialLinks links={branch.social} />}
     </Main>
   );

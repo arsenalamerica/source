@@ -1,12 +1,6 @@
-'use client';
-
 import styles from './Main.module.scss';
 
 import clsx from 'clsx';
-
-import { HeadingLevel } from '@ariakit/react';
-
-import SWRProvider from './SWRProvider';
 
 export interface MainProps {
   children?: React.ReactNode;
@@ -21,15 +15,11 @@ export default function Main({
   ...rest
 }: MainProps) {
   return (
-    <HeadingLevel>
-      <SWRProvider>
-        <main
-          {...rest}
-          className={clsx(styles['_'], variant && styles[variant], className)}
-        >
-          {children}
-        </main>
-      </SWRProvider>
-    </HeadingLevel>
+    <main
+      {...rest}
+      className={clsx(styles['_'], variant && styles[variant], className)}
+    >
+      {children}
+    </main>
   );
 }
