@@ -2,12 +2,7 @@ import './global.scss';
 
 import type { Metadata } from 'next';
 
-import {
-  BranchProvider,
-  FathomNext,
-  NavBar,
-  SWRProvider,
-} from '@arsenalamerica/components';
+import { BranchProvider, FathomNext, NavBar } from '@arsenalamerica/components';
 import { branchData } from '@arsenalamerica/data';
 
 export interface LayoutProps {
@@ -37,7 +32,7 @@ export default function Layout({ children, params }: LayoutProps) {
       />
       <h1 className="screen-reader-only">{branch.name}</h1>
       <NavBar />
-      <SWRProvider>{children}</SWRProvider>
+      {children}
     </BranchProvider>
   );
 }

@@ -10,3 +10,4 @@ export * from './lib/Main';
 export * from './lib/NavBar/NavBar';
 export * from './lib/SocialLinks';
 export * from './lib/Toolbar';
+export * from './lib/Card';
