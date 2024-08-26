@@ -16,12 +16,18 @@ $navbar-spacing: 0.625em;
   overflow-x: auto;
   transform: translateX(-50%);
 
-  .toolbar {
+  .Toolbar {
     display: flex;
     width: 100%;
     max-width: 1200px;
     align-items: center;
     gap: $navbar-spacing;
     place-content: center center;
+
+    & > * {
+      min-width: 0;
+      flex-basis: 33%;
+      flex-grow: 1;
+    }
   }
 }

@@ -52,9 +52,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+// body {
+//   background-attachment: fixed;
+//   background-image: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 20%));
+// }
+
 body {
-  background-attachment: fixed;
-  background-image: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 20%));
+  &::before,
+  &::after {
+    position: fixed;
+    width: 100%;
+    height: 0;
+    background-color: #da1f26;
+    box-shadow: 0 0 0.75em 0.75em #da1f26;
+    content: ' ';
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
 }
 
 /* stylelint-disable-next-line selector-id-pattern */
