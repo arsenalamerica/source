@@ -52,6 +52,20 @@ export function NextGameComponent() {
     ? branch.pub?.replayTime + ' (replay)'
     : fixtureTime;
 
+  const fixtureTime24 = new Date(
+    starting_at_timestamp * 1000,
+  ).toLocaleTimeString(undefined, {
+    timeStyle: 'short',
+    hour12: false,
+  });
+
+  // THIS IS A TEMPORARY HARD-CODED FIX
+  const viewingPub = branch.pubs
+    ? fixtureTime24 > '06:00' // Note to compare times here, we need to use 24-hour format, including the leading zero
+      ? branch.pubs[0]
+      : branch.pubs[1]
+    : branch.pub;
+
   return (
     <Card className={styles._}>
       <h2>Next Match Viewing</h2>
@@ -59,12 +73,12 @@ export function NextGameComponent() {
       <p>
         {fixtureDate} {adjustedFixtureTime}
       </p>
-      {branch.pub && (
+      {viewingPub && (
         <address>
-          <a href={branch.pub.website}>
-            {branch.pub.name}
+          <a href={viewingPub.website}>
+            {viewingPub.name}
             <br />
-            {branch.pub.address.replace(',', '\n')}
+            {viewingPub.address.replace(',', '\n')}
           </a>
         </address>
       )}
