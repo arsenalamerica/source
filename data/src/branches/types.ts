@@ -1,3 +1,17 @@
+type Condition = {
+  'time-compare': string;
+  time: string;
+  weekend: boolean;
+  weekday: boolean;
+};
+
+type Pub = {
+  condition: Condition;
+  name: string;
+  address: string;
+  website: string;
+};
+
 export interface BranchData {
   'fathom-id': string;
   domain: string;
@@ -8,6 +22,7 @@ export interface BranchData {
     website: string;
     replayTime?: string;
   };
+  pubs?: Pub[];
   social?: {
     name: string;
     url: string;
