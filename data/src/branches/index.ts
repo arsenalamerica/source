@@ -1,5 +1,6 @@
 import boisegooners from './boisegooners';
 import cascadiagooners from './cascadiagooners';
+import eastlagooners from './eastlagooners';
 import pdxgooners from './pdxgooners';
 import tacomagooners from './tacomagooners';
 import { BranchData, BranchLogo } from './types';
@@ -26,6 +27,7 @@ const exportLogoHelper = ({
 export const branchData = {
   ...exportDataHelper(boisegooners),
   ...exportDataHelper(cascadiagooners),
+  ...exportDataHelper(eastlagooners),
   ...exportDataHelper(pdxgooners),
   ...exportDataHelper(tacomagooners),
   ...exportDataHelper(vancouverarsenal),
@@ -34,6 +36,7 @@ export const branchData = {
 export const branchLogo = {
   ...exportLogoHelper(boisegooners),
   ...exportLogoHelper(cascadiagooners),
+  ...exportLogoHelper(eastlagooners),
   ...exportLogoHelper(pdxgooners),
   ...exportLogoHelper(tacomagooners),
   ...exportLogoHelper(vancouverarsenal),
@@ -42,6 +45,7 @@ export const branchLogo = {
 export default {
   ...exportAllHelper(boisegooners),
   ...exportAllHelper(cascadiagooners),
+  ...exportAllHelper(eastlagooners),
   ...exportAllHelper(pdxgooners),
   ...exportAllHelper(tacomagooners),
   ...exportAllHelper(vancouverarsenal),
