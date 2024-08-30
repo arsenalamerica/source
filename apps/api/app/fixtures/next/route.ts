@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
 
-import { smFixtures } from '@arsenalamerica/sportmonks';
+import { smFixtures, smTvStation } from '@arsenalamerica/sportmonks';
 import { season } from '@arsenalamerica/utils';
 
 import logger from '../../logger';
 
-// const USA_COUNTRY_ID = 3483;
+const USA_COUNTRY_ID = 3483;
 
 // https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
 export const revalidate = 60 * 60; // 1 hour
@@ -16,23 +16,26 @@ export async function GET() {
       include: [
         'league:name,image_path',
         'participants:name,short_code,image_path',
-        // 'scores',
-        // 'tvStations',
+        'scores',
+        'tvStations',
         'venue:name,city_name',
       ].join(';'),
-      filters: ['fixtureStates:1'].join(';'),
+      // All active or upcoming fixture states: https://docs.sportmonks.com/football/tutorials-and-guides/tutorials/includes/states#state-interactions
+      filters: ['fixtureStates:1,2,3,22,4,6,21,6,7,25,9'].join(';'),
+      sort_by: 'starting_at',
+      order: 'asc',
       per_page: ['1'].join(';'),
     });
 
-    // const tvstations = await Promise.all(
-    //   data[0].tvstations
-    //     .filter(({ country_id }) => country_id === USA_COUNTRY_ID)
-    //     .map(async (tvstation) => {
-    //       const { data } = await smTvStation(tvstation.tvstation_id);
-    //       return { ...tvstation, ...data };
-    //     }),
-    // );
-    // data[0].tvstations = tvstations;
+    const tvstations = await Promise.all(
+      data[0].tvstations
+        .filter(({ country_id }) => country_id === USA_COUNTRY_ID)
+        .map(async (tvstation) => {
+          const { data } = await smTvStation(tvstation.tvstation_id);
+          return { ...tvstation, ...data };
+        }),
+    );
+    data[0].tvstations = tvstations;
 
     logger.info(rest);
 

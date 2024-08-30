@@ -19,8 +19,9 @@ export async function GET() {
         'periods',
         'venue:name,city_name',
       ].join(';'),
-      // filters: ['fixtureStates:1'].join(';'),
-      per_page: ['60'].join(';'),
+      sort_by: 'starting_at',
+      order: 'asc',
+      per_page: ['80'].join(';'),
     });
 
     logger.info(rest);
