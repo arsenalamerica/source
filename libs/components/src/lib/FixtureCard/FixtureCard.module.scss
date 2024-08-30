@@ -26,10 +26,14 @@ $fixture-card-shadow: 0 0 1rem rgb(0 0 0 / 30%);
     }
   }
 
+  .Separator {
+    white-space: nowrap;
+  }
+
   .Team {
     .TeamLogo {
-      width: 4em;
-      height: 4em;
+      width: 3em;
+      height: 3em;
     }
 
     .TeamName,
@@ -44,6 +48,11 @@ $fixture-card-shadow: 0 0 1rem rgb(0 0 0 / 30%);
     }
 
     @media screen and (width > 725px) {
+      .TeamLogo {
+        width: 4em;
+        height: 4em;
+      }
+
       .TeamName {
         display: block;
       }

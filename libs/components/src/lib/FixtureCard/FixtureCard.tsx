@@ -4,18 +4,24 @@ import styles from './FixtureCard.module.scss';
 
 import Image from 'next/image';
 
+import { Heading, HeadingLevel, VisuallyHidden } from '@ariakit/react';
 import {
   FixtureEntity,
   REGULAR_TIME_ACTIVE_STATES,
 } from '@arsenalamerica/sportmonks';
 import { shite } from '@arsenalamerica/utils';
 
-import { Card } from '../Card';
+import { Card, CardProps } from '../Card';
 
 import { FixtureCardTeam } from './FixtureCardTeam';
 
+type FixtureCardProps = Omit<CardProps, 'id'> & FixtureEntity;
+
 export function FixtureCard({
+  // eslint-disable-next-line jsx-a11y/heading-has-content
+  render = <section />,
   name,
+  className,
   participants,
   starting_at_timestamp,
   league,
@@ -24,7 +30,7 @@ export function FixtureCard({
   venue,
   state,
   ...rest
-}: FixtureEntity) {
+}: FixtureCardProps) {
   const gameTime = new Date(starting_at_timestamp * 1000).toLocaleTimeString(
     [],
     { timeStyle: 'short' },
@@ -50,34 +56,38 @@ export function FixtureCard({
   const isFuture = state.state === 'NS';
 
   return (
-    <Card render={<section />} className={styles._}>
-      <h2 className="screen-reader-only">{name}</h2>
-      <section className={styles.Details}>
-        {localTeam && <FixtureCardTeam {...localTeam} />}
-        <div className={styles.Separator}>
-          <div className={styles.Date}>
-            {isActive ? (ticking ? ticking.minutes : 'HT') : gameDate}
+    <Card className={[styles._, className].join(' ')}>
+      <HeadingLevel>
+        <VisuallyHidden>
+          <Heading>{name}</Heading>
+        </VisuallyHidden>
+        <div className={styles.Details}>
+          {localTeam && <FixtureCardTeam {...localTeam} />}
+          <div className={styles.Separator}>
+            <div className={styles.Date}>
+              {isActive ? (ticking ? ticking.minutes : 'HT') : gameDate}
+            </div>
+            <div className={styles.Score}>
+              {isFuture
+                ? gameTime
+                : currentScores.get('home') + '-' + currentScores.get('away')}
+            </div>
           </div>
-          <div className={styles.Score}>
-            {isFuture
-              ? gameTime
-              : currentScores.get('home') + '-' + currentScores.get('away')}
+          {visitorTeam && <FixtureCardTeam {...visitorTeam} />}
+        </div>
+        <footer className={styles.Metadata}>
+          <div>
+            <Image
+              src={league.image_path}
+              alt={league.name + ' Logo'}
+              width={25}
+              height={25}
+            />
+            {league.name}
           </div>
-        </div>
-        {visitorTeam && <FixtureCardTeam {...visitorTeam} />}
-      </section>
-      <footer className={styles.Metadata}>
-        <div>
-          <Image
-            src={league.image_path}
-            alt={league.name + ' Logo'}
-            width={25}
-            height={25}
-          />
-          {league.name}
-        </div>
-        <div>{shite(venue.name)}</div>
-      </footer>
+          <div>{shite(venue.name)}</div>
+        </footer>
+      </HeadingLevel>
     </Card>
   );
 }

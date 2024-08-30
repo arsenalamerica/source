@@ -6,6 +6,6 @@ export async function getFixtures(): Promise<FixtureEntity[]> {
   return api.url(`/fixtures`).get() as Promise<FixtureEntity[]>;
 }
 
-export async function getFixtureNext(): Promise<FixtureEntity[]> {
+export async function getNextFixture(): Promise<FixtureEntity[]> {
   return api.url(`/fixtures/next`).get() as Promise<FixtureEntity[]>;
 }

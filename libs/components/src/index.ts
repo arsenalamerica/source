@@ -1,6 +1,6 @@
 export * from './lib/TeamLogo/TeamLogo';
-export { LeagueTable } from './lib/LeagueTable/LeagueTable';
-export { NextGame } from './lib/NextGame/NextGame';
+export * from './lib/LeagueTable/LeagueTable';
+export * from './lib/NextGame/NextGame';
 export * from './lib/BranchContext/BranchContext';
 export * from './lib/ExternalLink';
 export * from './lib/FathomNext';

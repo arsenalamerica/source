@@ -1,7 +1,7 @@
 import { GameCard } from '@arsenalamerica/components';
 import { branchData } from '@arsenalamerica/data';
 
-import { getFixtureNext } from '../../../endpoints/fixtures';
+import { getNextFixture } from '../../../endpoints/fixtures';
 
 export default async function GameCardPage({
   params,
@@ -10,7 +10,7 @@ export default async function GameCardPage({
 }) {
   const branch = branchData[params.domain];
 
-  const [nextFixture] = await getFixtureNext();
+  const [nextFixture] = await getNextFixture();
 
   return <GameCard {...nextFixture} branch={branch} />;
 }

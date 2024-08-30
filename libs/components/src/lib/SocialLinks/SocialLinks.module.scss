@@ -1,10 +1,11 @@
 ._ {
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
-  margin: 0;
+  margin: 3em;
   gap: 5vmin;
   list-style: none;
-  text-align: center;
 
   li {
     a {
@@ -12,8 +13,8 @@
       outline: none;
 
       svg {
-        width: 8vmin;
-        height: 8vmin;
+        width: 2em;
+        height: 2em;
         fill: #ccc;
         transition: all 0.2s ease-in-out;
       }

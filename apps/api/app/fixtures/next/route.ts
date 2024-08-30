@@ -17,6 +17,8 @@ export async function GET() {
         'league:name,image_path',
         'participants:name,short_code,image_path',
         'scores',
+        'state',
+        'periods',
         'tvStations',
         'venue:name,city_name',
       ].join(';'),

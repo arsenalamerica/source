@@ -1,32 +1,34 @@
-'use client';
-
-import { useContext } from 'react';
-
+import { Heading } from '@ariakit/react';
 import {
-  BranchContext,
+  FixtureCard,
   Main,
   NextGame,
   SocialLinks,
-  SWRProvider,
 } from '@arsenalamerica/components';
-import { branchLogo } from '@arsenalamerica/data';
+import { branchData, branchLogo } from '@arsenalamerica/data';
+
+import { getNextFixture } from '../../endpoints/fixtures';
 
 export interface HomeProps {
   params: { domain: string };
 }
 
-export default function Home() {
-  const branch = useContext(BranchContext);
-  const Logo = branchLogo[branch.domain];
+// https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
+export const revalidate = 60; // 15 minutes
+
+export default async function Home({ params }: { params: { domain: string } }) {
+  const branch = branchData[params.domain];
+  const Logo = branchLogo[branch?.domain];
+
+  const [nextFixture] = await getNextFixture();
 
   return (
-    <Main variant="landing">
+    <Main>
       {Logo && <Logo title={branch.name} role="img" />}
-      <SWRProvider>
-        <NextGame />
-      </SWRProvider>
-
-      {branch.social && <SocialLinks links={branch.social} />}
+      <Heading>Next Match</Heading>
+      <FixtureCard {...nextFixture} />
+      <NextGame fixture={nextFixture} branch={branch} />
+      {branch?.social && <SocialLinks links={branch.social} />}
     </Main>
   );
 }
