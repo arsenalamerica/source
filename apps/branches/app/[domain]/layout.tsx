@@ -2,7 +2,8 @@ import './global.scss';
 
 import type { Metadata } from 'next';
 
-import { BranchProvider, FathomNext, NavBar } from '@arsenalamerica/components';
+import { Heading, HeadingLevel, VisuallyHidden } from '@ariakit/react';
+import { FathomNext, NavBar } from '@arsenalamerica/components';
 import { branchData } from '@arsenalamerica/data';
 
 export interface LayoutProps {
@@ -16,8 +17,8 @@ export async function generateMetadata({
   const branch = branchData[params.domain];
 
   return {
-    title: branch.name,
-    description: `Welcome to ${branch.name}!`,
+    title: branch?.name,
+    description: `Welcome to ${branch?.name}!`,
   };
 }
 
@@ -25,14 +26,23 @@ export default function Layout({ children, params }: LayoutProps) {
   const branch = branchData[params.domain];
 
   return (
-    <BranchProvider branch={branch}>
-      <FathomNext
-        fathomId={branch['fathom-id']}
-        includedDomains={[branch.domain]}
-      />
-      <h1 className="screen-reader-only">{branch.name}</h1>
-      <NavBar />
-      {children}
-    </BranchProvider>
+    <>
+      <HeadingLevel>
+        {branch && (
+          <>
+            <FathomNext
+              fathomId={branch['fathom-id']}
+              includedDomains={[branch.domain]}
+            />
+            <VisuallyHidden>
+              <Heading>{branch.name}</Heading>
+            </VisuallyHidden>
+          </>
+        )}
+
+        <NavBar />
+        <HeadingLevel>{children}</HeadingLevel>
+      </HeadingLevel>
+    </>
   );
 }
