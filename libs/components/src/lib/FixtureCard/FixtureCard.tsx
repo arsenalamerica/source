@@ -2,8 +2,6 @@
 
 import styles from './FixtureCard.module.scss';
 
-import Image from 'next/image';
-
 import { Heading, HeadingLevel, VisuallyHidden } from '@ariakit/react';
 import {
   FixtureEntity,
@@ -12,6 +10,7 @@ import {
 import { shite } from '@arsenalamerica/utils';
 
 import { Card, CardProps } from '../Card';
+import { LeagueLogo } from '../LeagueLogo';
 
 import { FixtureCardTeam } from './FixtureCardTeam';
 
@@ -37,7 +36,7 @@ export function FixtureCard({
   );
   const gameDate = new Date(starting_at_timestamp * 1000).toLocaleDateString(
     [],
-    { dateStyle: 'medium' },
+    { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' },
   );
 
   const localTeam = participants.find((team) => team.meta.location === 'home');
@@ -77,11 +76,10 @@ export function FixtureCard({
         </div>
         <footer className={styles.Metadata}>
           <div>
-            <Image
-              src={league.image_path}
-              alt={league.name + ' Logo'}
-              width={25}
-              height={25}
+            <LeagueLogo
+              leagueId={league.id}
+              name={league.name}
+              fallback={league.image_path}
             />
             {league.name}
           </div>

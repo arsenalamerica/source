@@ -1,29 +1,29 @@
-import teams from './teams';
+import leagues from './leagues';
 
 type ImageProps = React.ComponentPropsWithoutRef<'svg'> &
   React.ComponentPropsWithoutRef<'img'>;
 
-interface TeamLogoProps extends ImageProps {
+interface LeagueLogoProps extends ImageProps {
   className?: string;
   fallback: string;
   height?: number;
   name: string;
-  teamId: number;
+  leagueId: number;
   width?: number;
 }
 
-export function TeamLogo({
+export function LeagueLogo({
   fallback,
   height = 24,
   name,
-  teamId,
+  leagueId,
   width = 24,
   ...rest
-}: TeamLogoProps) {
+}: LeagueLogoProps) {
   const altText = name + ' Logo';
 
-  if (!teams.has(teamId)) {
-    console.warn(`Logo for ${teamId}:${name} not found`);
+  if (!leagues.has(leagueId)) {
+    console.warn(`Logo for ${leagueId}:${name} not found`);
 
     return <img {...rest} src={fallback} alt={altText} />;
   }
@@ -39,7 +39,7 @@ export function TeamLogo({
       width={width}
       height={height}
     >
-      <path d={teams.get(teamId)} />
+      <path d={leagues.get(leagueId)} />
     </svg>
   );
 }
