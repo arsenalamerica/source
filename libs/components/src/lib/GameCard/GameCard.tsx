@@ -3,7 +3,7 @@ import styles from './GameCard.module.scss';
 import { branchLogo } from '@arsenalamerica/data';
 import { FixtureEntity } from '@arsenalamerica/sportmonks';
 
-import { TeamLogo } from '../TeamLogo';
+import { TeamLogo } from '../TeamLogo/TeamLogo';
 
 import { GameCardBilling } from './GameCardBilling';
 import { GameCardTime } from './GameCardTime';

@@ -13,7 +13,13 @@ $fixture-card-shadow: 0 0 1rem rgb(0 0 0 / 30%);
   }
 
   img {
-    filter: brightness(0) invert(1);
+    &:not(:global(.loading)) {
+      filter: brightness(0) invert(1);
+    }
+
+    &:global(.loading) {
+      border-radius: 2em;
+    }
   }
 
   .Details {
@@ -40,15 +46,20 @@ $fixture-card-shadow: 0 0 1rem rgb(0 0 0 / 30%);
       height: 3em;
     }
 
+    .TeamName {
+      display: none;
+    }
+
     .TeamName,
     .TeamAbbr {
       font-family: ars-bold, sans-serif;
       font-size: 1.25em;
       text-transform: uppercase;
-    }
 
-    .TeamName {
-      display: none;
+      &:global(.loading) {
+        width: 50%;
+        margin: 0 auto;
+      }
     }
 
     @media screen and (width > 725px) {

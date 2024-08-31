@@ -4,10 +4,9 @@ import styles from './NavBar.module.scss';
 
 import * as Ariakit from '@ariakit/react';
 
-import { NavLink } from '../NavLink/NavLink';
-
 // import { calendar, home, trophy } from './icons';
 import { NavBarItem } from './NavBarItem';
+import { NavLink } from './NavLink';
 
 export function NavBar() {
   const ACTIVE_CLASS = 'is-dark';

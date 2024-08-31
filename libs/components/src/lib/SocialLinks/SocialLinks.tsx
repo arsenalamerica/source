@@ -4,7 +4,7 @@ import React from 'react';
 import clsx from 'clsx';
 import * as icons from 'simple-icons';
 
-import { ExternalLink } from '../ExternalLink';
+import ExternalLink from '../ExternalLink/ExternalLink';
 
 export interface SocialLinksProperties
   extends React.HTMLAttributes<HTMLUListElement> {
@@ -26,7 +26,7 @@ const getBrandIcon = (name: string) => {
   return icon;
 };
 
-export default function SocialLinks({
+export function SocialLinks({
   className,
   links,
   ...rest

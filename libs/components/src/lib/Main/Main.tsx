@@ -8,12 +8,7 @@ export interface MainProps {
   variant?: 'landing';
 }
 
-export default function Main({
-  children,
-  className,
-  variant,
-  ...rest
-}: MainProps) {
+export function Main({ children, className, variant, ...rest }: MainProps) {
   return (
     <main
       {...rest}

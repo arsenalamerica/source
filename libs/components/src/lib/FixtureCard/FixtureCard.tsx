@@ -1,4 +1,4 @@
-'use client'; // Needed because we are dealing with dates relative to the user. We can move this to the game info section later on to encapsulate the date
+// 'use client'; // Needed because we are dealing with dates relative to the user. We can move this to the game info section later on to encapsulate the date
 
 import styles from './FixtureCard.module.scss';
 
@@ -9,8 +9,9 @@ import {
 } from '@arsenalamerica/sportmonks';
 import { shite } from '@arsenalamerica/utils';
 
-import { Card, CardProps } from '../Card';
-import { LeagueLogo } from '../LeagueLogo';
+import { Card, CardProps } from '../Card/Card';
+import { ClientOnly } from '../ClientOnly/ClientOnly';
+import { LeagueLogo } from '../LeagueLogo/LeagueLogo';
 
 import { FixtureCardTeam } from './FixtureCardTeam';
 
@@ -64,12 +65,16 @@ export function FixtureCard({
           {localTeam && <FixtureCardTeam {...localTeam} />}
           <div className={styles.Separator}>
             <div className={styles.Date}>
-              {isActive ? (ticking ? ticking.minutes + "'" : 'HT') : gameDate}
+              <ClientOnly>
+                {isActive ? (ticking ? ticking.minutes + "'" : 'HT') : gameDate}
+              </ClientOnly>
             </div>
             <div className={styles.Score}>
-              {isFuture
-                ? gameTime
-                : currentScores.get('home') + '-' + currentScores.get('away')}
+              <ClientOnly>
+                {isFuture
+                  ? gameTime
+                  : currentScores.get('home') + '-' + currentScores.get('away')}
+              </ClientOnly>
             </div>
           </div>
           {visitorTeam && <FixtureCardTeam {...visitorTeam} />}
@@ -84,6 +89,49 @@ export function FixtureCard({
             {league.name}
           </div>
           <div>{shite(venue.name)}</div>
+        </footer>
+      </HeadingLevel>
+    </Card>
+  );
+}
+
+export function FixtureCardLoading() {
+  return (
+    <Card className={styles._}>
+      <HeadingLevel>
+        <VisuallyHidden>
+          <Heading>Loading...</Heading>
+        </VisuallyHidden>
+        <div className={styles.Details}>
+          <FixtureCardTeam
+            isLoading
+            id={19}
+            name="Loading"
+            short_code="XXX"
+            image_path="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+          />
+          <div className={styles.Separator}>
+            <div className={styles.Date} />
+            <div className={styles.Score} />
+          </div>
+          <FixtureCardTeam
+            isLoading
+            id={19}
+            name="Loading"
+            short_code="XXX"
+            image_path="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+          />
+        </div>
+        <footer className={styles.Metadata}>
+          <div>
+            <LeagueLogo
+              className="loading"
+              leagueId={2}
+              name="Loading..."
+              fallback="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+            />
+          </div>
+          <div />
         </footer>
       </HeadingLevel>
     </Card>
