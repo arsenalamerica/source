@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react';
 
-import { TeamLogo } from './TeamLogo';
+import { LeagueLogo } from './LeagueLogo';
 
-describe('TeamLogo', () => {
+describe('LeagueLogo', () => {
   it('should render successfully', () => {
     const { baseElement } = render(
-      <TeamLogo teamId={19} name="Team Name" fallback="img_path" />,
+      <LeagueLogo leagueId={2} name="League Name" fallback="img_path" />,
     );
     expect(baseElement).toBeTruthy();
   });
