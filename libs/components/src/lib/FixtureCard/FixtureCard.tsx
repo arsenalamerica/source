@@ -65,7 +65,7 @@ export function FixtureCard({
           {localTeam && <FixtureCardTeam {...localTeam} />}
           <div className={styles.Separator}>
             <div className={styles.Date}>
-              {isActive ? (ticking ? ticking.minutes : 'HT') : gameDate}
+              {isActive ? (ticking ? ticking.minutes + "'" : 'HT') : gameDate}
             </div>
             <div className={styles.Score}>
               {isFuture

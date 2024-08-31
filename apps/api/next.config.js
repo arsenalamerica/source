@@ -8,6 +8,11 @@ const { composePlugins, withNx } = require('@nx/next');
  **/
 const nextConfig = {
   poweredByHeader: false,
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
 };
 
 const plugins = [
