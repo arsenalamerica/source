@@ -7,6 +7,9 @@ import logger from '../logger';
 // This League ID is for the Premier League and we can use it to make the table live results once the season starts
 // const LEAGUE_ID = 8;
 
+// https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
+export const revalidate = 1800; // 30 minutes
+
 export async function GET() {
   try {
     const { data, ...rest } = await smStandings(undefined, {
