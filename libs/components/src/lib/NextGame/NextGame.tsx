@@ -7,7 +7,8 @@ import { BranchData } from '@arsenalamerica/data';
 import { FixtureEntity } from '@arsenalamerica/sportmonks';
 import { dateFromEpoch, timeFromEpoch } from '@arsenalamerica/utils';
 
-import { Card } from '../Card';
+import { Card } from '../Card/Card';
+import { ClientOnly } from '../ClientOnly/ClientOnly';
 
 export function NextGame({
   fixture,
@@ -50,7 +51,9 @@ export function NextGame({
       <Heading>Match Watch Party</Heading>
       <Card render={<div />} className={styles._}>
         <p>
-          {fixtureDate} {adjustedFixtureTime}
+          <ClientOnly>
+            {fixtureDate} {adjustedFixtureTime}
+          </ClientOnly>
         </p>
         {viewingPub && (
           <address>

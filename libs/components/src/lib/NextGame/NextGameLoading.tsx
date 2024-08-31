@@ -1,30 +1,23 @@
-'use client';
-
 import styles from './NextGame.module.scss';
 
-import { useContext } from 'react';
+import { Heading } from '@ariakit/react';
 
-import { BranchContext } from '../BranchContext/BranchContext';
+import { Card } from '../Card/Card';
 
-export function NextGameError() {
-  const branch = useContext(BranchContext);
-
+export function NextGameLoading() {
   return (
-    <div className={styles._}>
-      <h2 className="loading">Next Match Viewing</h2>
-      <h3 className="loading">Loading...</h3>
-      <p className="loading">Loading...</p>
-      {branch.pub && (
+    <>
+      <Heading>Match Watch Party</Heading>
+      <Card render={<div />} className={styles._}>
+        <p className="loading">Loading...</p>
         <address className="loading">
-          <a href={branch.pub.website}>
-            {branch.pub.name}
+          <span className="loading">
+            Loading...
             <br />
-            {branch.pub.address.replace(',', '\n')}
-          </a>
+            Loading...
+          </span>
         </address>
-      )}
-    </div>
+      </Card>
+    </>
   );
 }
-
-export default NextGameError;
