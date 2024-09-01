@@ -9,7 +9,7 @@ import { NavBarItem } from './NavBarItem';
 import { NavLink } from './NavLink';
 
 export function NavBar() {
-  const ACTIVE_CLASS = 'is-dark';
+  const ACTIVE_CLASS = 'active';
 
   const ITEMS = [
     {

@@ -1,10 +1,5 @@
 import { Heading } from '@ariakit/react';
-import {
-  FixtureCard,
-  Main,
-  NextGame,
-  SocialLinks,
-} from '@arsenalamerica/components';
+import { FixtureCard, Main, NextGame } from '@arsenalamerica/components';
 import { branchData, branchLogo } from '@arsenalamerica/data';
 
 import { getNextFixture } from '../../endpoints/fixtures';
@@ -28,7 +23,6 @@ export default async function Home({ params }: { params: { domain: string } }) {
       <Heading>Next Match</Heading>
       <FixtureCard {...nextFixture} />
       <NextGame fixture={nextFixture} branch={branch} />
-      {branch?.social && <SocialLinks links={branch.social} />}
     </Main>
   );
 }
