@@ -27,6 +27,7 @@ export interface BranchData {
     name: string;
     url: string;
   }[];
+  footer?: string;
 }
 
 export type BranchLogo = React.FunctionComponent<

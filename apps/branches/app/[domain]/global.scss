@@ -52,28 +52,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-// body {
-//   background-attachment: fixed;
-//   background-image: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 20%));
-// }
-
 body {
-  &::before,
-  &::after {
-    position: fixed;
-    width: 100%;
-    height: 0;
-    background-color: #da1f26;
-    box-shadow: 0 0 0.75em 0.75em #da1f26;
-    content: ' ';
+  padding: 0 1em 6em;
+
+  // &::before,
+  // &::after {
+  //   position: fixed;
+  //   width: 100%;
+  //   height: 0;
+  //   background-color: #da1f26;
+  //   box-shadow: 0 0 0.75em 0.75em #da1f26;
+  //   content: ' ';
+  // }
+
+  // &::before {
+  //   top: 0;
+  // }
+
+  // &::after {
+  //   bottom: 0;
+  // }
+
+  & > header,
+  & > main,
+  & > footer {
+    max-width: 60rem;
+    padding: 0 1em;
+    margin: 0 auto;
   }
 
-  &::before {
-    top: 0;
-  }
-
-  &::after {
-    bottom: 0;
+  & > footer {
+    font-size: 0.875em;
   }
 }
 
@@ -118,8 +127,40 @@ body,
 h1,
 h2,
 h3 {
+  position: sticky;
+  top: 0;
+  padding: 1em 0 0;
+  margin-bottom: 1em;
+  background-color: #da1f26;
+  box-shadow: 0 0 0.75em 0.75em #da1f26;
   font-family: ars-bold, sans-serif;
   text-transform: uppercase;
+}
+
+h1 {
+  font-size: 6vmin;
+}
+
+h2 {
+  font-size: 6vmin;
+}
+
+h3 {
+  font-size: 4vmin;
+}
+
+@media screen and (width > 725px) {
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 1.75em;
+  }
+
+  h3 {
+    font-size: 1.25em;
+  }
 }
 
 @font-face {

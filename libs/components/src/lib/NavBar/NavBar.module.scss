@@ -2,17 +2,17 @@ $navbar-spacing: 0.625em;
 
 ._ {
   position: fixed;
+  z-index: 1000;
   bottom: 0;
-  left: calc(50% - 1em);
+  left: 50%;
   display: flex;
-  max-width: calc(100% - 2em);
+  width: 100%;
+  max-width: 60rem;
   align-items: center;
   justify-content: center;
   padding: $navbar-spacing;
-  border-radius: 1em;
-  margin: 1em;
-  background-color: #c2011720;
-  box-shadow: 0 1em 1em 0.5em #00000030;
+  background-color: #da1f26;
+  box-shadow: 0 0 0.75em 0.75em #da1f26;
   overflow-x: auto;
   transform: translateX(-50%);
 
@@ -28,6 +28,13 @@ $navbar-spacing: 0.625em;
       min-width: 0;
       flex-basis: 33%;
       flex-grow: 1;
+      background-color: rgb(0 0 0 / 10%);
+
+      &:global(.active),
+      &:active,
+      &:hover {
+        background-color: rgb(0 0 0 / 30%);
+      }
     }
   }
 }
