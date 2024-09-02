@@ -1,0 +1,118 @@
+// Colors
+
+$black: hsl(221deg 14% 4%) !default;
+$black-bis: hsl(221deg 14% 9%) !default;
+$black-ter: hsl(221deg 14% 14%) !default;
+
+$grey-darker: hsl(221deg 14% 21%) !default;
+$grey-dark: hsl(221deg 14% 29%) !default;
+$grey: hsl(221deg 14% 48%) !default;
+$grey-light: hsl(221deg 14% 71%) !default;
+$grey-lighter: hsl(221deg 14% 86%) !default;
+$grey-lightest: hsl(221deg 14% 93%) !default;
+
+$white-ter: hsl(221deg 14% 96%) !default;
+$white-bis: hsl(221deg 14% 98%) !default;
+$white: hsl(221deg 14% 100%) !default;
+
+$orange: hsl(14deg 100% 53%) !default;
+$yellow: hsl(42deg 100% 53%) !default;
+$green: hsl(153deg 53% 53%) !default;
+$turquoise: hsl(171deg 100% 41%) !default;
+$cyan: hsl(198deg 100% 70%) !default;
+$blue: hsl(233deg 100% 63%) !default;
+$purple: hsl(271deg 100% 71%) !default;
+$red: hsl(348deg 100% 70%) !default;
+
+// Typography
+
+$font-family-sans-serif: 'Inter', 'SF Pro', 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$font-family-monospace: 'Inconsolata', 'Hack', 'SF Mono', 'Roboto Mono',
+  'Source Code Pro', 'Ubuntu Mono', monospace !default;
+
+$font-size-1: 3rem !default;
+$font-size-2: 2.5rem !default;
+$font-size-3: 2rem !default;
+$font-size-4: 1.5rem !default;
+$font-size-5: 1.25rem !default;
+$font-size-6: 1rem !default;
+$font-size-7: 0.75rem !default;
+
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-extrabold: 800 !default;
+
+// Spacing
+
+$block-spacing: 1.5rem !default;
+
+// Responsiveness
+
+// The container horizontal gap, which acts as the offset for breakpoints
+$gap: 32px !default;
+
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 769px !default;
+
+// 960px container + 4rem
+$desktop: 960px + 2 * $gap !default;
+
+// 1152px container + 4rem
+$widescreen: 1152px + 2 * $gap !default;
+$widescreen-enabled: true !default;
+
+// 1344px container + 4rem
+$fullhd: 1344px + 2 * $gap !default;
+$fullhd-enabled: true !default;
+$breakpoints: (
+  'mobile': (
+    'until': $tablet,
+  ),
+  'tablet': (
+    'from': $tablet,
+  ),
+  'tablet-only': (
+    'from': $tablet,
+    'until': $desktop,
+  ),
+  'touch': (
+    'from': $desktop,
+  ),
+  'desktop': (
+    'from': $desktop,
+  ),
+  'desktop-only': (
+    'from': $desktop,
+    'until': $widescreen,
+  ),
+  'until-widescreen': (
+    'until': $widescreen,
+  ),
+  'widescreen': (
+    'from': $widescreen,
+  ),
+  'widescreen-only': (
+    'from': $widescreen,
+    'until': $fullhd,
+  ),
+  'until-fullhd': (
+    'until': $fullhd,
+  ),
+  'fullhd': (
+    'from': $fullhd,
+  ),
+) !default;
+
+// Miscellaneous
+
+$easing: ease-out !default;
+$radius-small: 0.25rem !default;
+$radius: 0.375rem !default;
+$radius-medium: 0.5em !default;
+$radius-large: 0.75rem !default;
+$radius-rounded: 9999px !default;
+$speed: 86ms !default;

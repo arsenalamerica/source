@@ -1,3 +1,5 @@
+@use 'bork/components/button';
+
 $navbar-spacing: 0.625em;
 
 ._ {
@@ -10,31 +12,19 @@ $navbar-spacing: 0.625em;
   max-width: 60rem;
   align-items: center;
   justify-content: center;
-  padding: $navbar-spacing;
+  padding: $navbar-spacing 1em;
   background-color: #da1f26;
   box-shadow: 0 0 0.75em 0.75em #da1f26;
+  gap: $navbar-spacing;
   overflow-x: auto;
   transform: translateX(-50%);
 
-  .Toolbar {
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-    align-items: center;
-    gap: $navbar-spacing;
-    place-content: center center;
+  a {
+    $active-attribute: 'data-active-item';
+    @include button.default;
 
-    & > * {
-      min-width: 0;
-      flex-basis: 33%;
-      flex-grow: 1;
-      background-color: rgb(0 0 0 / 10%);
-
-      &:global(.active),
-      &:active,
-      &:hover {
-        background-color: rgb(0 0 0 / 30%);
-      }
-    }
+    min-width: 0;
+    flex-basis: 33%;
+    flex-grow: 1;
   }
 }

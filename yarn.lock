@@ -98,7 +98,6 @@ __metadata:
     "@vercel/og": 0.6.2
     "@vercel/remote-nx": 2.0.0
     babel-jest: 29.7.0
-    bulma: 1.0.2
     clsx: 2.1.1
     core-js: 3.38.1
     cypress: 13.13.1
@@ -134,7 +133,7 @@ __metadata:
     sass: 1.77.8
     sharp: 0.33.5
     simple-icons: 9.16.1
-    stylelint: 16.8.2
+    stylelint: 16.9.0
     stylelint-config-css-modules: 4.4.0
     stylelint-config-idiomatic-order: 10.0.0
     stylelint-config-recommended-scss: 14.1.0
@@ -1817,7 +1816,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/css-parser-algorithms@npm:^3.0.0":
+"@csstools/css-parser-algorithms@npm:^3.0.1":
   version: 3.0.1
   resolution: "@csstools/css-parser-algorithms@npm:3.0.1"
   peerDependencies:
@@ -1826,14 +1825,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/css-tokenizer@npm:^3.0.0":
+"@csstools/css-tokenizer@npm:^3.0.1":
   version: 3.0.1
   resolution: "@csstools/css-tokenizer@npm:3.0.1"
   checksum: 53e5e147290972b37c00e2debcd84662e41d1a72055bc231d75c6c6ceb2f654bc3f0ba064ca4ae97c6b39a7c51e1023c4a5e857af2c5c8e16d8665c490ee8948
   languageName: node
   linkType: hard
 
-"@csstools/media-query-list-parser@npm:^3.0.0":
+"@csstools/media-query-list-parser@npm:^3.0.1":
   version: 3.0.1
   resolution: "@csstools/media-query-list-parser@npm:3.0.1"
   peerDependencies:
@@ -6059,13 +6058,6 @@ __metadata:
     base64-js: ^1.3.1
     ieee754: ^1.2.1
   checksum: 5ad23293d9a731e4318e420025800b42bf0d264004c0286c8cc010af7a270c7a0f6522e84f54b9ad65cbd6db20b8badbfd8d2ebf4f80fa03dab093b89e68c3f9
-  languageName: node
-  linkType: hard
-
-"bulma@npm:1.0.2":
-  version: 1.0.2
-  resolution: "bulma@npm:1.0.2"
-  checksum: 4adeafdd4e702a61f84094fbeea35c577eeeae8a11c503596d810689de0c00c87a3f930aadf4a41fc05a5b8492c6ebc6b99708684f707d920fe943bc8b018cc8
   languageName: node
   linkType: hard
 
@@ -12199,7 +12191,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.0, micromatch@npm:^4.0.2, micromatch@npm:^4.0.4, micromatch@npm:^4.0.7, micromatch@npm:~4.0.7":
+"micromatch@npm:^4.0.0, micromatch@npm:^4.0.2, micromatch@npm:^4.0.4, micromatch@npm:~4.0.7":
   version: 4.0.7
   resolution: "micromatch@npm:4.0.7"
   dependencies:
@@ -12209,7 +12201,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.5":
+"micromatch@npm:^4.0.5, micromatch@npm:^4.0.8":
   version: 4.0.8
   resolution: "micromatch@npm:4.0.8"
   dependencies:
@@ -16048,13 +16040,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:16.8.2":
-  version: 16.8.2
-  resolution: "stylelint@npm:16.8.2"
+"stylelint@npm:16.9.0":
+  version: 16.9.0
+  resolution: "stylelint@npm:16.9.0"
   dependencies:
-    "@csstools/css-parser-algorithms": ^3.0.0
-    "@csstools/css-tokenizer": ^3.0.0
-    "@csstools/media-query-list-parser": ^3.0.0
+    "@csstools/css-parser-algorithms": ^3.0.1
+    "@csstools/css-tokenizer": ^3.0.1
+    "@csstools/media-query-list-parser": ^3.0.1
     "@csstools/selector-specificity": ^4.0.0
     "@dual-bundle/import-meta-resolve": ^4.1.0
     balanced-match: ^2.0.0
@@ -16076,7 +16068,7 @@ __metadata:
     known-css-properties: ^0.34.0
     mathml-tag-names: ^2.1.3
     meow: ^13.2.0
-    micromatch: ^4.0.7
+    micromatch: ^4.0.8
     normalize-path: ^3.0.0
     picocolors: ^1.0.1
     postcss: ^8.4.41
@@ -16087,13 +16079,13 @@ __metadata:
     resolve-from: ^5.0.0
     string-width: ^4.2.3
     strip-ansi: ^7.1.0
-    supports-hyperlinks: ^3.0.0
+    supports-hyperlinks: ^3.1.0
     svg-tags: ^1.0.0
     table: ^6.8.2
     write-file-atomic: ^5.0.1
   bin:
     stylelint: bin/stylelint.mjs
-  checksum: fb90da1de44c47d0f53840881db54072ab996ac3b3dc8cabcacfee55680eac88a0b4fbb02c4746428e246b22e00a4e07ebc2054e1af072db6de7e2860473773c
+  checksum: c595eb76d75c9b44e710154c9df41476c96c606f2b232a52f527ffe935f0fd982302f233132107da14fd4c7de78b3d81fce7f9263f50704b8a8c176fc2b2a26e
   languageName: node
   linkType: hard
 
@@ -16152,13 +16144,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"supports-hyperlinks@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "supports-hyperlinks@npm:3.0.0"
+"supports-hyperlinks@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "supports-hyperlinks@npm:3.1.0"
   dependencies:
     has-flag: ^4.0.0
     supports-color: ^7.0.0
-  checksum: 41021305de5255b10d821bf93c7a781f783e1693d0faec293d7fc7ccf17011b90bde84b0295fa92ba75c6c390351fe84fdd18848cad4bf656e464a958243c3e7
+  checksum: 051ffc31ae0d3334502decb6a17170ff89d870094d6835d93dfb2cda03e2a4504bf861a0954942af5e65fdd038b81cef5998696d0f4f4ff5f5bd3e40c7981874
   languageName: node
   linkType: hard
 

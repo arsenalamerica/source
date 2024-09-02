@@ -22,11 +22,17 @@ const nextConfig = {
       },
     ],
   },
-  // Tried this from comments about vanilla-extract but this does not seem to optimize bulma CSS,
-  // which I think is the root of the probelm with respect to big strings. Will leave here for now,
-  // but need to move to a more atomic set of primitives for building out styles.
-  experimental: {
-    optimizePackageImports: ['bulma'],
+  sassOptions: {
+    logger: {
+      // @ts-expect-error - this is a custom logger
+      warn: function (message) {
+        console.warn(message);
+      },
+      // @ts-expect-error - this is a custom logger
+      debug: function (message) {
+        console.log(message);
+      },
+    },
   },
 };
 

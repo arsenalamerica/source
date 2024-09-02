@@ -1,0 +1,35 @@
+@use 'sass:meta';
+@use 'sass:color';
+
+@function colorDarken($color, $amount: 10%) {
+  @if meta.type-of($color) != 'color' {
+    @error 'colorDarken: #{$color} is not a color.';
+    @return $color;
+  }
+  @return color.scale($color, $lightness: - $amount);
+}
+
+@function colorLighten($color, $amount: 10%) {
+  @if meta.type-of($color) != 'color' {
+    @error 'colorLighten: #{$color} is not a color.';
+    @return $color;
+  }
+  @return color.scale($color, $lightness: $amount);
+}
+
+@function checkContrast($foreground, $background) {
+  $r: (max(color.red($foreground), color.red($background))) -
+    (min(color.red($foreground), color.red($background)));
+
+  $g: (max(color.green($foreground), color.green($background))) -
+    (min(color.green($foreground), color.green($background)));
+
+  $b: (max(color.blue($foreground), color.blue($background))) -
+    (min(color.blue($foreground), color.blue($background)));
+
+  $sum-rgb: $r + $g + $b;
+  @if $sum-rgb < 500 {
+    @return false;
+  }
+  @return true;
+}

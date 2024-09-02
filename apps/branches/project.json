@@ -40,6 +40,7 @@
       "configurations": {
         "development": {
           "buildTarget": "branches:build:development",
+
           "dev": true
         },
         "production": {
@@ -64,7 +65,9 @@
     "stylelint": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "npx stylelint apps/branches/**/*.{css,scss}"
+        "command": "npx stylelint apps/branches/**/*.{css,scss}",
+        "fix": true,
+        "maxWarnings": 0
       }
     },
     "lint": {
