@@ -1,6 +1,8 @@
+/** @type {import('stylelint').Config} */
+
 // https://github.com/stylelint/stylelint/blob/main/docs/user-guide/configure.md
 
-module.exports = {
+export default {
   overrides: [
     {
       files: [
@@ -26,8 +28,18 @@ module.exports = {
     'stylelint-config-css-modules', // MUST come after config-standard and recommended-scss https://github.com/pascalduez/stylelint-config-css-modules
     'stylelint-config-idiomatic-order', // https://github.com/ream88/stylelint-config-idiomatic-order
   ],
-  plugins: [
-    // 'stylelint-order', // https://github.com/hudochenkov/stylelint-order
-  ],
-  rules: {},
+  plugins: [],
+  rules: {
+    'at-rule-empty-line-before': [
+      'always',
+      {
+        except: [
+          'inside-block',
+          'blockless-after-same-name-blockless',
+          'first-nested',
+        ],
+      },
+    ],
+    'scss/operator-no-newline-after': null,
+  },
 };
