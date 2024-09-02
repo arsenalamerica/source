@@ -1,0 +1,93 @@
+$active-attribute: 'data-active-item' !default;
+
+@use 'bork/utilities/functions' as func;
+@use 'sass:color';
+
+@mixin default {
+  @extend %base;
+  @extend %clickable;
+  @extend %focusable;
+}
+
+@mixin base {
+  @extend %base;
+}
+
+@mixin clickable {
+  @extend %base;
+  @extend %clickable;
+}
+
+@mixin focusable {
+  @extend %base;
+  @extend %focusable;
+}
+
+$background: func.colorDarken(#da1f26) !default;
+
+%base {
+  --depth: 2px;
+  --outline-offset: -1px;
+  --border: rgb(0 0 0 / 13%);
+  --light: rgb(255 255 255 / 20%);
+  --shadow: rgb(0 0 0 / 10%);
+  --text: white;
+  --size: 2.5rem;
+  --gap: 0.5rem;
+
+  display: flex;
+  max-width: 100%;
+  height: var(--size);
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+  border-radius: calc(var(--rounded, 0.5rem) - var(--padding, 0px));
+  background-color: $background;
+  color: var(--text, currentColor);
+  font-size: 1rem;
+  gap: var(--gap);
+  line-height: 1.5rem;
+  padding-inline: 1rem;
+  scroll-margin: var(--padding, 0);
+  text-decoration-line: none;
+
+  &:active,
+  &[#{$active-attribute}] {
+    background-color: func.colorDarken($background, 25%);
+  }
+
+  i {
+    width: calc(var(--size) - var(--gap) * 2);
+    height: calc(var(--size) - var(--gap) * 2);
+  }
+}
+
+%clickable {
+  --depth: 1px;
+  --padding-block: initial;
+
+  padding-block: var(--padding-block-start, var(--padding-block))
+    var(--padding-block-end, var(--padding-block));
+  user-select: none;
+  white-space: nowrap;
+
+  &:active,
+  &[#{$active-attribute}] {
+    padding-block: calc(
+        var(--padding-block-start, var(--padding-block, 0px)) +
+          var(--depth, 0px)
+      )
+      calc(
+        var(--padding-block-end, var(--padding-block, 0px)) - var(--depth, 0px)
+      );
+  }
+}
+
+%focusable {
+  --outline-offset: 0;
+  --outline: var(--text, currentColor);
+
+  outline-color: var(--outline);
+  outline-offset: var(--outline-offset);
+  outline-width: 2px;
+}

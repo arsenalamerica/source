@@ -1,29 +1,49 @@
 import React from 'react';
-import clsx from 'clsx';
+import Link, { LinkProps } from 'next/link';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 import * as Ariakit from '@ariakit/react';
 
-export interface NavBarItemProps extends Ariakit.ToolbarItemProps {
+type MergedLinkProps = LinkProps & Ariakit.ToolbarItemProps;
+
+export interface NavBarItemProps extends MergedLinkProps {
   label?: string;
   icon?: React.ReactNode;
 }
 
 export function NavBarItem({
-  className,
   label,
   icon,
   children,
+  href,
   ...rest
 }: NavBarItemProps) {
+  const currentPathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const preserveQueryParams = true;
+
+  if (preserveQueryParams) {
+    const query = searchParams.toString();
+    href = { pathname: href as string, query };
+  }
+
+  const hrefPath = typeof href === 'object' ? href.pathname : href;
+
+  const linkHref = preserveQueryParams
+    ? { pathname: hrefPath, query: searchParams.toString() }
+    : href;
+
   return (
     <Ariakit.ToolbarItem
-      className={clsx(className, 'button is-link icon-text')}
       {...rest}
+      autoFocus={currentPathname === hrefPath}
+      render={<Link href={linkHref} />}
     >
       {children || (
         <>
-          {icon && <span className="icon">{icon}</span>}
-          {label && <span>{label}</span>}
+          {icon && <i>{icon}</i>}
+          {label}
         </>
       )}
     </Ariakit.ToolbarItem>
