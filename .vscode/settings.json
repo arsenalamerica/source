@@ -18,6 +18,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
+  "emmet.excludeLanguages": ["markdown", "scss"],
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
@@ -44,6 +45,7 @@
   "less.validate": false,
   "prettier.requireConfig": true,
   "scss.validate": false,
+  "somesass.suggestFromUseOnly": true,
   "stylelint.validate": ["css", "scss"],
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#a01a24",

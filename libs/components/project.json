@@ -8,7 +8,9 @@
     "stylelint": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "npx stylelint libs/components/**/*.{css,scss}"
+        "command": "npx stylelint libs/components/**/*.{css,scss}",
+        "fix": true,
+        "maxWarnings": 0
       }
     },
     "lint": {
