@@ -12,7 +12,7 @@ export function middleware(request: NextRequest) {
   // Check if we are on a preview deployment
   const isPreview = url.hostname.endsWith('vercel.app');
 
-  // Get the hostname from the URL, or if we are local, from the 'site' query parameter
+  // Get the hostname from the URL, or if we are local, from the 'domain' query parameter
   const siteDomain = isLocal
     ? request.nextUrl.searchParams.get('domain') || url.hostname
     : url.hostname;
@@ -38,13 +38,22 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
+    // /*
+    //  * Match all paths except for:
+    //  * 1. /api routes
+    //  * 2. /_next (Next.js internals)
+    //  * 3. /_static (inside /public)
+    //  * 4. all root files inside /public (e.g. /favicon.ico)
+    //  */
+    // '/((?!api/|_next/|_static/|_vercel|[\\w-]+\\.\\w+).*)',
+
     /*
-     * Match all paths except for:
-     * 1. /api routes
-     * 2. /_next (Next.js internals)
-     * 3. /_static (inside /public)
-     * 4. all root files inside /public (e.g. /favicon.ico)
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico, sitemap.xml, robots.txt (metadata files)
      */
-    '/((?!api/|_next/|_static/|_vercel|[\\w-]+\\.\\w+).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|manifest.webmanifest).*)',
   ],
 };
