@@ -12,7 +12,7 @@ $navbar-spacing: 0.625em;
   max-width: 60rem;
   align-items: center;
   justify-content: center;
-  padding: $navbar-spacing 1em;
+  padding: $navbar-spacing 2em calc(env(safe-area-inset-bottom) + 1em);
   background-color: #da1f26;
   box-shadow: 0 0 0.75em 0.75em #da1f26;
   gap: $navbar-spacing;
