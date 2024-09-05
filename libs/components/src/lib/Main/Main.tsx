@@ -5,15 +5,11 @@ import clsx from 'clsx';
 export interface MainProps {
   children?: React.ReactNode;
   className?: string;
-  variant?: 'landing';
 }
 
-export function Main({ children, className, variant, ...rest }: MainProps) {
+export function Main({ children, className, ...rest }: MainProps) {
   return (
-    <main
-      {...rest}
-      className={clsx(styles['_'], variant && styles[variant], className)}
-    >
+    <main {...rest} className={clsx(styles['_'], className)}>
       {children}
     </main>
   );

@@ -40,7 +40,12 @@ export function LeagueTable({ standings }: { standings: StandingEntity[] }) {
               name={shite(team.participant.name)}
               fallback={team.participant.image_path}
             />
-            <span>{shite(team.participant.name)}</span>
+            <span className={styles.TeamName}>
+              {shite(team.participant.name)}
+            </span>
+            <span className={styles.ShortName}>
+              {shite(team.participant.short_code)}
+            </span>
           </td>
           <td>{team.stats['overall-matches-played']}</td>
           <td>{team.stats['overall-won']}</td>

@@ -4,15 +4,6 @@ import { branchLogo } from '@arsenalamerica/data';
 
 import { ICON_SIZES } from '../../icon-sizes';
 
-// Route segment config
-// export const runtime = 'edge';
-
-// Image config exports: https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image#config-exports
-// export const size = {
-//   width: 256,
-//   height: 256,
-// };
-
 export function generateImageMetadata() {
   return ICON_SIZES.map((size) => ({
     contentType: 'image/png',
@@ -34,8 +25,10 @@ export default function Icon({
 
   const isFavicon = size === 32;
 
-  const logoSize = isFavicon ? size : size * 0.9;
-  const backgroundColor = isFavicon ? 'transparent' : '#da1f26';
+  const logoSize = isFavicon ? size : Math.floor(size * 0.9);
+  const backgroundImage = isFavicon
+    ? 'none'
+    : 'linear-gradient(0deg, rgba(163,22,27,1) 0%, rgba(218,31,38,1) 100%)';
 
   return new ImageResponse(
     (
@@ -46,7 +39,7 @@ export default function Icon({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor,
+          backgroundImage,
         }}
       >
         <Logo width={logoSize} preserveAspectRatio="xMidYMid meet" />

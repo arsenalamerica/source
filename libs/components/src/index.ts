@@ -11,3 +11,4 @@ export * from './lib/NavBar/NavBar';
 export * from './lib/NextGame/NextGame';
 export * from './lib/SocialLinks/SocialLinks';
 export * from './lib/TeamLogo/TeamLogo';
+export * from './lib/PWAInstallPrompt/PWAInstallPrompt';

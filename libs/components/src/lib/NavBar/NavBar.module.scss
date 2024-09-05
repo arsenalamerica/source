@@ -23,8 +23,12 @@ $navbar-spacing: 0.625em;
     $active-attribute: 'data-active-item';
     @include button.default;
 
-    min-width: 0;
     flex-basis: 33%;
     flex-grow: 1;
+    @media screen and (width > 725px) {
+      min-width: 12rem;
+      flex-basis: initial;
+      flex-grow: initial;
+    }
   }
 }

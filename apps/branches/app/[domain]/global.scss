@@ -9,6 +9,7 @@
 a {
   color: inherit;
   text-decoration: none;
+  -webkit-touch-callout: none;
 }
 
 html,
@@ -94,9 +95,16 @@ h3 {
   padding: 1em 0 0;
   margin-bottom: 1em;
   background-color: #da1f26;
-  box-shadow: 0 0 0.75em 0.75em #da1f26;
   font-family: ars-bold, sans-serif;
   text-transform: uppercase;
+
+  &::after {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 0.75em 0.75em #da1f26;
+    content: '';
+  }
 }
 
 h1 {
