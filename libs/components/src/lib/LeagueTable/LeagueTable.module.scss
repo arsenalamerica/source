@@ -7,75 +7,63 @@ $cell-padding: 0.625em;
     border-collapse: collapse;
     table-layout: fixed;
 
-    tr {
-      padding: 0.35em;
-    }
-
     th,
     td {
       padding: $cell-padding;
       text-align: center;
       vertical-align: middle;
       white-space: nowrap;
-
-      span {
-        display: inline-block;
-        min-width: 30%;
-      }
     }
 
     th {
       font-size: 0.85em;
-      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
     td:first-child,
     th:first-child {
-      width: 12vw;
-      line-height: 2em;
+      overflow: hidden;
+      width: 25vw;
+      text-align: left;
 
-      span {
-        position: absolute;
-        overflow: hidden;
-        width: 1px;
-        height: 1px;
-        clip: rect(0 0 0 0);
-        clip-path: inset(50%);
-        white-space: nowrap;
+      .TeamName,
+      .ShortName {
+        margin-left: 0.75em;
+        font-family: ars-bold, sans-serif;
+        text-transform: uppercase;
+      }
+
+      .TeamName {
+        display: none;
       }
 
       svg,
       img {
-        width: 1.75em;
-        height: 1.75em;
-        margin: 0 0 - $cell-padding;
+        display: inline-block;
+        width: 2em;
+        height: 2em;
+        vertical-align: middle;
 
         &:global(.loading) {
           border-radius: 2em;
         }
       }
       @media screen and (width > 725px) {
-        overflow: hidden;
         width: 40vw;
-        text-align: left;
-        text-overflow: ellipsis;
 
-        span {
-          position: initial;
-          overflow: inital;
-          width: initial;
-          height: initial;
-          clip: initial;
-          clip-path: initial;
-          white-space: initial;
+        .TeamName {
+          display: initial;
+          font-size: 1.25em;
+        }
+
+        .ShortName {
+          display: none;
         }
 
         svg,
         img {
-          width: 2.75em;
-          height: 2.75em;
-          margin: 0 0.5em -0.2lh 0;
+          width: 2.5em;
+          height: 2.5em;
         }
       }
       @media screen and (width > 1024px) {

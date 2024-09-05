@@ -2,8 +2,8 @@
   display: flex;
   align-items: center;
   padding: 0;
-  margin: 1em 0 2em;
-  gap: 5vmin;
+  margin-bottom: 2em;
+  gap: 2em;
   list-style: none;
 
   li {
@@ -14,7 +14,7 @@
       svg {
         width: 2em;
         height: 2em;
-        fill: #ccc;
+        fill: #fff;
         transition: all 0.2s ease-in-out;
       }
 
@@ -22,7 +22,7 @@
       &:active,
       &:focus {
         svg {
-          fill: #fff;
+          fill: #ccc;
           transform: scale(1.1);
         }
       }

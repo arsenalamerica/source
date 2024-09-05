@@ -129,6 +129,7 @@ __metadata:
     ramda: 0.30.1
     react: 18.3.1
     react-dom: 18.3.1
+    react-ios-pwa-prompt: 2.0.6
     react-textfit: 1.1.1
     sass: 1.77.8
     sharp: 0.33.5
@@ -14380,6 +14381,16 @@ __metadata:
   peerDependencies:
     react: ">=16.13.1"
   checksum: 50398d080015d51d22c6f94c56f4ea336d10232d72345b36ee6f15b6b643666d20b072829b02f091a80e5af68fe67f68a62ef0d2b649dbd759ead929304449af
+  languageName: node
+  linkType: hard
+
+"react-ios-pwa-prompt@npm:2.0.6":
+  version: 2.0.6
+  resolution: "react-ios-pwa-prompt@npm:2.0.6"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 287c9318d6faf9bc6bcc047180b230c1534e0437afd545194511e93c03f9ef57dc43a6db23b0192a7e311a2d906b202bcdb5cb86da1c52bdf3d50f8cdbedb438
   languageName: node
   linkType: hard
 

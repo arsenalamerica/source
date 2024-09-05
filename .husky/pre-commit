@@ -1,2 +1,1 @@
 yarn lint-staged
-yarn nx affected --targets=lint,test,build --parallel=4

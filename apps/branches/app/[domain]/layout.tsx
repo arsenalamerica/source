@@ -3,7 +3,12 @@ import './global.scss';
 import type { Metadata } from 'next';
 
 import { Heading, HeadingLevel, VisuallyHidden } from '@ariakit/react';
-import { FathomNext, NavBar, SocialLinks } from '@arsenalamerica/components';
+import {
+  FathomNext,
+  NavBar,
+  PWAInstallPrompt,
+  SocialLinks,
+} from '@arsenalamerica/components';
 import { branchData } from '@arsenalamerica/data';
 
 export interface LayoutProps {
@@ -27,6 +32,8 @@ export default function Layout({ children, params }: LayoutProps) {
 
   return (
     <HeadingLevel>
+      <PWAInstallPrompt />
+
       {branch && (
         <>
           <FathomNext

@@ -23,7 +23,7 @@ export function NextGame({
   const fixtureTime = timeFromEpoch(starting_at_timestamp);
   const fakeDate = '1/1/2000 ';
 
-  const isReplay = branch.pub?.replayTime
+  const isReplay = branch?.pub?.replayTime
     ? new Date(fakeDate + branch.pub.replayTime) >
       new Date(fakeDate + fixtureTime)
     : false;
@@ -40,11 +40,11 @@ export function NextGame({
   });
 
   // THIS IS A TEMPORARY HARD-CODED FIX
-  const viewingPub = branch.pubs
-    ? fixtureTime24 > '06:00' // Note to compare times here, we need to use 24-hour format, including the leading zero
+  const viewingPub = branch?.pubs
+    ? fixtureTime24 >= '06:00' // Note to compare times here, we need to use 24-hour format, including the leading zero
       ? branch.pubs[0]
       : branch.pubs[1]
-    : branch.pub;
+    : branch?.pub;
 
   return (
     <>

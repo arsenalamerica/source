@@ -32,7 +32,7 @@ $background: func.colorDarken(#da1f26) !default;
   --light: rgb(255 255 255 / 20%);
   --shadow: rgb(0 0 0 / 10%);
   --text: white;
-  --size: 2.5rem;
+  --size: 2.75rem;
   --gap: 0.5rem;
 
   display: flex;
@@ -57,8 +57,8 @@ $background: func.colorDarken(#da1f26) !default;
   }
 
   i {
-    width: calc(var(--size) - var(--gap) * 2);
-    height: calc(var(--size) - var(--gap) * 2);
+    width: calc(var(--size) - var(--gap) * 2.5);
+    height: calc(var(--size) - var(--gap) * 2.5);
   }
 }
 
