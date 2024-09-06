@@ -1,3 +1,9 @@
 # https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 
+# No owner for package.json or yarn.lock so dependabot can set these to auto merge without a codeowner.
+# These need to be first for this to work, since CODEOWNERS reads top to bottom and stops upon matching
+/package.json
+/yarn.lock
+
+# Everything else for right now will be same owner
 * @brianespinosa
