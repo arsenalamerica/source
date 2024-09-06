@@ -10,19 +10,34 @@ updates:
       interval: 'daily'
     assignees:
       - 'brianespinosa'
+    ignore:
+      # Ignore updates to anything related to NX, as those updates should be run by hand.
+      - dependency-name: '@nrwl*'
+      - dependency-name: '@nx*'
+      - dependency-name: 'nx'
     open-pull-requests-limit: 5
     commit-message:
       prefix: 'chore(deps): update'
     groups:
-      storybook:
+      babel:
         patterns:
-          - ^@storybook/.*
-          - ^storybook$
+          - '@babel*'
+          - 'babel*'
       eslint:
         patterns:
           - ^eslint-.*
           - ^@typescript-eslint/.*
           - ^eslint$
+      react:
+        patterns:
+          - 'react'
+          - 'react-dom'
+          - '@types/react'
+          - '@types/react-dom'
+      storybook:
+        patterns:
+          - ^@storybook/.*
+          - ^storybook$
       stylelint:
         patterns:
           - ^stylelint-.*
