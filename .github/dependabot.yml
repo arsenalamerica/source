@@ -7,9 +7,7 @@ updates:
     rebase-strategy: 'auto'
     directory: '/'
     schedule:
-      interval: 'daily'
-    assignees:
-      - 'brianespinosa'
+      interval: 'weekly'
     ignore:
       # Ignore updates to anything related to NX, as those updates should be run by hand.
       - dependency-name: '@nrwl*'

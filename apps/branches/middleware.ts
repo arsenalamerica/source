@@ -4,8 +4,29 @@ import { branches } from '@arsenalamerica/data';
 
 const DOMAINS = Object.keys(branches);
 
+const BAD_ACTORS = [
+  '.asp',
+  '.aspx',
+  '.env',
+  '.php',
+  '/admin',
+  '/login',
+  'wp-admin',
+  'wp-content',
+  'wp-includes',
+  'wp-json',
+  'wp-login',
+];
+
 export function middleware(request: NextRequest) {
   const url = request.nextUrl;
+
+  // First, check for bad actors, and rewrite them to a local IP address.
+  // Might update this later to automatically set a firewall rule for these IPs:
+  // https://vercel.com/docs/security/vercel-waf/examples#deny-traffic-from-a-set-of-ip-addresses
+  if (BAD_ACTORS.some((bad) => url.pathname.includes(bad))) {
+    return NextResponse.rewrite(new URL('http://192.168.0.250', request.url));
+  }
 
   // Check for local development
   const isLocal = url.hostname === 'localhost';
