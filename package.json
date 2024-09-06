@@ -68,7 +68,7 @@
     "@nx/js": "19.6.2",
     "@nx/next": "19.6.2",
     "@nx/plugin": "19.6.2",
-    "@nx/react": "19.6.2",
+    "@nx/react": "19.6.5",
     "@nx/web": "19.6.2",
     "@nx/workspace": "19.6.2",
     "@svgr/core": "8.1.0",
