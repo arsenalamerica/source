@@ -19,30 +19,38 @@ updates:
     commit-message:
       prefix: 'chore(deps): update'
     groups:
-      babel:
+      # Due to how CI is currently set up using NX cloud, having many separate, or
+      # even group PRs that come in at the same time can very quickly end up having
+      # us hit our max number of concurrent connections (max 10) so setting everything
+      # into one group should help us here, given we use 3 agents, plus one main agent.
+      dependencies:
         patterns:
-          - '@babel*'
-          - 'babel*'
-      eslint:
-        patterns:
-          - ^eslint-.*
-          - ^@typescript-eslint/.*
-          - ^eslint$
-      react:
-        patterns:
-          - 'react'
-          - 'react-dom'
-          - '@types/react'
-          - '@types/react-dom'
-      storybook:
-        patterns:
-          - ^@storybook/.*
-          - ^storybook$
-      stylelint:
-        patterns:
-          - ^stylelint-.*
-          - ^stylelint$
-      typescript:
-        patterns:
-          - ^@types/.*
-          - ^typescript$
+          - '*'
+
+      # babel:
+      #   patterns:
+      #     - '@babel*'
+      #     - 'babel*'
+      # eslint:
+      #   patterns:
+      #     - ^eslint-.*
+      #     - ^@typescript-eslint/.*
+      #     - ^eslint$
+      # react:
+      #   patterns:
+      #     - 'react'
+      #     - 'react-dom'
+      #     - '@types/react'
+      #     - '@types/react-dom'
+      # storybook:
+      #   patterns:
+      #     - ^@storybook/.*
+      #     - ^storybook$
+      # stylelint:
+      #   patterns:
+      #     - ^stylelint-.*
+      #     - ^stylelint$
+      # typescript:
+      #   patterns:
+      #     - ^@types/.*
+      #     - ^typescript$
