@@ -29,12 +29,21 @@ export function middleware(request: NextRequest) {
   // update the firewall to block the IP address.
   // https://vercel.com/docs/security/vercel-waf/examples#deny-traffic-from-a-set-of-ip-addresses
   if (BADDIES.some((bad) => url.pathname.includes(bad))) {
-    console.warn('BADDIE!');
-
     const baddieIp = request.ip;
 
-    // Should only happen locally
+    console.warn(`BADDIE! ${baddieIp}`);
+
+    if (
+      !VERCEL_TEAM_ID ||
+      !VERCEL_BRANCH_PROJECT_ID ||
+      !process.env.VERCEL_TOKEN
+    ) {
+      console.warn('Missing environment variables');
+      return NextResponse.error();
+    }
+
     if (!baddieIp) {
+      // Should only happen locally
       console.warn('No IP address found for bad actor');
       return NextResponse.error();
     }
