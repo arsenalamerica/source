@@ -1,10 +1,7 @@
 import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
 
 import { branches } from '@arsenalamerica/data';
-// import { waitUntil } from '@vercel/functions';
-
-const FIREWALL_URL = 'https://api.vercel.com/v1/security/firewall/config';
-const VERCEL_BRANCH_PROJECT_ID = process.env.VERCEL_BRANCH_PROJECT_ID;
+import { waitUntil } from '@vercel/functions';
 
 const DOMAINS = Object.keys(branches);
 
@@ -24,7 +21,6 @@ const BADDIES = [
 
 function checkAndBlockBaddie(
   request: NextRequest,
-  event: NextFetchEvent,
   {
     projectId = process.env.VERCEL_PROJECT_ID,
     vercelToken = process.env.VERCEL_TOKEN,
@@ -35,10 +31,8 @@ function checkAndBlockBaddie(
     includesSubstrings?: string[];
   } = {},
 ) {
-  if (!request || !event) {
-    console.warn(
-      'checkAndBlockBaddie(): Passing the NextRequest and NextFetchEvent is required',
-    );
+  if (!request) {
+    console.warn('checkAndBlockBaddie(): Passing the NextRequest is required');
     return;
   }
 
@@ -75,26 +69,27 @@ function checkAndBlockBaddie(
   );
 
   if (isBaddie) {
-    console.warn(`BADDIE! ${request.ip}`);
-
-    event.waitUntil(
-      fetch(`${FIREWALL_URL}?projectId=${VERCEL_BRANCH_PROJECT_ID}`, {
-        method: 'PATCH',
-        headers: {
-          Authorization: `Bearer ${process.env.VERCEL_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          action: 'ip.insert',
-          id: null,
-          value: {
-            action: 'deny',
-            hostname: '*',
-            ip: request.ip,
-            notes: `Deny Baddie ${request.ip}`,
+    waitUntil(
+      fetch(
+        `https://api.vercel.com/v1/security/firewall/config?projectId=${projectId}`,
+        {
+          method: 'PATCH',
+          headers: {
+            Authorization: `Bearer ${process.env.VERCEL_TOKEN}`,
+            'Content-Type': 'application/json',
           },
-        }),
-      }),
+          body: JSON.stringify({
+            action: 'ip.insert',
+            id: null,
+            value: {
+              action: 'deny',
+              hostname: '*',
+              ip: request.ip,
+              notes: `Deny Baddie ${request.ip}`,
+            },
+          }),
+        },
+      ),
     );
   }
 
@@ -108,7 +103,7 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
   // update the firewall to block the IP address.
   // https://vercel.com/docs/security/vercel-waf/examples#deny-traffic-from-a-set-of-ip-addresses
 
-  const isBaddie = checkAndBlockBaddie(request, event, {
+  const isBaddie = checkAndBlockBaddie(request, {
     projectId: process.env.VERCEL_BRANCH_PROJECT_ID,
   });
 
