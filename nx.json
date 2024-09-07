@@ -7,7 +7,7 @@
   "neverConnectToCloud": true,
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@vercel/remote-nx",
+      "runner": "nx/tasks-runners/default",
       "options": {
         "cacheableOperations": ["build", "lint", "stylelint", "test", "e2e"]
       }

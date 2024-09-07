@@ -14,10 +14,6 @@
     "nx-migrate": "NX_MIGRATE_USE_LOCAL=true nx migrate --run-migrations",
     "postinstall": "husky"
   },
-  "volta": {
-    "node": "20.16.0",
-    "yarn": "3.6.2"
-  },
   "engines": {
     "node": "20"
   },
