@@ -29,7 +29,11 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
   const isBaddie = BADDIES.some((bad) => url.pathname.includes(bad));
 
   if (isBaddie) {
-    const notes = `Blocked Baddie ${ip}`;
+    const now = new Date();
+    const blockTime = now.toISOString();
+
+    const notes = `${blockTime} - Auto Blocked: ${ip} `;
+    console.log(notes);
     event.waitUntil(
       fetch(
         `https://api.vercel.com/v1/security/firewall/config?projectId=${process.env.VERCEL_BRANCH_PROJECT_ID}&teamId=${process.env.VERCEL_TEAM_ID}`,
@@ -61,7 +65,10 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
         .catch((err) => console.error(err)),
     );
 
-    return NextResponse.json({ error: `${ip} 🖕` }, { status: 403 });
+    return NextResponse.json(
+      { error: 'BYE FELICIA', ip: `${ip}` },
+      { status: 403 },
+    );
   }
 
   // Check for local development
