@@ -22,7 +22,7 @@ const BADDIES = [
   'wp-login',
 ];
 
-function blockBaddie(
+function checkAndBlockBaddie(
   request: NextRequest,
   event: NextFetchEvent,
   {
@@ -37,7 +37,7 @@ function blockBaddie(
 ) {
   if (!request || !event) {
     console.warn(
-      'blockBaddie(): Passing the NextRequest and NextFetchEvent is required',
+      'checkAndBlockBaddie(): Passing the NextRequest and NextFetchEvent is required',
     );
     return;
   }
@@ -45,38 +45,36 @@ function blockBaddie(
   if (!request.ip) {
     if (process.env.NODE_ENV === 'development') {
       console.info(
-        'blockBaddie(): Missing ip, which is expected in development when uing "request.ip"',
+        'checkAndBlockBaddie(): Missing ip, which is expected in development when uing "request.ip"',
       );
     } else {
       console.warn(
-        'blockBaddie(): Missing request.ip, which is provided by Vercel as a host provicer',
+        'checkAndBlockBaddie(): Missing request.ip, which is provided by Vercel as a host provicer',
       );
     }
     return;
   }
 
   if (!projectId) {
-    console.warn('blockBaddie(): Missing { projectId }');
+    console.warn('checkAndBlockBaddie(): Missing { projectId }');
     return;
   }
 
   if (!vercelToken) {
-    console.warn('blockBaddie(): Missing { vercelToken }');
+    console.warn('checkAndBlockBaddie(): Missing { vercelToken }');
     return;
   }
 
   if (!includesSubstrings) {
-    console.warn('blockBaddie(): Missing { includesSubstrings }');
+    console.warn('checkAndBlockBaddie(): Missing { includesSubstrings }');
     return;
   }
 
-  const isBaddie = includesSubstrings.some((bad) =>
+  const isBaddie: boolean = includesSubstrings.some((bad) =>
     request.nextUrl.pathname.includes(bad),
   );
 
-  if (!isBaddie) {
-    return;
-  } else {
+  if (isBaddie) {
     console.warn(`BADDIE! ${request.ip}`);
 
     event.waitUntil(
@@ -98,9 +96,9 @@ function blockBaddie(
         }),
       }),
     );
-
-    return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
   }
+
+  return isBaddie;
 }
 
 export function middleware(request: NextRequest, event: NextFetchEvent) {
@@ -110,9 +108,13 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
   // update the firewall to block the IP address.
   // https://vercel.com/docs/security/vercel-waf/examples#deny-traffic-from-a-set-of-ip-addresses
 
-  blockBaddie(request, event, {
+  const isBaddie = checkAndBlockBaddie(request, event, {
     projectId: process.env.VERCEL_BRANCH_PROJECT_ID,
   });
+
+  if (isBaddie) {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+  }
 
   // Check for local development
   const isLocal = url.hostname === 'localhost';
