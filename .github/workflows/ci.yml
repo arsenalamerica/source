@@ -34,12 +34,13 @@ jobs:
       #     working-directory: apps/my-first-app
       #     update-comment: true
 
-  build:
-    runs-on: ubuntu-latest
-    needs:
-      - lint
-      - test
-    steps:
-      - uses: brianespinosa/checkout-setup-node-install@main
-      - uses: brianespinosa/next-build-cache@main
-      - run: yarn nx affected --target=build --parallel=3
+  # May come back to adding build later. Or maybe not now that we are not using cloud caching
+  # build:
+  #   runs-on: ubuntu-latest
+  #   needs:
+  #     - lint
+  #     - test
+  #   steps:
+  #     - uses: brianespinosa/checkout-setup-node-install@main
+  #     - uses: brianespinosa/next-build-cache@main
+  #     - run: yarn nx affected --target=build --parallel=3
