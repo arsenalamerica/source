@@ -6,13 +6,10 @@ repository:
   name: source
 
   # A short description of the repository that will show up on GitHub
-  description: Arsenal America branch microsites
-
-  # A URL with more information about the repository
-  homepage: <url>
+  description: Arsenal America branch apps
 
   # A comma-separated list of topics to set on the repository
-  topics: react, nextjs, typescript, multi-tenant, microsites
+  topics: react, nextjs, typescript, multi-tenant, pwa
 
   # Either `true` to make the repository private, or `false` to make it public.
   private: false
