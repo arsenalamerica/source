@@ -23,8 +23,7 @@ const BADDIES = [
 ];
 
 function blockBaddie(
-  pathname: string,
-  ip: string | undefined,
+  request: NextRequest,
   event: NextFetchEvent,
   {
     projectId = process.env.VERCEL_PROJECT_ID,
@@ -36,18 +35,22 @@ function blockBaddie(
     includesSubstrings?: string[];
   } = {},
 ) {
-  if (!pathname) {
-    console.warn('blockBaddie(): Missing pathname');
+  if (!request || !event) {
+    console.warn(
+      'blockBaddie(): Passing the NextRequest and NextFetchEvent is required',
+    );
     return;
   }
 
-  if (!ip) {
+  if (!request.ip) {
     if (process.env.NODE_ENV === 'development') {
       console.info(
         'blockBaddie(): Missing ip, which is expected in development when uing "request.ip"',
       );
     } else {
-      console.warn('blockBaddie(): Missing ip');
+      console.warn(
+        'blockBaddie(): Missing request.ip, which is provided by Vercel as a host provicer',
+      );
     }
     return;
   }
@@ -67,12 +70,14 @@ function blockBaddie(
     return;
   }
 
-  const isBaddie = includesSubstrings.some((bad) => pathname.includes(bad));
+  const isBaddie = includesSubstrings.some((bad) =>
+    request.nextUrl.pathname.includes(bad),
+  );
 
   if (!isBaddie) {
     return;
   } else {
-    console.warn(`BADDIE! ${ip}`);
+    console.warn(`BADDIE! ${request.ip}`);
 
     event.waitUntil(
       fetch(`${FIREWALL_URL}?projectId=${VERCEL_BRANCH_PROJECT_ID}`, {
@@ -87,12 +92,14 @@ function blockBaddie(
           value: {
             action: 'deny',
             hostname: '*',
-            ip,
-            notes: `Deny Baddie ${ip}`,
+            ip: request.ip,
+            notes: `Deny Baddie ${request.ip}`,
           },
         }),
       }),
     );
+
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
   }
 }
 
@@ -103,7 +110,7 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
   // update the firewall to block the IP address.
   // https://vercel.com/docs/security/vercel-waf/examples#deny-traffic-from-a-set-of-ip-addresses
 
-  blockBaddie(url.pathname, request.ip, event, {
+  blockBaddie(request, event, {
     projectId: process.env.VERCEL_BRANCH_PROJECT_ID,
   });
 
