@@ -1,7 +1,6 @@
 import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
 
 import { branches } from '@arsenalamerica/data';
-import { waitUntil } from '@vercel/functions';
 
 const DOMAINS = Object.keys(branches);
 
@@ -19,59 +18,21 @@ const BADDIES = [
   'wp-login',
 ];
 
-function checkAndBlockBaddie(
-  request: NextRequest,
-  {
-    projectId = process.env.VERCEL_PROJECT_ID,
-    vercelToken = process.env.VERCEL_TOKEN,
-    includesSubstrings = BADDIES,
-  }: {
-    projectId?: string;
-    vercelToken?: string;
-    includesSubstrings?: string[];
-  } = {},
-) {
-  if (!request) {
-    console.warn('checkAndBlockBaddie(): Passing the NextRequest is required');
-    return;
-  }
+export function middleware(request: NextRequest, event: NextFetchEvent) {
+  const url = request.nextUrl;
+  const ip = request.ip;
 
-  if (!request.ip) {
-    if (process.env.NODE_ENV === 'development') {
-      console.info(
-        'checkAndBlockBaddie(): Missing ip, which is expected in development when uing "request.ip"',
-      );
-    } else {
-      console.warn(
-        'checkAndBlockBaddie(): Missing request.ip, which is provided by Vercel as a host provicer',
-      );
-    }
-    return;
-  }
+  // First, check for bad actors, and rewrite them to a local IP address. If we have a match,
+  // update the firewall to block the IP address.
+  // https://vercel.com/docs/security/vercel-waf/examples#deny-traffic-from-a-set-of-ip-addresses
 
-  if (!projectId) {
-    console.warn('checkAndBlockBaddie(): Missing { projectId }');
-    return;
-  }
-
-  if (!vercelToken) {
-    console.warn('checkAndBlockBaddie(): Missing { vercelToken }');
-    return;
-  }
-
-  if (!includesSubstrings) {
-    console.warn('checkAndBlockBaddie(): Missing { includesSubstrings }');
-    return;
-  }
-
-  const isBaddie: boolean = includesSubstrings.some((bad) =>
-    request.nextUrl.pathname.includes(bad),
-  );
+  const isBaddie = BADDIES.some((bad) => url.pathname.includes(bad));
 
   if (isBaddie) {
-    waitUntil(
+    const notes = `Blocked Baddie ${ip}`;
+    event.waitUntil(
       fetch(
-        `https://api.vercel.com/v1/security/firewall/config?projectId=${projectId}`,
+        `https://api.vercel.com/v1/security/firewall/config?projectId=${process.env.VERCEL_BRANCH_PROJECT_ID}&teamId=${process.env.VERCEL_TEAM_ID}`,
         {
           method: 'PATCH',
           headers: {
@@ -84,31 +45,23 @@ function checkAndBlockBaddie(
             value: {
               action: 'deny',
               hostname: '*',
-              ip: request.ip,
-              notes: `Deny Baddie ${request.ip}`,
+              ip,
+              notes,
             },
           }),
         },
-      ),
+      )
+        .then((res) => {
+          if (res.ok) {
+            console.warn(notes);
+          } else {
+            console.error(res.status);
+          }
+        })
+        .catch((err) => console.error(err)),
     );
-  }
 
-  return isBaddie;
-}
-
-export function middleware(request: NextRequest, event: NextFetchEvent) {
-  const url = request.nextUrl;
-
-  // First, check for bad actors, and rewrite them to a local IP address. If we have a match,
-  // update the firewall to block the IP address.
-  // https://vercel.com/docs/security/vercel-waf/examples#deny-traffic-from-a-set-of-ip-addresses
-
-  const isBaddie = checkAndBlockBaddie(request, {
-    projectId: process.env.VERCEL_BRANCH_PROJECT_ID,
-  });
-
-  if (isBaddie) {
-    return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+    return NextResponse.json({ error: `${ip} 🖕` }, { status: 403 });
   }
 
   // Check for local development
