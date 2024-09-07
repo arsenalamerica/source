@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 import { branches } from '@arsenalamerica/data';
+import { waitUntil } from '@vercel/functions';
 
 const FIREWALL_URL = 'https://api.vercel.com/v1/security/firewall/config';
-const VERCEL_TEAM_ID = process.env.VERCEL_TEAM_ID;
 const VERCEL_BRANCH_PROJECT_ID = process.env.VERCEL_BRANCH_PROJECT_ID;
 
 const DOMAINS = Object.keys(branches);
@@ -22,65 +22,89 @@ const BADDIES = [
   'wp-login',
 ];
 
+function blockBaddie(
+  pathname: string,
+  ip: string | undefined,
+  {
+    projectId = process.env.VERCEL_PROJECT_ID,
+    vercelToken = process.env.VERCEL_TOKEN,
+    includesSubstrings = BADDIES,
+  }: {
+    projectId?: string;
+    vercelToken?: string;
+    includesSubstrings?: string[];
+  } = {},
+) {
+  if (!pathname) {
+    console.warn('blockBaddie(): Missing pathname');
+    return;
+  }
+
+  if (!ip) {
+    if (process.env.NODE_ENV === 'development') {
+      console.info(
+        'blockBaddie(): Missing ip, which is expected in development when uing "request.ip"',
+      );
+    } else {
+      console.warn('blockBaddie(): Missing ip');
+    }
+    return;
+  }
+
+  if (!projectId) {
+    console.warn('blockBaddie(): Missing { projectId }');
+    return;
+  }
+
+  if (!vercelToken) {
+    console.warn('blockBaddie(): Missing { vercelToken }');
+    return;
+  }
+
+  if (!includesSubstrings) {
+    console.warn('blockBaddie(): Missing { includesSubstrings }');
+    return;
+  }
+
+  const isBaddie = includesSubstrings.some((bad) => pathname.includes(bad));
+
+  if (!isBaddie) {
+    return;
+  } else {
+    console.warn(`BADDIE! ${ip}`);
+
+    waitUntil(
+      fetch(`${FIREWALL_URL}?projectId=${VERCEL_BRANCH_PROJECT_ID}`, {
+        method: 'PATCH',
+        headers: {
+          Authorization: `Bearer ${process.env.VERCEL_TOKEN}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          action: 'ip.insert',
+          id: null,
+          value: {
+            action: 'deny',
+            hostname: '*',
+            ip,
+            notes: `Deny Baddie ${ip}`,
+          },
+        }),
+      }),
+    );
+  }
+}
+
 export function middleware(request: NextRequest) {
   const url = request.nextUrl;
 
   // First, check for bad actors, and rewrite them to a local IP address. If we have a match,
   // update the firewall to block the IP address.
   // https://vercel.com/docs/security/vercel-waf/examples#deny-traffic-from-a-set-of-ip-addresses
-  if (BADDIES.some((bad) => url.pathname.includes(bad))) {
-    const baddieIp = request.ip;
 
-    console.warn(`BADDIE! ${baddieIp}`);
-
-    if (
-      !VERCEL_TEAM_ID ||
-      !VERCEL_BRANCH_PROJECT_ID ||
-      !process.env.VERCEL_TOKEN
-    ) {
-      console.warn('Missing environment variables');
-      return NextResponse.error();
-    }
-
-    if (!baddieIp) {
-      // Should only happen locally
-      console.warn('No IP address found for bad actor');
-      return NextResponse.error();
-    }
-
-    const body = JSON.stringify({
-      action: 'ip.insert',
-      id: null,
-      value: {
-        action: 'deny',
-        hostname: '*',
-        ip: baddieIp,
-        notes: `Deny Baddie ${baddieIp}`,
-      },
-    });
-
-    fetch(
-      `${FIREWALL_URL}?projectId=${VERCEL_BRANCH_PROJECT_ID}&teamId=${VERCEL_TEAM_ID}`,
-      {
-        method: 'PATCH',
-        headers: {
-          Authorization: `Bearer ${process.env.VERCEL_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
-        body,
-      },
-    )
-      .then((res) => {
-        if (res.status === 200) {
-          console.log('Firewall updated');
-          return;
-        }
-      })
-      .then((res) => {
-        console.warn('Failed to update Firewall', res);
-        return;
-      });
-  }
+  blockBaddie(url.pathname, request.ip, {
+    projectId: process.env.VERCEL_BRANCH_PROJECT_ID,
+  });
 
   // Check for local development
   const isLocal = url.hostname === 'localhost';

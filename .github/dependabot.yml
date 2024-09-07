@@ -13,6 +13,8 @@ updates:
       - dependency-name: '@nrwl*'
       - dependency-name: '@nx*'
       - dependency-name: 'nx'
+      # Ignore updates to Cypress because Zscaler is trash and nobody knows how to allowlist it.
+      - dependency-name: 'cypress'
     open-pull-requests-limit: 5
     commit-message:
       prefix: 'chore(deps): update'
