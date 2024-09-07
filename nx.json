@@ -9,7 +9,8 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "stylelint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "stylelint", "test", "e2e"],
+        "parallel": 4
       }
     }
   },

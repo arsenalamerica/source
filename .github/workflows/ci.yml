@@ -15,13 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: brianespinosa/checkout-setup-node-install@main
-      - run: yarn nx affected --target=lint --parallel=3
+      - run: yarn nx affected --target=lint
 
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: brianespinosa/checkout-setup-node-install@main
-      - run: yarn nx affected --target=test --parallel=3 --ci
+      - run: yarn nx affected --target=test --ci
       # - name: Setup LCOV
       #   uses: hrishikesh-kadam/setup-lcov@v1
       # - name: Report code coverage
@@ -43,4 +43,4 @@ jobs:
   #   steps:
   #     - uses: brianespinosa/checkout-setup-node-install@main
   #     - uses: brianespinosa/next-build-cache@main
-  #     - run: yarn nx affected --target=build --parallel=3
+  #     - run: yarn nx affected --target=build
