@@ -4,15 +4,9 @@
     "appsDir": "apps",
     "libsDir": "libs"
   },
+  "neverConnectToCloud": true,
   "tasksRunnerOptions": {
     "default": {
-      "runner": "nx-cloud",
-      "options": {
-        "cacheableOperations": ["build", "lint", "stylelint", "test", "e2e"],
-        "accessToken": "M2NkMjFlNjYtMzQ5Yy00ZGQzLWFiYjgtNWY2Y2RhYWExZTkzfHJlYWQtd3JpdGU="
-      }
-    },
-    "vercel": {
       "runner": "@vercel/remote-nx",
       "options": {
         "cacheableOperations": ["build", "lint", "stylelint", "test", "e2e"]
@@ -31,12 +25,13 @@
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
       "cache": true,
       "options": {
-        "passWithNoTests": true
+        "passWithNoTests": true,
+        "codeCoverage": true,
+        "coverageReporters": ["json", "lcov", "text"]
       },
       "configurations": {
         "ci": {
-          "ci": true,
-          "codeCoverage": true
+          "ci": true
         }
       }
     },
