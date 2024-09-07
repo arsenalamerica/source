@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
 
 import { branches } from '@arsenalamerica/data';
-import { waitUntil } from '@vercel/functions';
+// import { waitUntil } from '@vercel/functions';
 
 const FIREWALL_URL = 'https://api.vercel.com/v1/security/firewall/config';
 const VERCEL_BRANCH_PROJECT_ID = process.env.VERCEL_BRANCH_PROJECT_ID;
@@ -25,6 +25,7 @@ const BADDIES = [
 function blockBaddie(
   pathname: string,
   ip: string | undefined,
+  event: NextFetchEvent,
   {
     projectId = process.env.VERCEL_PROJECT_ID,
     vercelToken = process.env.VERCEL_TOKEN,
@@ -73,7 +74,7 @@ function blockBaddie(
   } else {
     console.warn(`BADDIE! ${ip}`);
 
-    waitUntil(
+    event.waitUntil(
       fetch(`${FIREWALL_URL}?projectId=${VERCEL_BRANCH_PROJECT_ID}`, {
         method: 'PATCH',
         headers: {
@@ -95,14 +96,14 @@ function blockBaddie(
   }
 }
 
-export function middleware(request: NextRequest) {
+export function middleware(request: NextRequest, event: NextFetchEvent) {
   const url = request.nextUrl;
 
   // First, check for bad actors, and rewrite them to a local IP address. If we have a match,
   // update the firewall to block the IP address.
   // https://vercel.com/docs/security/vercel-waf/examples#deny-traffic-from-a-set-of-ip-addresses
 
-  blockBaddie(url.pathname, request.ip, {
+  blockBaddie(url.pathname, request.ip, event, {
     projectId: process.env.VERCEL_BRANCH_PROJECT_ID,
   });
 
