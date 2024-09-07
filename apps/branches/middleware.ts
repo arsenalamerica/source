@@ -2,6 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 
 import { branches } from '@arsenalamerica/data';
 
+const FIREWALL_URL = 'https://api.vercel.com/v1/security/firewall/config';
+const VERCEL_TEAM_ID = process.env.VERCEL_TEAM_ID;
+const VERCEL_BRANCH_PROJECT_ID = process.env.VERCEL_BRANCH_PROJECT_ID;
+
 const DOMAINS = Object.keys(branches);
 
 const BADDIES = [
@@ -21,12 +25,52 @@ const BADDIES = [
 export function middleware(request: NextRequest) {
   const url = request.nextUrl;
 
-  // First, check for bad actors, and rewrite them to a local IP address.
-  // Might update this later to automatically set a firewall rule for these IPs:
+  // First, check for bad actors, and rewrite them to a local IP address. If we have a match,
+  // update the firewall to block the IP address.
   // https://vercel.com/docs/security/vercel-waf/examples#deny-traffic-from-a-set-of-ip-addresses
   if (BADDIES.some((bad) => url.pathname.includes(bad))) {
     console.warn('BADDIE!');
-    return NextResponse.rewrite(new URL('http://192.168.0.250', request.url));
+
+    const baddieIp = request.ip;
+
+    // Should only happen locally
+    if (!baddieIp) {
+      console.warn('No IP address found for bad actor');
+      return NextResponse.error();
+    }
+
+    const body = JSON.stringify({
+      action: 'ip.insert',
+      id: null,
+      value: {
+        action: 'deny',
+        hostname: '*',
+        ip: baddieIp,
+        notes: `Deny Baddie ${baddieIp}`,
+      },
+    });
+
+    fetch(
+      `${FIREWALL_URL}?projectId=${VERCEL_BRANCH_PROJECT_ID}&teamId=${VERCEL_TEAM_ID}`,
+      {
+        method: 'PATCH',
+        headers: {
+          Authorization: `Bearer ${process.env.VERCEL_TOKEN}`,
+          'Content-Type': 'application/json',
+        },
+        body,
+      },
+    )
+      .then((res) => {
+        if (res.status === 200) {
+          console.log('Firewall updated');
+          return;
+        }
+      })
+      .then((res) => {
+        console.warn('Failed to update Firewall', res);
+        return;
+      });
   }
 
   // Check for local development
