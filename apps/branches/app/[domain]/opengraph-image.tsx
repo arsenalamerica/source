@@ -1,9 +1,6 @@
 import { branchLogo } from '@arsenalamerica/data';
 import { ImageResponse } from '@vercel/og';
 
-// Route segment config
-export const runtime = 'edge';
-
 // Image config exports: https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image#config-exports
 export const size = {
   width: 1200,
