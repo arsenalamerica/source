@@ -46,7 +46,7 @@
     "react-dom": "18.3.1",
     "react-ios-pwa-prompt": "2.0.6",
     "react-textfit": "1.1.1",
-    "simple-icons": "13.8.0",
+    "simple-icons": "13.9.0",
     "tslib": "2.7.0",
     "wretch": "2.9.1"
   },
@@ -71,7 +71,7 @@
     "@svgr/plugin-svgo": "8.1.0",
     "@swc-node/register": "1.10.9",
     "@swc/cli": "0.4.0",
-    "@swc/core": "1.7.23",
+    "@swc/core": "1.7.24",
     "@swc/jest": "0.2.36",
     "@testing-library/dom": "10.4.0",
     "@testing-library/react": "16.0.1",
@@ -117,7 +117,7 @@
     "ts-jest": "29.2.5",
     "ts-node": "10.9.2",
     "tsconfig-paths-webpack-plugin": "4.1.0",
-    "typescript": "5.4.5",
+    "typescript": "5.5.4",
     "webpack": "5.94.0"
   },
   "packageManager": "yarn@3.8.3"
