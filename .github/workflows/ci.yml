@@ -15,12 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: brianespinosa/checkout-setup-node-install@main
+      - uses: nrwl/nx-set-shas@v4
       - run: yarn nx affected --target=lint
 
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: brianespinosa/checkout-setup-node-install@main
+      - uses: nrwl/nx-set-shas@v4
       - run: yarn nx affected --target=test --ci
       # - name: Setup LCOV
       #   uses: hrishikesh-kadam/setup-lcov@v1
@@ -43,4 +45,5 @@ jobs:
   #   steps:
   #     - uses: brianespinosa/checkout-setup-node-install@main
   #     - uses: brianespinosa/next-build-cache@main
+  #      - uses: nrwl/nx-set-shas@v4
   #     - run: yarn nx affected --target=build
