@@ -3,6 +3,7 @@ import styles from './GameCard.module.scss';
 import { branchLogo } from '@arsenalamerica/data';
 import { FixtureEntity } from '@arsenalamerica/sportmonks';
 
+import { ClientOnly } from '../ClientOnly/ClientOnly';
 import { TeamLogo } from '../TeamLogo/TeamLogo';
 
 import { GameCardBilling } from './GameCardBilling';
@@ -26,7 +27,7 @@ export function GameCard({
     <div className={styles._}>
       {Logo && <Logo className={styles.Logo} />}
       {localTeam && visitorTeam && (
-        <>
+        <ClientOnly>
           <div className={styles.Badges}>
             <TeamLogo
               teamId={localTeam.id}
@@ -41,7 +42,7 @@ export function GameCard({
           </div>
           <GameCardBilling localTeam={localTeam} visitorTeam={visitorTeam} />
           <GameCardTime starting_at_timestamp={starting_at_timestamp} />
-        </>
+        </ClientOnly>
       )}
       <svg
         className={styles.Background}

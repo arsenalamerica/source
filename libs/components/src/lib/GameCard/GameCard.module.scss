@@ -2,13 +2,22 @@ $margin: 8vw;
 
 ._ {
   position: relative;
+  z-index: 50;
+  margin: 0 -2em;
   aspect-ratio: 1/1;
-  background-color: white;
+  // background-color: white;
 
   h2 {
+    position: initial;
+    padding: initial;
     margin: 0;
+    background-color: transparent;
+    box-shadow: none;
     letter-spacing: -0.03em;
-    text-shadow: 0 0.05em 0.15em rgb(0 0 0 / 30%);
+
+    &::after {
+      display: none;
+    }
 
     span {
       font-family: ars-reg, sans-serif;
@@ -50,6 +59,7 @@ $margin: 8vw;
     svg,
     img {
       width: 25vw;
+      height: auto;
       fill: #fff;
     }
   }

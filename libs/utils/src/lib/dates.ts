@@ -1,4 +1,4 @@
-const epochToTime = (epoch: number) => epoch * 1000;
+export const epochToTime = (epoch: number) => epoch * 1000;
 
 export function dateFromEpoch(timestamp: number) {
   return new Date(epochToTime(timestamp)).toLocaleDateString(undefined, {
