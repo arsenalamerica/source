@@ -1,4 +1,4 @@
-// 'use client'; // Needed because we are dealing with dates relative to the user. We can move this to the game info section later on to encapsulate the date
+'use client'; // Needed because we are dealing with dates relative to the user. We can move this to the game info section later on to encapsulate the date
 
 import styles from './FixtureCard.module.scss';
 
