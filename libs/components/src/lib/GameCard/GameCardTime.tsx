@@ -4,11 +4,7 @@ import styles from './GameCard.module.scss';
 
 import { Textfit } from 'react-textfit';
 
-import {
-  dateFromEpoch,
-  epochToTime,
-  timeFromEpoch,
-} from '@arsenalamerica/utils';
+import { dateFromEpoch, epochToTime } from '@arsenalamerica/utils';
 
 export function GameCardTime({
   starting_at_timestamp,
