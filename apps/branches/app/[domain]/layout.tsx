@@ -36,10 +36,7 @@ export default function Layout({ children, params }: LayoutProps) {
 
       {branch && (
         <>
-          <FathomNext
-            fathomId={branch['fathom-id']}
-            includedDomains={[branch.domain]}
-          />
+          <FathomNext fathomId="RFIYDIHQ" />
           <VisuallyHidden>
             <Heading>{branch.name}</Heading>
           </VisuallyHidden>
