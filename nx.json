@@ -4,6 +4,7 @@
     "appsDir": "apps",
     "libsDir": "libs"
   },
+  "defaultBase": "origin/main",
   "neverConnectToCloud": true,
   "tasksRunnerOptions": {
     "default": {
