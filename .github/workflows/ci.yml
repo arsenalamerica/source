@@ -11,17 +11,36 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  lint:
+  setup:
     runs-on: ubuntu-latest
     steps:
       - uses: brianespinosa/checkout-setup-node-install@main
+      - uses: actions/cache/save@v4
+        with:
+          path: /
+          key: job-setup-cache-${{ github.run_id }}-${{ runner.os }}
+
+  lint:
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+    steps:
+      - uses: actions/cache/restore@v4
+        with:
+          path: /
+          key: job-setup-cache-${{ github.run_id }}-${{ runner.os }}
       - uses: nrwl/nx-set-shas@v4
       - run: yarn nx affected --target=lint
 
   test:
     runs-on: ubuntu-latest
+    needs:
+      - setup
     steps:
-      - uses: brianespinosa/checkout-setup-node-install@main
+      - uses: actions/cache/restore@v4
+        with:
+          path: /
+          key: job-setup-cache-${{ github.run_id }}-${{ runner.os }}
       - uses: nrwl/nx-set-shas@v4
       - run: yarn nx affected --target=test --ci
       # - name: Setup LCOV
