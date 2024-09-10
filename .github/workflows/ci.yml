@@ -29,6 +29,10 @@ jobs:
         with:
           path: ./
           key: job-setup-cache-${{ github.run_id }}-${{ runner.os }}
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
       - uses: nrwl/nx-set-shas@v4
       - run: yarn nx affected --target=lint
 
@@ -41,6 +45,10 @@ jobs:
         with:
           path: ./
           key: job-setup-cache-${{ github.run_id }}-${{ runner.os }}
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
       - uses: nrwl/nx-set-shas@v4
       - run: yarn nx affected --target=test --ci
       # - name: Setup LCOV
