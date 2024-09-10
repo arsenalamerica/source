@@ -29,7 +29,7 @@
       "options": {
         "passWithNoTests": true,
         "codeCoverage": true,
-        "coverageReporters": ["json", "lcov", "text"]
+        "coverageReporters": ["json", "lcov", "text-summary"]
       },
       "configurations": {
         "ci": {

@@ -62,5 +62,9 @@
     "sideBar.foreground": "#ffffff",
     "sideBarSectionHeader.background": "#c4222e",
     "sideBarSectionHeader.foreground": "#ffffff"
-  }
+  },
+  "coverage-gutters.showLineCoverage": true,
+  "coverage-gutters.showRulerCoverage": true,
+  "coverage-gutters.customizable.status-bar-toggler-watchCoverageAndVisibleEditors-enabled": true,
+  "coverage-gutters.customizable.context-menu": true
 }

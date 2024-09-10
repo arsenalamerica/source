@@ -2,8 +2,8 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "firsttris.vscode-jest-runner",
     "mrmlnc.vscode-scss",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "ryanluker.vscode-coverage-gutters"
   ]
 }

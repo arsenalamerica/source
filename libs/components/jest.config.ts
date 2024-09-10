@@ -15,4 +15,12 @@ export default {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/libs/components',
+  coverageThreshold: {
+    '*/**': {
+      branches: 50,
+      functions: 100,
+      lines: 80,
+      statements: 80,
+    },
+  },
 };
