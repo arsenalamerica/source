@@ -17,7 +17,7 @@ jobs:
       - uses: brianespinosa/checkout-setup-node-install@main
       - uses: actions/cache/save@v4
         with:
-          path: /
+          path: ./
           key: job-setup-cache-${{ github.run_id }}-${{ runner.os }}
 
   lint:
@@ -27,7 +27,7 @@ jobs:
     steps:
       - uses: actions/cache/restore@v4
         with:
-          path: /
+          path: ./
           key: job-setup-cache-${{ github.run_id }}-${{ runner.os }}
       - uses: nrwl/nx-set-shas@v4
       - run: yarn nx affected --target=lint
@@ -39,7 +39,7 @@ jobs:
     steps:
       - uses: actions/cache/restore@v4
         with:
-          path: /
+          path: ./
           key: job-setup-cache-${{ github.run_id }}-${{ runner.os }}
       - uses: nrwl/nx-set-shas@v4
       - run: yarn nx affected --target=test --ci
