@@ -28,6 +28,10 @@ const getBrandIcon = (name: string) => {
   return icon;
 };
 
+const handleClick = () => {
+  trackEvent('social');
+};
+
 export function SocialLinks({
   className,
   links,
@@ -41,11 +45,6 @@ export function SocialLinks({
           const icon = getBrandIcon(name);
           // console.log(getBrandIcon(name));
 
-          const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-            trackEvent('social', {
-              _site_id: url,
-            });
-          };
           return (
             <li key={name}>
               {icon ? (
