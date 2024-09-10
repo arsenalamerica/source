@@ -85,7 +85,7 @@ jobs:
     needs:
       - lint
       - test
-      # - build
+      - build
     steps:
       - name: clear cache
         shell: bash
