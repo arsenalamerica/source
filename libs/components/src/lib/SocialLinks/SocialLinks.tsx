@@ -1,7 +1,9 @@
+'use client';
 import styles from './SocialLinks.module.scss';
 
 import React from 'react';
 import clsx from 'clsx';
+import { trackEvent } from 'fathom-client';
 import * as icons from 'simple-icons';
 
 import ExternalLink from '../ExternalLink/ExternalLink';
@@ -38,10 +40,16 @@ export function SocialLinks({
         {links.map(({ name, url }) => {
           const icon = getBrandIcon(name);
           // console.log(getBrandIcon(name));
+
+          const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+            trackEvent('social', {
+              _site_id: url,
+            });
+          };
           return (
             <li key={name}>
               {icon ? (
-                <ExternalLink href={url}>
+                <ExternalLink onClick={handleClick} href={url}>
                   <svg
                     role="img"
                     viewBox="0 0 24 24"
