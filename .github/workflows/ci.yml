@@ -54,10 +54,8 @@ jobs:
       - run: yarn nx affected --target=build
 
   cleanup:
-    runs-on: ubuntu-latest
     needs:
       - lint
       - test
       - build
-    steps:
-      - uses: brianespinosa/job-root-cache/cleanup@main
+    uses: brianespinosa/job-root-cache/.github/workflows/cleanup.yml@main
