@@ -1,0 +1,16 @@
+name: 'job-root-cache/save'
+author: 'Brian Espinosa'
+description: 'Composite action that will save a cache of the root directory to be used after clone and install.'
+
+branding:
+  icon: 'download-cloud'
+  color: 'blue'
+
+runs:
+  using: 'composite'
+
+  steps:
+    - uses: actions/cache/save@v4
+      with:
+        path: ./
+        key: job-setup-cache-${{ github.run_id }}-${{ runner.os }}
