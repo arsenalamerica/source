@@ -53,7 +53,7 @@ jobs:
       - uses: brianespinosa/job-root-cache/restore@main
       - run: yarn nx affected --target=build
 
-  cleanup:
+  job-root-cache:
     needs:
       - lint
       - test
