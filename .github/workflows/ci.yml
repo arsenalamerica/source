@@ -15,14 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: brianespinosa/checkout-setup-node-install@main
-      - uses: ./.github/job-root-cache/save
+      - uses: brianespinosa/job-root-cache/save@main
 
   lint:
     runs-on: ubuntu-latest
     needs:
       - setup
     steps:
-      - uses: ./.github/job-root-cache/restore
+      - uses: brianespinosa/job-root-cache/restore@main
       - run: yarn nx affected --target=lint
 
   test:
@@ -30,7 +30,7 @@ jobs:
     needs:
       - setup
     steps:
-      - uses: ./.github/job-root-cache/restore
+      - uses: brianespinosa/job-root-cache/restore@main
       - run: yarn nx affected --target=test --ci
       # - name: Setup LCOV
       #   uses: hrishikesh-kadam/setup-lcov@v1
@@ -50,7 +50,7 @@ jobs:
       - lint
       - test
     steps:
-      - uses: ./.github/job-root-cache/restore
+      - uses: brianespinosa/job-root-cache/restore@main
       - run: yarn nx affected --target=build
 
   cleanup:
@@ -60,4 +60,4 @@ jobs:
       - test
       - build
     steps:
-      - uses: ./.github/job-root-cache/cleanup
+      - uses: brianespinosa/job-root-cache/cleanup@main
