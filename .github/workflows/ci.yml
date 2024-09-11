@@ -15,25 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: brianespinosa/checkout-setup-node-install@main
-      - uses: actions/cache/save@v4
-        with:
-          path: ./
-          key: job-setup-cache-${{ github.run_id }}-${{ runner.os }}
+      - uses: ./.github/job-root-cache/save
 
   lint:
     runs-on: ubuntu-latest
     needs:
       - setup
     steps:
-      - uses: actions/cache/restore@v4
-        with:
-          path: ./
-          key: job-setup-cache-${{ github.run_id }}-${{ runner.os }}
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-      - uses: nrwl/nx-set-shas@v4
+      - uses: ./.github/job-root-cache/restore
       - run: yarn nx affected --target=lint
 
   test:
@@ -41,15 +30,7 @@ jobs:
     needs:
       - setup
     steps:
-      - uses: actions/cache/restore@v4
-        with:
-          path: ./
-          key: job-setup-cache-${{ github.run_id }}-${{ runner.os }}
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-      - uses: nrwl/nx-set-shas@v4
+      - uses: ./.github/job-root-cache/restore
       - run: yarn nx affected --target=test --ci
       # - name: Setup LCOV
       #   uses: hrishikesh-kadam/setup-lcov@v1
@@ -69,21 +50,14 @@ jobs:
       - lint
       - test
     steps:
-      - uses: actions/cache/restore@v4
-        with:
-          path: ./
-          key: job-setup-cache-${{ github.run_id }}-${{ runner.os }}
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-      - uses: nrwl/nx-set-shas@v4
+      - uses: ./.github/job-root-cache/restore
       - run: yarn nx affected --target=build
-      - name: clear cache
-        if: ${{ success() }}
-        shell: bash
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh extension install actions/gh-actions-cache
-          gh actions-cache delete job-setup-cache-${{ github.run_id }}-${{ runner.os }} --confirm
+
+  cleanup:
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+      - test
+      - build
+    steps:
+      - uses: ./.github/job-root-cache/cleanup
