@@ -23,6 +23,7 @@ jobs:
       - setup
     steps:
       - uses: brianespinosa/job-root-cache/restore@main
+      - uses: nrwl/nx-set-shas@v4
       - run: yarn nx affected --target=lint
 
   test:
@@ -31,7 +32,8 @@ jobs:
       - setup
     steps:
       - uses: brianespinosa/job-root-cache/restore@main
-      - run: yarn nx affected --target=test --ci
+      - uses: nrwl/nx-set-shas@v4
+      - run: yarn nx affected --target=test
       # - name: Setup LCOV
       #   uses: hrishikesh-kadam/setup-lcov@v1
       # - name: Report code coverage
@@ -51,6 +53,7 @@ jobs:
       - test
     steps:
       - uses: brianespinosa/job-root-cache/restore@main
+      - uses: nrwl/nx-set-shas@v4
       - run: yarn nx affected --target=build
 
   job-root-cache:
