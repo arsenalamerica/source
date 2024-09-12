@@ -3,7 +3,7 @@ $margin: 8vw;
 ._ {
   position: relative;
   z-index: 50;
-  margin: 0 -2em;
+  margin: 0 -1em;
   aspect-ratio: 1/1;
   // background-color: white;
 
@@ -13,6 +13,7 @@ $margin: 8vw;
     margin: 0;
     background-color: transparent;
     box-shadow: none;
+    font-size: inherit;
     letter-spacing: -0.03em;
 
     &::after {
