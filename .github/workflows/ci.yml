@@ -74,7 +74,7 @@ jobs:
         run: echo "$APP"
       - env:
           APP: ${{ matrix.app }}
-        run: yarn nx build $APP --target=build --base=${{ needs.setup.outputs.base }} --head=${{ needs.setup.outputs.head }}
+        run: yarn nx build $APP --production --base=${{ needs.setup.outputs.base }} --head=${{ needs.setup.outputs.head }}
 
   job-root-cache:
     if: ${{ always() }}
