@@ -61,7 +61,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        app: ${{ needs.setup.outputs.affectedApps }}
+        # app: ${{ fromJson(needs.setup.outputs.affectedApps) }}
+        app: ['branches', 'api']
     needs:
       - setup
       - lint
