@@ -73,12 +73,12 @@ jobs:
         with:
           # We are leveraging setup-node for caching, so we do not need to use it for yarn, only for the Next.js cache.
           path: |
-            ${{ github.workspace }}/dist/apps/${{ matrix.app }}/.next/cache
+            ${{ github.workspace }}/**/.next/cache
           # Generate a new cache whenever packages or source files change.
-          key: ${{ matrix.app }}-${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          key: nextjs-build-cache-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
-            ${{ matrix.app }}-${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
+            nextjs-build-cache-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-
       - env:
           APP: ${{ matrix.app }}
         run: yarn nx build $APP --production --base=${{ needs.setup.outputs.base }} --head=${{ needs.setup.outputs.head }}
