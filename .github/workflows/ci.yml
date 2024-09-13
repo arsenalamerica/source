@@ -17,6 +17,7 @@ jobs:
       base: ${{ steps.set-shas.outputs.base }}
       head: ${{ steps.set-shas.outputs.head }}
       affectedApps: ${{ steps.affected.outputs.affectedApps }}
+      hasAffectedApps: ${{ steps.affected.outputs.hasAffectedApps }}
     steps:
       - uses: brianespinosa/checkout-setup-node-install@main
       - uses: nrwl/nx-set-shas@v4
@@ -24,8 +25,8 @@ jobs:
       - name: Check for Affected Projects
         uses: 2coo/action-nx-affected@v1
         id: affected
-        # with:
-        #   exclude: apps/branches-e2e,data
+        with:
+          exclude: apps/branches-e2e,data
       - uses: brianespinosa/job-root-cache/save@main
 
   lint:
@@ -34,9 +35,6 @@ jobs:
       - setup
     steps:
       - uses: brianespinosa/job-root-cache/restore@main
-      - env:
-          AFFECTED: ${{ needs.setup.outputs.affectedApps }}
-        run: echo "$AFFECTED"
       - run: yarn nx affected --target=lint --base=${{ needs.setup.outputs.base }} --head=${{ needs.setup.outputs.head }}
 
   test:
@@ -59,14 +57,23 @@ jobs:
       #     update-comment: true
 
   build:
+    if: ${{ needs.setup.outputs.hasAffectedApps == 'true' }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        app: ${{ needs.setup.outputs.affectedApps }}
     needs:
       - setup
       - lint
       - test
     steps:
       - uses: brianespinosa/job-root-cache/restore@main
-      - run: yarn nx affected --target=build --base=${{ needs.setup.outputs.base }} --head=${{ needs.setup.outputs.head }}
+      - env:
+          APP: ${{ matrix.app }}
+        run: echo "$APP"
+      - env:
+          APP: ${{ matrix.app }}
+        run: yarn nx build $APP --target=build --base=${{ needs.setup.outputs.base }} --head=${{ needs.setup.outputs.head }}
 
   job-root-cache:
     needs:
