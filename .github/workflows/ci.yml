@@ -24,8 +24,8 @@ jobs:
       - name: Check for Affected Projects
         uses: 2coo/action-nx-affected@v1
         id: affected
-        with:
-          exclude: apps/branches-e2e,data
+        # with:
+        #   exclude: apps/branches-e2e,data
       - uses: brianespinosa/job-root-cache/save@main
 
   lint:
