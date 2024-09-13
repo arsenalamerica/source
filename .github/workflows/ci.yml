@@ -13,8 +13,17 @@ concurrency:
 jobs:
   setup:
     runs-on: ubuntu-latest
+    outputs:
+      base: ${{ steps.set-shas.outputs.base }}
+      head: ${{ steps.set-shas.outputs.head }}
+      affected: ${{ steps.affected.outputs.affected }}
     steps:
       - uses: brianespinosa/checkout-setup-node-install@main
+      - uses: nrwl/nx-set-shas@v4
+        id: set-shas
+      - name: Check for Affected Projects
+        uses: 2coo/action-nx-affected@v1
+        id: affected
       - uses: brianespinosa/job-root-cache/save@main
 
   lint:
@@ -23,8 +32,10 @@ jobs:
       - setup
     steps:
       - uses: brianespinosa/job-root-cache/restore@main
-      - uses: nrwl/nx-set-shas@v4
-      - run: yarn nx affected --target=lint
+      - env:
+          AFFECTED: ${{ needs.setup.outputs.affected }}
+        run: echo "$AFFECTED"
+      - run: yarn nx affected --target=lint --base=${{ needs.setup.outputs.base }} --head=${{ needs.setup.outputs.head }}
 
   test:
     runs-on: ubuntu-latest
@@ -32,8 +43,7 @@ jobs:
       - setup
     steps:
       - uses: brianespinosa/job-root-cache/restore@main
-      - uses: nrwl/nx-set-shas@v4
-      - run: yarn nx affected --target=test
+      - run: yarn nx affected --target=test --base=${{ needs.setup.outputs.base }} --head=${{ needs.setup.outputs.head }}
       # - name: Setup LCOV
       #   uses: hrishikesh-kadam/setup-lcov@v1
       # - name: Report code coverage
@@ -49,12 +59,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs:
+      - setup
       - lint
       - test
     steps:
       - uses: brianespinosa/job-root-cache/restore@main
-      - uses: nrwl/nx-set-shas@v4
-      - run: yarn nx affected --target=build
+      - run: yarn nx affected --target=build --base=${{ needs.setup.outputs.base }} --head=${{ needs.setup.outputs.head }}
 
   job-root-cache:
     needs:
