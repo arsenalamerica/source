@@ -76,7 +76,9 @@ jobs:
         run: yarn nx build $APP --target=build --base=${{ needs.setup.outputs.base }} --head=${{ needs.setup.outputs.head }}
 
   job-root-cache:
+    if: ${{ always() }}
     needs:
+      - setup
       - lint
       - test
       - build
