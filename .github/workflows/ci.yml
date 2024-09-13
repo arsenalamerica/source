@@ -16,7 +16,7 @@ jobs:
     outputs:
       base: ${{ steps.set-shas.outputs.base }}
       head: ${{ steps.set-shas.outputs.head }}
-      affected: ${{ steps.affected.outputs.affected }}
+      affectedApps: ${{ steps.affected.outputs.affectedApps }}
     steps:
       - uses: brianespinosa/checkout-setup-node-install@main
       - uses: nrwl/nx-set-shas@v4
@@ -24,6 +24,8 @@ jobs:
       - name: Check for Affected Projects
         uses: 2coo/action-nx-affected@v1
         id: affected
+        with:
+          exclude: 'apps/branches-e2e, data'
       - uses: brianespinosa/job-root-cache/save@main
 
   lint:
@@ -33,7 +35,7 @@ jobs:
     steps:
       - uses: brianespinosa/job-root-cache/restore@main
       - env:
-          AFFECTED: ${{ needs.setup.outputs.affected }}
+          AFFECTED: ${{ needs.setup.outputs.affectedApps }}
         run: echo "$AFFECTED"
       - run: yarn nx affected --target=lint --base=${{ needs.setup.outputs.base }} --head=${{ needs.setup.outputs.head }}
 
