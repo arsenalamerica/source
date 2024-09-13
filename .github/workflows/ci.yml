@@ -69,9 +69,16 @@ jobs:
       - test
     steps:
       - uses: brianespinosa/job-root-cache/restore@main
-      - env:
-          APP: ${{ matrix.app }}
-        run: echo "$APP"
+      - uses: actions/cache@v4
+        with:
+          # We are leveraging setup-node for caching, so we do not need to use it for yarn, only for the Next.js cache.
+          path: |
+            ${{ github.workspace }}/apps/${{ matrix.app }}/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ matrix.app }}-${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ matrix.app }}-${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
       - env:
           APP: ${{ matrix.app }}
         run: yarn nx build $APP --production --base=${{ needs.setup.outputs.base }} --head=${{ needs.setup.outputs.head }}
