@@ -26,7 +26,7 @@
           "VERCEL_ORG_ID": "team_3FcuJksDBvOKgDoo28ETlJjx",
           "VERCEL_PROJECT_ID": "prj_NqBSR0oCTmQTZlsi3Oq5qn8bOWfT"
         },
-        "command": "yarn vercel deploy --prebuilt"
+        "commands": ["yarn vercel build", "yarn vercel deploy --prebuilt"]
       }
     },
     "start": {

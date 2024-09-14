@@ -70,22 +70,7 @@ jobs:
     steps:
       - uses: brianespinosa/job-root-cache/restore@main
       - uses: brianespinosa/next-build-cache@main
-      - run: yarn nx build ${{ matrix.app }} --production --base=${{ needs.setup.outputs.base }} --head=${{ needs.setup.outputs.head }}
-      - name: Get project properties
-        id: project
-        uses: zoexx/github-action-json-file-properties@1.0.6
-        with:
-          file_path: ${{ github.workspace }}/apps/${{ matrix.app }}/project.json
-      - run: |
-          echo ${{ steps.project.outputs.projectId }}
-          echo ${{ steps.project.outputs.orgId }}
-      - uses: amondnet/vercel-action@v25 #deploy
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-          github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
-          vercel-args: '--prebuilt' #Optional
-          vercel-org-id: ${{ steps.project.outputs.orgId }} #Required
-          vercel-project-id: ${{ steps.project.outputs.projectId }} #Required
+      - run: yarn nx deploy ${{ matrix.app }}
 
   job-root-cache:
     if: ${{ always() }}
