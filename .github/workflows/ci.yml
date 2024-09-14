@@ -62,7 +62,6 @@ jobs:
     strategy:
       matrix:
         app: ${{ fromJson(needs.setup.outputs.affectedApps) }}
-        # app: ['branches', 'api']
     needs:
       - setup
       - lint
@@ -70,7 +69,10 @@ jobs:
     steps:
       - uses: brianespinosa/job-root-cache/restore@main
       - uses: brianespinosa/next-build-cache@main
-      - run: yarn nx deploy ${{ matrix.app }}
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: yarn nx deploy ${{ matrix.app }}
 
   job-root-cache:
     if: ${{ always() }}
