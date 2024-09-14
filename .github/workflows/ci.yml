@@ -27,6 +27,13 @@ jobs:
         id: affected
         with:
           exclude: apps/branches-e2e,data
+      - name: Get Vercel project/org ID
+        id: vercel
+        run: |
+          export project_file=$('${{ github.workspace }}/apps/branches/project.json')
+          echo "Project file: ${project_file}"
+          echo "project= ${project_file}" >> "$GITHUB_OUTPUT"
+      - run: echo `${{ fromJson(steps.vercel.outputs.project).orgId }}`
       - uses: brianespinosa/job-root-cache/save@main
 
   lint:
@@ -70,9 +77,22 @@ jobs:
     steps:
       - uses: brianespinosa/job-root-cache/restore@main
       - uses: brianespinosa/next-build-cache@main
-      - env:
-          APP: ${{ matrix.app }}
-        run: yarn nx build $APP --production --base=${{ needs.setup.outputs.base }} --head=${{ needs.setup.outputs.head }}
+      - run: yarn nx build ${{ matrix.app }} --production --base=${{ needs.setup.outputs.base }} --head=${{ needs.setup.outputs.head }}
+      - name: Get Vercel project/org ID
+        id: vercel
+        run: |
+          export project_file=$('${{ github.workspace }}/apps/${{ matrix.app }}/project.json')
+          echo "Project file: ${project_file}"
+          echo "project= ${project_file}" >> "$GITHUB_OUTPUT"
+      - run: echo `${{ fromJson(steps.vercel.outputs.project).orgId }}`
+      - uses: amondnet/vercel-action@v25 #deploy
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+          github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
+          vercel-args: '--prebuilt' #Optional
+          vercel-org-id: ${{ fromJson(steps.vercel.outputs.project).orgId }} #Required
+          vercel-project-id: ${{ fromJson(steps.vercel.outputs.project).projectId }} #Required
+          working-directory: ${{ github.workspace }}/dist/apps/${{ matrix.app }}/.next
 
   job-root-cache:
     if: ${{ always() }}

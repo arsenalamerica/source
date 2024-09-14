@@ -3,6 +3,8 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/branches",
   "projectType": "application",
+  "projectId": "prj_NqBSR0oCTmQTZlsi3Oq5qn8bOWfT",
+  "orgId": "team_3FcuJksDBvOKgDoo28ETlJjx",
   "tags": [],
   "targets": {
     "build": {
