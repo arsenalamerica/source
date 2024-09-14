@@ -29,7 +29,7 @@
         "commands": [
           "yarn vercel pull --yes",
           "yarn vercel build",
-          "yarn vercel deploy --prebuilt"
+          "yarn vercel deploy --prebuilt > deployment-url.txt"
         ],
         "parallel": false
       }
