@@ -31,7 +31,7 @@
             "command": "yarn vercel pull --yes --token={args.token}",
             "forwardAllArgs": false
           },
-          "yarn vercel build --token={args.token}",
+          "yarn vercel build",
           "yarn vercel deploy --prebuilt > deployment-url.txt"
         ],
         "parallel": false
