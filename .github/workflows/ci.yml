@@ -62,6 +62,9 @@ jobs:
     strategy:
       matrix:
         app: ${{ fromJson(needs.setup.outputs.affectedApps) }}
+    environment:
+      name: 'Preview - ${{ matrix.app }}'
+      url: ${{ steps.deploy-to-vercel.outputs.url }}
     needs:
       - setup
       - lint
@@ -70,7 +73,10 @@ jobs:
       - uses: brianespinosa/job-root-cache/restore@main
       - uses: brianespinosa/next-build-cache@main
       - name: Deploy to Vercel
-        run: yarn nx deploy ${{ matrix.app }} --args="--token=${{ secrets.VERCEL_TOKEN }}"
+        id: deploy-to-vercel
+        run: |
+          yarn nx deploy ${{ matrix.app }} --args="--token=${{ secrets.VERCEL_TOKEN }}" >deployment-url.txt
+          echo "deploymentUrl=$(cat deployment-url.txt)" >> $GITHUB_OUTPUT
 
   job-root-cache:
     if: ${{ always() }}
