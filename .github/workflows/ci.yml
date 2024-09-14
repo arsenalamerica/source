@@ -27,13 +27,14 @@ jobs:
         id: affected
         with:
           exclude: apps/branches-e2e,data
-      - name: Get Vercel project/org ID
+      - name: get properties
         id: vercel
-        run: |
-          export project_file=$('${{ github.workspace }}/apps/branches/project.json')
-          echo "Project file: ${project_file}"
-          echo "project= ${project_file}" >> "$GITHUB_OUTPUT"
-      - run: echo `${{ fromJson(steps.vercel.outputs.project).orgId }}`
+        uses: zoexx/github-action-json-file-properties@1.0.6
+        with:
+          file_path: ${{ github.workspace }}/apps/branches/project.json
+      - run: |
+          echo ${{ steps.vercel.outputs.projectId }}
+          echo ${{ steps.vercel.outputs.orgId }}
       - uses: brianespinosa/job-root-cache/save@main
 
   lint:
@@ -78,13 +79,14 @@ jobs:
       - uses: brianespinosa/job-root-cache/restore@main
       - uses: brianespinosa/next-build-cache@main
       - run: yarn nx build ${{ matrix.app }} --production --base=${{ needs.setup.outputs.base }} --head=${{ needs.setup.outputs.head }}
-      - name: Get Vercel project/org ID
+      - name: get properties
         id: vercel
-        run: |
-          export project_file=$('${{ github.workspace }}/apps/${{ matrix.app }}/project.json')
-          echo "Project file: ${project_file}"
-          echo "project= ${project_file}" >> "$GITHUB_OUTPUT"
-      - run: echo `${{ fromJson(steps.vercel.outputs.project).orgId }}`
+        uses: zoexx/github-action-json-file-properties@1.0.6
+        with:
+          file_path: ${{ github.workspace }}/apps/${{ matrix.app }}/project.json
+      - run: |
+          echo ${{ steps.vercel.outputs.projectId }}
+          echo ${{ steps.vercel.outputs.orgId }}
       - uses: amondnet/vercel-action@v25 #deploy
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
