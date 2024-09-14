@@ -27,9 +27,9 @@
           "VERCEL_PROJECT_ID": "prj_NqBSR0oCTmQTZlsi3Oq5qn8bOWfT"
         },
         "commands": [
-          "yarn vercel pull --yes --token $VERCEL_TOKEN",
+          "yarn vercel pull --yes",
           "yarn vercel build",
-          "yarn vercel deploy --prebuilt --token $VERCEL_TOKEN"
+          "yarn vercel deploy --prebuilt"
         ],
         "parallel": false
       }

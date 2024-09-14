@@ -70,9 +70,7 @@ jobs:
       - uses: brianespinosa/job-root-cache/restore@main
       - uses: brianespinosa/next-build-cache@main
       - name: Deploy to Vercel
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: yarn nx deploy ${{ matrix.app }}
+        run: yarn nx deploy ${{ matrix.app }} --args="--token=${{ secrets.VERCEL_TOKEN }}"
 
   job-root-cache:
     if: ${{ always() }}
