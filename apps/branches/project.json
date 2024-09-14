@@ -3,8 +3,6 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/branches",
   "projectType": "application",
-  "projectId": "prj_NqBSR0oCTmQTZlsi3Oq5qn8bOWfT",
-  "orgId": "team_3FcuJksDBvOKgDoo28ETlJjx",
   "tags": [],
   "targets": {
     "build": {
@@ -19,6 +17,16 @@
           "outputPath": "apps/branches"
         },
         "production": {}
+      }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "env": {
+          "VERCEL_ORG_ID": "team_3FcuJksDBvOKgDoo28ETlJjx",
+          "VERCEL_PROJECT_ID": "prj_NqBSR0oCTmQTZlsi3Oq5qn8bOWfT"
+        },
+        "command": "yarn vercel deploy --prebuilt"
       }
     },
     "start": {

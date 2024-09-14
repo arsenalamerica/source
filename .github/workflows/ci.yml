@@ -86,7 +86,6 @@ jobs:
           vercel-args: '--prebuilt' #Optional
           vercel-org-id: ${{ steps.project.outputs.orgId }} #Required
           vercel-project-id: ${{ steps.project.outputs.projectId }} #Required
-          working-directory: ${{ github.workspace }}/dist/apps/${{ matrix.app }}/.next
 
   job-root-cache:
     if: ${{ always() }}
