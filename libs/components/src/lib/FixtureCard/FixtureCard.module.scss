@@ -3,6 +3,9 @@ $fixture-card-border-radius: 0.5em;
 $fixture-card-shadow: 0 0 1rem rgb(0 0 0 / 30%);
 
 ._ {
+  position: relative;
+  overflow: hidden;
+
   .Details,
   .Metadata {
     display: flex;
@@ -41,6 +44,9 @@ $fixture-card-shadow: 0 0 1rem rgb(0 0 0 / 30%);
   }
 
   .Team {
+    position: relative;
+    z-index: 1;
+
     .TeamLogo {
       width: 3em;
       height: 3em;
@@ -86,10 +92,20 @@ $fixture-card-shadow: 0 0 1rem rgb(0 0 0 / 30%);
       align-items: center;
       gap: 0.25em;
 
+      :not(svg, img) {
+        position: relative;
+        z-index: 1;
+      }
+
       img,
       svg {
-        width: 1.5em;
-        height: 1.5em;
+        position: absolute;
+        z-index: 0;
+        bottom: -5em;
+        left: -4em;
+        width: 15em;
+        height: 15em;
+        fill: rgb(0 0 0 / 7%);
       }
     }
   }

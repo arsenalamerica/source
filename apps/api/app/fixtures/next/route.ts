@@ -8,7 +8,7 @@ import logger from '../../logger';
 const USA_COUNTRY_ID = 3483;
 
 // https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
-export const revalidate = 30; // 30 seconds
+export const revalidate = 5; // 30 seconds
 
 export async function GET() {
   try {
