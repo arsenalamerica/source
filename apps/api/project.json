@@ -24,12 +24,15 @@
       "options": {
         "env": {
           "VERCEL_ORG_ID": "team_3FcuJksDBvOKgDoo28ETlJjx",
-          "VERCEL_PROJECT_ID": "prj_V6w1iV2ExgA6m71aHJHx1mAmhmg9"
+          "VERCEL_PROJECT_ID": "prj_NqBSR0oCTmQTZlsi3Oq5qn8bOWfT"
         },
         "commands": [
-          "yarn vercel pull --yes",
+          {
+            "command": "yarn vercel pull --yes --token={args.token}",
+            "forwardAllArgs": false
+          },
           "yarn vercel build",
-          "yarn vercel deploy --prebuilt"
+          "yarn vercel deploy --prebuilt > deployment-url.txt"
         ],
         "parallel": false
       }
