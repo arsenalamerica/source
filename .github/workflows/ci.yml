@@ -77,6 +77,17 @@ jobs:
         run: |
           yarn nx deploy ${{ matrix.app }} --args="--token=${{ secrets.VERCEL_TOKEN }} ${{ github.event_name != 'pull_request' && '--prod' }}"
           echo "url=$(cat deployment-url.txt)" >> $GITHUB_OUTPUT
+      - name: Preview URL Comment
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "Deployment of ${{ matrix.app }} ready at: ${{ steps.deploy-to-vercel.outputs.url }}"
+            })
 
   job-root-cache:
     if: ${{ always() }}
