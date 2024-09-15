@@ -10,7 +10,6 @@ import { NavBarItem } from './NavBarItem';
 export function NavBar() {
   const ITEMS = [
     {
-      // 'data-home': true,
       label: 'Home',
       icon: home,
       href: '/',

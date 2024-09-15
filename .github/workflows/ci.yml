@@ -75,7 +75,7 @@ jobs:
       - name: Deploy to Vercel
         id: deploy-to-vercel
         run: |
-          yarn nx deploy ${{ matrix.app }} --args="--token=${{ secrets.VERCEL_TOKEN }} ${{ github.event_name != 'pull_request' && '--prod' }}"
+          yarn nx deploy ${{ matrix.app }} --args="--token=${{ secrets.VERCEL_TOKEN }} ${{ github.event_name != 'pull_request' && '--prod' || '' }}"
           echo "url=$(cat deployment-url.txt)" >> $GITHUB_OUTPUT
       - name: Preview URL Comment
         if: ${{ github.event_name == 'pull_request' }}
