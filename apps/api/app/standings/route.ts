@@ -8,7 +8,7 @@ import logger from '../logger';
 // const LEAGUE_ID = 8;
 
 // https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
-export const revalidate = 1800; // 30 minutes
+export const revalidate = 60; // 1 minute
 
 export async function GET() {
   try {

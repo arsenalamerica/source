@@ -19,7 +19,10 @@ export type EntityBase = {
 
 export const ARSENAL_TEAM_ID = 19;
 
-export const sportmonks = wretch('https://api.sportmonks.com/v3/football', {})
+export const sportmonks = wretch('https://api.sportmonks.com/v3/football', {
+  cache: 'no-cache',
+  // next: { revalidate: 5 },
+})
   .headers({ Authorization: `${process.env['MONK_TOKEN']}` })
   .addon(QueryStringAddon)
   .errorType('json')

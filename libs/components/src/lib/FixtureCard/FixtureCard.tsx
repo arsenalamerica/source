@@ -86,7 +86,7 @@ export function FixtureCard({
               name={league.name}
               fallback={league.image_path}
             />
-            {league.name}
+            <span>{league.name}</span>
           </div>
           <div>{shite(venue.name)}</div>
         </footer>
