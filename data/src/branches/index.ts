@@ -6,10 +6,6 @@ import tacomagooners from './tacomagooners';
 import { BranchData, BranchLogo } from './types';
 import vancouverarsenal from './vancouverarsenal';
 
-const exportAllHelper = (branchObject: { data: BranchData }) => ({
-  [branchObject.data.domain]: branchObject,
-});
-
 const exportDataHelper = ({ data }: { data: BranchData }) => ({
   [data.domain]: data,
 });
@@ -40,13 +36,4 @@ export const branchLogo = {
   ...exportLogoHelper(pdxgooners),
   ...exportLogoHelper(tacomagooners),
   ...exportLogoHelper(vancouverarsenal),
-};
-
-export default {
-  ...exportAllHelper(boisegooners),
-  ...exportAllHelper(cascadiagooners),
-  ...exportAllHelper(eastlagooners),
-  ...exportAllHelper(pdxgooners),
-  ...exportAllHelper(tacomagooners),
-  ...exportAllHelper(vancouverarsenal),
 };
