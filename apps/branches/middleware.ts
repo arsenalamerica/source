@@ -1,8 +1,8 @@
 import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
 
-import { branches } from '@arsenalamerica/data';
+import { branchData } from '@arsenalamerica/data';
 
-const DOMAINS = Object.keys(branches);
+const DOMAINS = Object.keys(branchData);
 
 const BADDIES = [
   '.asp',
