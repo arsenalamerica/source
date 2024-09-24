@@ -13,9 +13,13 @@ updates:
       - dependency-name: '@nrwl*'
       - dependency-name: '@nx*'
       - dependency-name: 'nx'
-      # Ignore updates to Cypress because Zscaler is trash and nobody knows how to allowlist it.
+      # Ignore any dependencies that are being managed with NX plugins:
       - dependency-name: 'cypress'
-      # Ignore typescript for now because it is most likely to generate a checksum that differs from CI environments, breaking immutable installs in Yarn.
+      - dependency-name: 'eslint'
+      - dependency-name: 'jest'
+      - dependency-name: 'next'
+      - dependency-name: 'react-dom'
+      - dependency-name: 'react'
       - dependency-name: 'typescript'
     open-pull-requests-limit: 5
     commit-message:
