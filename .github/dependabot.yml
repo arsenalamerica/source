@@ -38,28 +38,28 @@ updates:
 
       babel:
         patterns:
-          - '@babel*'
+          - '@babel/*'
           - 'babel*'
       eslint:
         patterns:
-          - ^eslint-.*
-          - ^@typescript-eslint/.*
-          - ^eslint$
+          - '@typescript-eslint/*'
+          - 'eslint-*'
+          - 'eslint'
       react:
         patterns:
-          - 'react'
-          - 'react-dom'
-          - '@types/react'
           - '@types/react-dom'
+          - '@types/react'
+          - 'react-dom'
+          - 'react'
       storybook:
         patterns:
-          - ^@storybook/.*
-          - ^storybook$
+          - '@storybook/*'
+          - 'storybook'
       stylelint:
         patterns:
-          - ^stylelint-.*
-          - ^stylelint$
+          - 'stylelint-*'
+          - 'stylelint'
       typescript:
         patterns:
-          - ^@types/.*
-          - ^typescript$
+          - '@types/*'
+          - 'typescript'
