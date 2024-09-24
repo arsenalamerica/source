@@ -70,9 +70,6 @@ jobs:
   build:
     if: ${{ needs.setup.outputs.hasAffectedApps == 'true' }}
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-      contents: write
     strategy:
       matrix:
         app: ${{ fromJson(needs.setup.outputs.affectedApps) }}
