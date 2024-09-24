@@ -11,6 +11,17 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  dependabot-automerge:
+    runs-on: ubuntu-latest
+    # if: github.actor == 'dependabot[bot]' && github.event_name == 'pull_request'
+    permissions:
+      pull-requests: write
+      contents: write
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v3
+        with:
+          use-github-auto-merge: true
+          target: 'premajor'
   setup:
     runs-on: ubuntu-latest
     outputs:
