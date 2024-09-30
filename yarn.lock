@@ -141,10 +141,10 @@ __metadata:
     eslint-plugin-cypress: 3.5.0
     eslint-plugin-import: 2.30.0
     eslint-plugin-jsx-a11y: 6.10.0
-    eslint-plugin-react: 7.36.1
+    eslint-plugin-react: 7.37.0
     eslint-plugin-react-hooks: 4.6.2
     eslint-plugin-simple-import-sort: 12.1.1
-    eslint-plugin-storybook: 0.8.0
+    eslint-plugin-storybook: 0.9.0
     express: 4.21.0
     fathom-client: 3.7.2
     http-status-codes: 2.3.0
@@ -8947,9 +8947,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react@npm:7.36.1":
-  version: 7.36.1
-  resolution: "eslint-plugin-react@npm:7.36.1"
+"eslint-plugin-react@npm:7.37.0":
+  version: 7.37.0
+  resolution: "eslint-plugin-react@npm:7.37.0"
   dependencies:
     array-includes: ^3.1.8
     array.prototype.findlast: ^1.2.5
@@ -8971,7 +8971,7 @@ __metadata:
     string.prototype.repeat: ^1.0.0
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
-  checksum: bf3be414f3d639200a7d91feeaa6beec3397feed93ab22eaecef44dda37ecbd01812ed1720c72a9861fb276d3543cea69a834a66f64de3d878796fef4f4bf129
+  checksum: ece92e28b34ced0fd6bddebd41234ee53187b236fd507abef4f61cc868e27edd94fb7e290f44ff546037a6862c3302e848185a5e6511e2bcdf1883a1bfaa4ffc
   languageName: node
   linkType: hard
 
@@ -9012,9 +9012,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-storybook@npm:0.8.0":
-  version: 0.8.0
-  resolution: "eslint-plugin-storybook@npm:0.8.0"
+"eslint-plugin-storybook@npm:0.9.0":
+  version: 0.9.0
+  resolution: "eslint-plugin-storybook@npm:0.9.0"
   dependencies:
     "@storybook/csf": ^0.0.1
     "@typescript-eslint/utils": ^5.62.0
@@ -9022,7 +9022,7 @@ __metadata:
     ts-dedent: ^2.2.0
   peerDependencies:
     eslint: ">=6"
-  checksum: 71e4b064259e09a6353360ca4a3ec929df0ea3aabe1dc83a40b9264fe5c16bcecb94d097e7403f6916622b8fdb739e91f1268bbad220d838fcbc2b9a901345ec
+  checksum: 91e12030db3a6228b692e76ddda6871d59a5f6ef6979e2ed794f734b09aaf8de8528eab7597d7c2d06fd4b8b9a30654ff27d097816a5ac1e22170c13af97731a
   languageName: node
   linkType: hard
 
