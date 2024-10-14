@@ -19,8 +19,9 @@ jobs:
     steps:
       - uses: fastify/github-action-merge-dependabot@v3
         with:
-          use-github-auto-merge: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           target: 'minor'
+          use-github-auto-merge: true
 
   setup:
     runs-on: ubuntu-latest
