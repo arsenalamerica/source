@@ -2,6 +2,8 @@
 
 import styles from './FixtureCard.module.scss';
 
+import { useEffect, useRef } from 'react';
+
 import { Heading, HeadingLevel, VisuallyHidden } from '@ariakit/react';
 import {
   FixtureEntity,
@@ -15,7 +17,8 @@ import { LeagueLogo } from '../LeagueLogo/LeagueLogo';
 
 import { FixtureCardTeam } from './FixtureCardTeam';
 
-type FixtureCardProps = Omit<CardProps, 'id'> & FixtureEntity;
+type FixtureCardProps = Omit<CardProps, 'id'> &
+  Omit<FixtureEntity, 'id'> & { id: number | string | undefined };
 
 export function FixtureCard({
   // eslint-disable-next-line jsx-a11y/heading-has-content
@@ -29,8 +32,18 @@ export function FixtureCard({
   periods,
   venue,
   state,
+  id,
   ...rest
 }: FixtureCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (id) {
+      console.log(id);
+      cardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [id]);
+
   const gameTime = new Date(starting_at_timestamp * 1000).toLocaleTimeString(
     [],
     { timeStyle: 'short' },
@@ -56,7 +69,7 @@ export function FixtureCard({
   const isFuture = state.state === 'NS';
 
   return (
-    <Card className={[styles._, className].join(' ')}>
+    <Card className={[styles._, className].join(' ')} ref={cardRef}>
       <HeadingLevel>
         <VisuallyHidden>
           <Heading>{name}</Heading>
