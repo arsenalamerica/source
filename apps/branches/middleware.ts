@@ -94,7 +94,9 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
       new URL(`/${DOMAINS[0]}${url.pathname}`, request.url),
     );
   } else {
-    console.warn('Not a branch site:', siteDomain);
+    if (!isLocal) {
+      console.warn('Not a branch site:', siteDomain);
+    }
     // Keep the url at the base path for non-branch sites so we show our 404 page
     return NextResponse.rewrite(new URL(`/`, request.url));
   }
