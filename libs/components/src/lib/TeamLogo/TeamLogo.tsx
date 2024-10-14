@@ -37,7 +37,7 @@ export function TeamLogo({
   }
 
   if (!teams.has(teamId)) {
-    console.warn(`Logo for ${teamId}:${name} not found`);
+    console.warn(`TeamLogo for ${teamId}:${name} not found`);
 
     return <img {...rest} className={className} src={fallback} alt={altText} />;
   }

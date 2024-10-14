@@ -1,6 +1,6 @@
 $active-attribute: 'data-active-item' !default;
 
-@use 'bork/utilities/functions' as func;
+@use '../utilities/functions' as func;
 @use 'sass:color';
 
 @mixin default {
