@@ -4,72 +4,72 @@ import { branchData } from '@arsenalamerica/data';
 
 const DOMAINS = Object.keys(branchData);
 
-const BADDIES = [
-  '.asp',
-  '.aspx',
-  '.env',
-  '.php',
-  '/admin',
-  '/login',
-  'wp-admin',
-  'wp-content',
-  'wp-includes',
-  'wp-json',
-  'wp-login',
-];
+// const BADDIES = [
+//   '.asp',
+//   '.aspx',
+//   '.env',
+//   '.php',
+//   '/admin',
+//   '/login',
+//   'wp-admin',
+//   'wp-content',
+//   'wp-includes',
+//   'wp-json',
+//   'wp-login',
+// ];
 
 export function middleware(request: NextRequest, event: NextFetchEvent) {
   const url = request.nextUrl;
-  const ip = request.ip;
+  // const ip = request.ip;
 
   // First, check for bad actors, and rewrite them to a local IP address. If we have a match,
   // update the firewall to block the IP address.
   // https://vercel.com/docs/security/vercel-waf/examples#deny-traffic-from-a-set-of-ip-addresses
 
-  const isBaddie = BADDIES.some((bad) => url.pathname.includes(bad));
+  // const isBaddie = BADDIES.some((bad) => url.pathname.includes(bad));
 
-  if (isBaddie) {
-    const now = new Date();
-    const blockTime = now.toISOString();
+  // if (isBaddie) {
+  //   const now = new Date();
+  //   const blockTime = now.toISOString();
 
-    const notes = `${blockTime} - Auto Blocked: ${ip} `;
-    console.log(notes);
-    event.waitUntil(
-      fetch(
-        `https://api.vercel.com/v1/security/firewall/config?projectId=${process.env.VERCEL_BRANCH_PROJECT_ID}&teamId=${process.env.VERCEL_TEAM_ID}`,
-        {
-          method: 'PATCH',
-          headers: {
-            Authorization: `Bearer ${process.env.VERCEL_TOKEN}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            action: 'ip.insert',
-            id: null,
-            value: {
-              action: 'deny',
-              hostname: '*',
-              ip,
-              notes,
-            },
-          }),
-        },
-      )
-        .then((res) => {
-          if (res.ok) {
-            console.warn(notes);
-          } else {
-            console.error(res.status);
-          }
-        })
-        .catch((err) => console.error(err)),
-    );
+  //   const notes = `${blockTime} - Auto Blocked: ${ip} `;
+  //   console.log(notes);
+  //   event.waitUntil(
+  //     fetch(
+  //       `https://api.vercel.com/v1/security/firewall/config?projectId=${process.env.VERCEL_BRANCH_PROJECT_ID}&teamId=${process.env.VERCEL_TEAM_ID}`,
+  //       {
+  //         method: 'PATCH',
+  //         headers: {
+  //           Authorization: `Bearer ${process.env.VERCEL_TOKEN}`,
+  //           'Content-Type': 'application/json',
+  //         },
+  //         body: JSON.stringify({
+  //           action: 'ip.insert',
+  //           id: null,
+  //           value: {
+  //             action: 'deny',
+  //             hostname: '*',
+  //             ip,
+  //             notes,
+  //           },
+  //         }),
+  //       },
+  //     )
+  //       .then((res) => {
+  //         if (res.ok) {
+  //           console.warn(notes);
+  //         } else {
+  //           console.error(res.status);
+  //         }
+  //       })
+  //       .catch((err) => console.error(err)),
+  //   );
 
-    return NextResponse.json(
-      { error: 'BYE FELICIA', ip: `${ip}` },
-      { status: 403 },
-    );
-  }
+  //   return NextResponse.json(
+  //     { error: 'BYE FELICIA', ip: `${ip}` },
+  //     { status: 403 },
+  //   );
+  // }
 
   // Check for local development
   const isLocal = url.hostname === 'localhost';

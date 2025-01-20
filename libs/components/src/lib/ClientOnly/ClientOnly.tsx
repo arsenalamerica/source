@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react';
 
 type ReactChildren =
-  | JSX.Element[]
-  | JSX.Element
+  // | JSX.Element[]
+  // | JSX.Element
   | React.ReactElement[]
   | React.ReactElement
   | string[]

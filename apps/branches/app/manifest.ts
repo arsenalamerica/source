@@ -5,8 +5,8 @@ import { branchData } from '@arsenalamerica/data';
 
 import { ICON_SIZES } from '../icon-sizes';
 
-export default function Manifest(): MetadataRoute.Manifest {
-  const headersList = headers();
+export default async function Manifest(): Promise<MetadataRoute.Manifest> {
+  const headersList = await headers();
   const domain = headersList.get('host') || 'localhost';
 
   const branchSite = domain.startsWith('localhost')

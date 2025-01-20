@@ -13,12 +13,11 @@ import { branchData } from '@arsenalamerica/data';
 
 export interface LayoutProps {
   children: React.ReactNode;
-  params: { domain: string };
+  params: Promise<{ domain: string }>;
 }
 
-export async function generateMetadata({
-  params,
-}: LayoutProps): Promise<Metadata> {
+export async function generateMetadata(props: LayoutProps): Promise<Metadata> {
+  const params = await props.params;
   const branch = branchData[params.domain];
 
   return {
@@ -27,7 +26,11 @@ export async function generateMetadata({
   };
 }
 
-export default function Layout({ children, params }: LayoutProps) {
+export default async function Layout(props: LayoutProps) {
+  const params = await props.params;
+
+  const { children } = props;
+
   const branch = branchData[params.domain];
 
   return (
