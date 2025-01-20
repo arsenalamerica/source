@@ -11,7 +11,10 @@ export interface HomeProps {
 // https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
 export const revalidate = 45; // 45 seconds
 
-export default async function Home({ params }: { params: { domain: string } }) {
+export default async function Home(props: {
+  params: Promise<{ domain: string }>;
+}) {
+  const params = await props.params;
   const branch = branchData[params.domain];
   const Logo = branchLogo[branch?.domain];
 
