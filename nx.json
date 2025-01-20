@@ -6,15 +6,6 @@
   },
   "defaultBase": "main",
   "neverConnectToCloud": true,
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "stylelint", "test", "e2e"],
-        "parallel": 4
-      }
-    }
-  },
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
@@ -94,6 +85,5 @@
       }
     }
   },
-  "useInferencePlugins": false,
-  "useLegacyCache": true
+  "useInferencePlugins": false
 }

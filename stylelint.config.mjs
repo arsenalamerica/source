@@ -15,12 +15,6 @@ export default {
         'selector-class-pattern': '[^]*',
       },
     },
-    {
-      files: ['apps/tacomagooners/pages/_app.scss'],
-      rules: {
-        'selector-id-pattern': '__next',
-      },
-    },
   ],
   extends: [
     'stylelint-config-standard', // https://github.com/stylelint/stylelint-config-standard

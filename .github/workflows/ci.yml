@@ -38,7 +38,7 @@ jobs:
         uses: 2coo/action-nx-affected@v1
         id: affected
         with:
-          exclude: apps/branches-e2e,data
+          exclude: apps/branches-e2e,data,source
       - uses: brianespinosa/job-root-cache/save@main
 
   lint:

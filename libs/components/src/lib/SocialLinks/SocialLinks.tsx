@@ -38,8 +38,7 @@ export function SocialLinks({
   ...rest
 }: SocialLinksProperties) {
   return (
-    links &&
-    ((
+    links && (
       <ul {...rest} className={clsx(styles['_'], className)}>
         {links.map(({ name, url }) => {
           const icon = getBrandIcon(name);
@@ -67,7 +66,6 @@ export function SocialLinks({
           );
         })}
       </ul>
-    ) ??
-      null)
+    )
   );
 }
