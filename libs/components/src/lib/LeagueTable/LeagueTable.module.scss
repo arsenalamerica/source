@@ -2,7 +2,7 @@ $cell-padding: 0.625em;
 
 ._ {
   table {
-    width: calc(100% + 2 * $cell-padding);
+    width: calc(100% + 2 * #{$cell-padding});
     margin: -0.625em;
     border-collapse: collapse;
     table-layout: fixed;

@@ -21,7 +21,6 @@ type FixtureCardProps = Omit<CardProps, 'id'> &
   Omit<FixtureEntity, 'id'> & { id: number | string | undefined };
 
 export function FixtureCard({
-  // eslint-disable-next-line jsx-a11y/heading-has-content
   render = <section />,
   name,
   className,

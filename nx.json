@@ -32,7 +32,7 @@
       "dependsOn": ["stylelint"],
       "inputs": [
         "default",
-        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/eslint.config.cjs",
         "{workspaceRoot}/.eslintignore"
       ],
       "cache": true
@@ -52,7 +52,7 @@
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/src/test-setup.[jt]s",
       "!{projectRoot}/test-setup.[jt]s",
-      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/eslint.config.cjs",
       "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
       "!{projectRoot}/.storybook/**/*",
       "!{projectRoot}/tsconfig.storybook.json"
