@@ -8,7 +8,6 @@ export default forwardRef(function ExternalLink(
   forwardedRef: React.Ref<HTMLAnchorElement>,
 ) {
   return (
-    // eslint-disable-next-line jsx-a11y/anchor-has-content
     <a
       {...props}
       ref={forwardedRef}
