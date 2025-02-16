@@ -96,6 +96,7 @@ __metadata:
     "@babel/core": "npm:7.26.8"
     "@babel/preset-react": "npm:7.26.3"
     "@bjeco/blocks": "npm:1.1.0"
+    "@bjeco/prettier-config": "npm:*"
     "@eslint/compat": "npm:1.2.5"
     "@eslint/eslintrc": "npm:3.2.0"
     "@eslint/js": "npm:9.18.0"
@@ -1721,6 +1722,15 @@ __metadata:
     react: "*"
     react-dom: "*"
   checksum: 10/3a4fdb8c14f76e4fe6e9c4734dc5891d785e06f4d4276b1bf34acc5481d81ae556a10b9664f874d7fa164e369435b3f006e66f621b6677af6184395ccdb5e5bb
+  languageName: node
+  linkType: hard
+
+"@bjeco/prettier-config@npm:*":
+  version: 0.1.6
+  resolution: "@bjeco/prettier-config@npm:0.1.6"
+  dependencies:
+    prettier: "npm:2.0.5"
+  checksum: 10/a4bb8b681ced229d72fcbbdaf30796c29a61fd501eae1f2a6bc94f9bc184f8305ad452dac83b3d1895b125bff88c541d6d0c86d87d61a73f321db9cac547f386
   languageName: node
   linkType: hard
 
@@ -15502,6 +15512,15 @@ __metadata:
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
   checksum: 10/0b9d2c76801ca652a7f64892dd37b7e3fab149a37d2424920099bf894acccc62abb4424af2155ab36dea8744843060a2d8ddc983518d0b1e22265a22324b72ed
+  languageName: node
+  linkType: hard
+
+"prettier@npm:2.0.5":
+  version: 2.0.5
+  resolution: "prettier@npm:2.0.5"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 10/62e58e8b7a5ec8d3cb4e7576e788d6c7a81afd25845a91fef270e24ce4952212d6493b92f1ab9340ad705febc868db1f797578fcac896ee8cffb7c12b9dce36d
   languageName: node
   linkType: hard
 
