@@ -1,0 +1,3 @@
+[submodule ".vscode"]
+	path = .vscode
+	url = https://bespinosa_mntv@github.com/brianespinosa/.vscode.git
