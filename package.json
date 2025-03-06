@@ -130,5 +130,5 @@
     "vercel": "39.3.0",
     "webpack": "5.97.1"
   },
-  "packageManager": "yarn@4.6.0"
+  "packageManager": "yarn@4.7.0"
 }
