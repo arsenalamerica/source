@@ -3,34 +3,10 @@
   "domain": "eastlagooners.com",
   "name": "East Los Angeles Gooners",
   "pub": {
-    "name": "The York",
-    "address": "5018 York Blvd, Los Angeles, CA 90042",
-    "website": "https://maps.app.goo.gl/Vg4bPY1J44FSyxBJ8"
+    "name": "Lucky Baldwin's Pub",
+    "address": "17 S Raymond Ave, Pasadena, CA 91105",
+    "website": "https://maps.app.goo.gl/8GugzNrcEXXDLrSo8"
   },
-  "pubs": [
-    {
-      "condition": {
-        "time-compare": "GTE",
-        "time": "6:00",
-        "weekend": true,
-        "weekday": false
-      },
-      "name": "The York",
-      "address": "5018 York Blvd, Los Angeles, CA 90042",
-      "website": "https://maps.app.goo.gl/Vg4bPY1J44FSyxBJ8"
-    },
-    {
-      "condition": {
-        "time-compare": "LT",
-        "time": "6:00",
-        "weekend": true,
-        "weekday": false
-      },
-      "name": "Lucky Baldwin's Pub",
-      "address": "17 S Raymond Ave, Pasadena, CA 91105",
-      "website": "https://maps.app.goo.gl/8GugzNrcEXXDLrSo8"
-    }
-  ],
   "social": [
     {
       "name": "Facebook",
