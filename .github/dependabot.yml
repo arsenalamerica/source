@@ -3,6 +3,13 @@
 
 version: 2
 updates:
+  - package-ecosystem: gitsubmodule
+    schedule:
+      interval: 'daily'
+      time: '03:00'
+      timezone: 'America/New_York'
+    directory: /
+
   - package-ecosystem: npm
     rebase-strategy: 'auto'
     directory: '/'
