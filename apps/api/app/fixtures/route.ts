@@ -6,7 +6,7 @@ import { season } from '@arsenalamerica/utils';
 import logger from '../logger';
 
 // https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
-export const revalidate = 60; // 1 minute
+// export const revalidate = 60; // 1 minute
 
 export async function GET() {
   try {
@@ -21,7 +21,7 @@ export async function GET() {
       ].join(';'),
       sort_by: 'starting_at',
       order: 'asc',
-      per_page: ['50'].join(';'),
+      per_page: ['100'].join(';'),
     });
 
     logger.info(rest);
