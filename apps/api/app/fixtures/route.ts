@@ -21,7 +21,7 @@ export async function GET() {
       ].join(';'),
       sort_by: 'starting_at',
       order: 'asc',
-      per_page: ['100'].join(';'),
+      per_page: ['50'].join(';'),
     });
 
     logger.info(rest);
