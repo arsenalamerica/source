@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Heading } from '@ariakit/react';
 import { FixtureCard, Main, NextGame } from '@arsenalamerica/components';
 import { branchData, branchLogo } from '@arsenalamerica/data';
@@ -22,9 +23,11 @@ export default async function Home(props: {
 
   return (
     <Main>
-      {Logo && <Logo title={branch.name} role="img" />}
+      {Logo && <Logo title={branch.name} role='img' />}
       <Heading>Next Match</Heading>
-      <FixtureCard {...nextFixture} />
+      <Suspense>
+        <FixtureCard {...nextFixture} />
+      </Suspense>
       <NextGame fixture={nextFixture} branch={branch} />
     </Main>
   );

@@ -24,9 +24,25 @@ export async function GET() {
       per_page: ['50'].join(';'),
     });
 
-    logger.info(rest);
+    const { data: data2, ...rest2 } = await smFixtures(undefined, {
+      include: [
+        'league:name,image_path',
+        'participants:name,short_code,image_path',
+        'scores',
+        'state',
+        'periods',
+        'venue:name,city_name',
+      ].join(';'),
+      sort_by: 'starting_at',
+      order: 'asc',
+      per_page: ['50'].join(';'),
+      page: ['2'].join(';'),
+    });
 
-    return NextResponse.json(data);
+    logger.info(rest);
+    logger.info(rest2);
+
+    return NextResponse.json([...data, ...data2]);
   } catch (error) {
     logger.error(error);
     return NextResponse.json({

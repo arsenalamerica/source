@@ -100,7 +100,7 @@ export function FixtureCard({
             />
             <span>{league.name}</span>
           </div>
-          <div>{shite(venue.name)}</div>
+          <div>{shite(venue?.name)}</div>
         </footer>
       </HeadingLevel>
     </Card>
@@ -118,9 +118,9 @@ export function FixtureCardLoading() {
           <FixtureCardTeam
             isLoading
             id={19}
-            name="Loading"
-            short_code="XXX"
-            image_path="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+            name='Loading'
+            short_code='XXX'
+            image_path='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='
           />
           <div className={styles.Separator}>
             <div className={styles.Date} />
@@ -129,18 +129,18 @@ export function FixtureCardLoading() {
           <FixtureCardTeam
             isLoading
             id={19}
-            name="Loading"
-            short_code="XXX"
-            image_path="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+            name='Loading'
+            short_code='XXX'
+            image_path='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='
           />
         </div>
         <footer className={styles.Metadata}>
           <div>
             <LeagueLogo
-              className="loading"
+              className='loading'
               leagueId={2}
-              name="Loading..."
-              fallback="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+              name='Loading...'
+              fallback='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='
             />
           </div>
           <div />
