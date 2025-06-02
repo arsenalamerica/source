@@ -52,6 +52,19 @@ export function FixtureCard({
     { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' },
   );
 
+  if (!participants) {
+    return (
+      <Card className={[styles._, className].join(' ')} ref={cardRef}>
+        <HeadingLevel>
+          <VisuallyHidden>
+            <Heading>{name}</Heading>
+          </VisuallyHidden>
+          <div className={styles.Details}>No upcoming fixtures...</div>
+        </HeadingLevel>
+      </Card>
+    );
+  }
+
   const localTeam = participants.find((team) => team.meta.location === 'home');
   const visitorTeam = participants.find(
     (team) => team.meta.location === 'away',
