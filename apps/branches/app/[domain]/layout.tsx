@@ -2,6 +2,8 @@ import './global.scss';
 
 import type { Metadata } from 'next';
 
+import { Suspense } from 'react';
+
 import { Heading, HeadingLevel, VisuallyHidden } from '@ariakit/react';
 import {
   FathomNext,
@@ -36,24 +38,25 @@ export default async function Layout(props: LayoutProps) {
   return (
     <HeadingLevel>
       <PWAInstallPrompt />
-
-      {branch && (
-        <>
-          <FathomNext fathomId="RFIYDIHQ" />
-          <VisuallyHidden>
-            <Heading>{branch.name}</Heading>
-          </VisuallyHidden>
-        </>
-      )}
-      <NavBar />
-      <HeadingLevel>{children}</HeadingLevel>
-      <HeadingLevel level={3}>
-        <footer>
-          <Heading>Socials</Heading>
-          {branch?.social && <SocialLinks links={branch.social} />}
-          {branch?.footer && <p>{branch.footer}</p>}
-        </footer>
-      </HeadingLevel>
+      <Suspense>
+        {branch && (
+          <>
+            <FathomNext fathomId='RFIYDIHQ' />
+            <VisuallyHidden>
+              <Heading>{branch.name}</Heading>
+            </VisuallyHidden>
+          </>
+        )}
+        <NavBar />
+        <HeadingLevel>{children}</HeadingLevel>
+        <HeadingLevel level={3}>
+          <footer>
+            <Heading>Socials</Heading>
+            {branch?.social && <SocialLinks links={branch.social} />}
+            {branch?.footer && <p>{branch.footer}</p>}
+          </footer>
+        </HeadingLevel>
+      </Suspense>
     </HeadingLevel>
   );
 }

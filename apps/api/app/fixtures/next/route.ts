@@ -44,10 +44,12 @@ export async function GET() {
     return NextResponse.json(data);
   } catch (error) {
     logger.error(error);
-    return NextResponse.json({
-      season,
-      status: 500,
-      error,
-    });
+    return NextResponse.json([
+      {
+        season,
+        status: 500,
+        error,
+      },
+    ]);
   }
 }
