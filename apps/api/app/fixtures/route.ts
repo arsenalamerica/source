@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-import { smFixtures } from '@arsenalamerica/sportmonks';
+import { smFixtures, FixtureEntity } from '@arsenalamerica/sportmonks';
 import { season } from '@arsenalamerica/utils';
 
 import logger from '../logger';
@@ -24,20 +24,28 @@ export async function GET() {
       per_page: ['50'].join(';'),
     });
 
-    const { data: data2, ...rest2 } = await smFixtures(undefined, {
-      include: [
-        'league:name,image_path',
-        'participants:name,short_code,image_path',
-        'scores',
-        'state',
-        'periods',
-        'venue:name,city_name',
-      ].join(';'),
-      sort_by: 'starting_at',
-      order: 'asc',
-      per_page: ['50'].join(';'),
-      page: ['2'].join(';'),
-    });
+    let data2: FixtureEntity[] = [];
+    let rest2 = {};
+
+    if (rest.pagination.has_more) {
+      const { data, ...rest } = await smFixtures(undefined, {
+        include: [
+          'league:name,image_path',
+          'participants:name,short_code,image_path',
+          'scores',
+          'state',
+          'periods',
+          'venue:name,city_name',
+        ].join(';'),
+        sort_by: 'starting_at',
+        order: 'asc',
+        per_page: ['50'].join(';'),
+        page: ['2'].join(';'),
+      });
+
+      data2 = data;
+      rest2 = rest;
+    }
 
     logger.info(rest);
     logger.info(rest2);
