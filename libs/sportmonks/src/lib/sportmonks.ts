@@ -9,6 +9,13 @@ export type Sportmonks = {
     requested_entity: string;
   };
   timezone: string;
+  pagination: {
+    count: number;
+    per_page: number;
+    current_page: number;
+    next_page: number | null;
+    has_more: boolean;
+  };
 };
 
 export type EntityBase = {

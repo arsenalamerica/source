@@ -2,7 +2,8 @@ import { Sportmonks, sportmonks } from './sportmonks';
 
 // Needed for the static table endpoint - We will need to find a way to look this up based on the
 // team at some point maybe create some sort of highly cached current season endpoint.
-const TEMP_SEASON_ID = 23614;
+// FOR NOW THIS HAS TO BE UPDATED MANUALLY EVERY SEASON!!!
+const TEMP_SEASON_ID = 25583;
 
 export type StandingEntity = {
   id: number;
