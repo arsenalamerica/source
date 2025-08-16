@@ -15,11 +15,14 @@ export async function GET() {
     const { data, ...rest } = await smFixtures(undefined, {
       include: [
         'league:name,image_path',
-        'participants:name,short_code,image_path',
+        'participants.sidelined.player',
         'scores',
         'state',
+        'lineups.player',
         'periods',
         'tvStations',
+        // 'metadata.type',
+        // 'referees',
         'venue:name,city_name',
       ].join(';'),
       // All active or upcoming fixture states: https://docs.sportmonks.com/football/tutorials-and-guides/tutorials/includes/states#state-interactions
