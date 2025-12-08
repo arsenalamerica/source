@@ -186,7 +186,7 @@ __metadata:
     typescript: "npm:5.7.3"
     typescript-eslint: "npm:8.21.0"
     vercel: "npm:39.3.0"
-    webpack: "npm:5.99.1"
+    webpack: "npm:5.99.2"
     wretch: "npm:2.11.0"
   languageName: unknown
   linkType: soft
@@ -19043,9 +19043,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:5.99.1":
-  version: 5.99.1
-  resolution: "webpack@npm:5.99.1"
+"webpack@npm:5.99.2":
+  version: 5.99.2
+  resolution: "webpack@npm:5.99.2"
   dependencies:
     "@types/eslint-scope": "npm:^3.7.7"
     "@types/estree": "npm:^1.0.6"
@@ -19075,7 +19075,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 10/e9cf098e905bcfabe69665489a8dfaa77ebeca6274fcab952d07743b53f3e67b998c7615290d40265ebb7d56f96fd1f93025e7a8f910371d9f8c49ed685c36f5
+  checksum: 10/c0461f97b88322e4d8503b06f2b7a0982bd7634bb7e4a6e39f7389ada8918df31b95d62d08f57a24af80ef7c00ba27f451d894b43d61979d6e0398d9c6bc3581
   languageName: node
   linkType: hard
 
