@@ -181,7 +181,7 @@ __metadata:
     typescript: "npm:5.9.3"
     typescript-eslint: "npm:8.49.0"
     vercel: "npm:39.3.0"
-    webpack: "npm:5.99.0"
+    webpack: "npm:5.99.1"
     wretch: "npm:2.11.0"
   languageName: unknown
   linkType: soft
@@ -22179,9 +22179,52 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "webpack@npm:5.99.0":
   version: 5.99.0
   resolution: "webpack@npm:5.99.0"
+=======
+"webpack@npm:5.88.0":
+  version: 5.88.0
+  resolution: "webpack@npm:5.88.0"
+  dependencies:
+    "@types/eslint-scope": "npm:^3.7.3"
+    "@types/estree": "npm:^1.0.0"
+    "@webassemblyjs/ast": "npm:^1.11.5"
+    "@webassemblyjs/wasm-edit": "npm:^1.11.5"
+    "@webassemblyjs/wasm-parser": "npm:^1.11.5"
+    acorn: "npm:^8.7.1"
+    acorn-import-assertions: "npm:^1.9.0"
+    browserslist: "npm:^4.14.5"
+    chrome-trace-event: "npm:^1.0.2"
+    enhanced-resolve: "npm:^5.15.0"
+    es-module-lexer: "npm:^1.2.1"
+    eslint-scope: "npm:5.1.1"
+    events: "npm:^3.2.0"
+    glob-to-regexp: "npm:^0.4.1"
+    graceful-fs: "npm:^4.2.9"
+    json-parse-even-better-errors: "npm:^2.3.1"
+    loader-runner: "npm:^4.2.0"
+    mime-types: "npm:^2.1.27"
+    neo-async: "npm:^2.6.2"
+    schema-utils: "npm:^3.2.0"
+    tapable: "npm:^2.1.1"
+    terser-webpack-plugin: "npm:^5.3.7"
+    watchpack: "npm:^2.4.0"
+    webpack-sources: "npm:^3.2.3"
+  peerDependenciesMeta:
+    webpack-cli:
+      optional: true
+  bin:
+    webpack: bin/webpack.js
+  checksum: 10/2d54e7e3863a34eb4233c9bafaefd417a06c3aef95cd61d5054d0cd7f774be77105ff57b1e2ee2c422ec1e5fb731295d63331b6a45c41807bba4c080e559cb8b
+  languageName: node
+  linkType: hard
+
+"webpack@npm:5.99.1":
+  version: 5.99.1
+  resolution: "webpack@npm:5.99.1"
+>>>>>>> dcf8d20 (chore(deps): update: bump webpack from 5.99.0 to 5.99.1 (#183))
   dependencies:
     "@types/eslint-scope": "npm:^3.7.7"
     "@types/estree": "npm:^1.0.6"
@@ -22211,7 +22254,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 10/cc3d37cd266aef26c96d27bda12c7b9d246e06b9115efe1c814db83dbd0076f2b4de8c60df88a8db7472cd06029b069dd669eda08e1b515118d65e31ae3bc022
+  checksum: 10/e9cf098e905bcfabe69665489a8dfaa77ebeca6274fcab952d07743b53f3e67b998c7615290d40265ebb7d56f96fd1f93025e7a8f910371d9f8c49ed685c36f5
   languageName: node
   linkType: hard
 
