@@ -22087,7 +22087,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "webpack-dev-server@npm:^5.2.1":
+=======
+"webpack-dev-server@npm:^5.0.4":
+>>>>>>> 1a740bb (chore(deps): update: bump webpack-dev-server from 5.2.0 to 5.2.2 (#176))
   version: 5.2.2
   resolution: "webpack-dev-server@npm:5.2.2"
   dependencies:
