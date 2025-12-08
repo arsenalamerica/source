@@ -6,16 +6,17 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nx/next:build",
-      "outputs": ["{options.outputPath}"],
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/apps/api"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/api"
+        "commands": [
+          "cd apps/api && npx next build --webpack"
+        ],
+        "parallel": false
       },
       "configurations": {
-        "development": {
-          "outputPath": "apps/api"
-        },
+        "development": {},
         "production": {}
       }
     },
@@ -42,14 +43,12 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "api:build",
-        "dev": true,
-        "turbo": true
+        "dev": true
       },
       "configurations": {
         "development": {
           "port": 3333,
           "buildTarget": "api:build:development",
-
           "dev": true
         },
         "production": {

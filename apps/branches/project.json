@@ -6,16 +6,17 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nx/next:build",
-      "outputs": ["{options.outputPath}"],
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/apps/branches"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/branches"
+        "commands": [
+          "cd apps/branches && npx next build --webpack"
+        ],
+        "parallel": false
       },
       "configurations": {
-        "development": {
-          "outputPath": "apps/branches"
-        },
+        "development": {},
         "production": {}
       }
     },
@@ -53,13 +54,11 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "branches:build",
-        "dev": true,
-        "turbo": true
+        "dev": true
       },
       "configurations": {
         "development": {
           "buildTarget": "branches:build:development",
-
           "dev": true
         },
         "production": {

@@ -11,11 +11,11 @@ export async function GET(
   request: Request,
   context: {
     params: Promise<{
-      station_id: number;
+      station_id: string;
     }>;
   },
 ) {
-  const station_id = (await context.params).station_id;
+  const station_id = Number((await context.params).station_id);
 
   try {
     const { data, ...rest } = await smTvStation(station_id);
