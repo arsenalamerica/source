@@ -39,7 +39,7 @@
     "clsx": "2.1.1",
     "core-js": "3.40.0",
     "fathom-client": "3.7.2",
-    "next": "15.2.5",
+    "next": "15.5.7",
     "normalize.css": "8.0.1",
     "pino": "9.6.0",
     "ramda": "0.30.1",
