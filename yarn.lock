@@ -22,10 +22,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ariakit/core@npm:0.4.14":
-  version: 0.4.14
-  resolution: "@ariakit/core@npm:0.4.14"
-  checksum: 10/5ae957a9d57c17afee0a4f82c23b84dbd2743e4d7046f74707ba1fc2453ea5068074c7618057ab02571da415dbd7cc927531289f2f0af90c9a991a8d3ac4156c
+"@ariakit/core@npm:0.4.17":
+  version: 0.4.17
+  resolution: "@ariakit/core@npm:0.4.17"
+  checksum: 10/d59a81d0ccf3d8884604bd64f000806588a4c001aeca4a0081c914e0877c581d918a36346c515e575a753dd3f619931d2777616ce050632460917f8704c251d4
   languageName: node
   linkType: hard
 
@@ -50,17 +50,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ariakit/react-core@npm:0.4.15":
-  version: 0.4.15
-  resolution: "@ariakit/react-core@npm:0.4.15"
+"@ariakit/react-core@npm:0.4.20":
+  version: 0.4.20
+  resolution: "@ariakit/react-core@npm:0.4.20"
   dependencies:
-    "@ariakit/core": "npm:0.4.14"
+    "@ariakit/core": "npm:0.4.17"
     "@floating-ui/dom": "npm:^1.0.0"
     use-sync-external-store: "npm:^1.2.0"
   peerDependencies:
     react: ^17.0.0 || ^18.0.0 || ^19.0.0
     react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 10/d4b72f7d8b8c776b840c98d074e27a24dab2c015463dac2086f6018e2ebbbd16d77ae11f6777cdd96f5dca278148ca9f9188b3bd98857d48884a7617cf11d1bb
+  checksum: 10/479e7d08b93b7b72fa8b483864eef1da7daf5e5ee8c8b3e85e6700dabfa2ba7709a1b5c3846616b521af991b666ba5ce65b1f73c722840fb395191c19353df8f
   languageName: node
   linkType: hard
 
@@ -76,15 +76,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ariakit/react@npm:0.4.15":
-  version: 0.4.15
-  resolution: "@ariakit/react@npm:0.4.15"
+"@ariakit/react@npm:0.4.20":
+  version: 0.4.20
+  resolution: "@ariakit/react@npm:0.4.20"
   dependencies:
-    "@ariakit/react-core": "npm:0.4.15"
+    "@ariakit/react-core": "npm:0.4.20"
   peerDependencies:
     react: ^17.0.0 || ^18.0.0 || ^19.0.0
     react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 10/e94ff75aac15b203eb28630eec0e9af5f5c6e3b644c511d2a340b0a7e58b649a5c2980ac135189ad3ae14ceb9882067c10cdb485ee9594fe8a524058b8d514ea
+  checksum: 10/7b34188b4f6129f2e73ba7aa68678d09a68390bd75a02237a88a269d1a7543d9ed512055c1592ab225f3548e0810a5da9742afe42647b2418d98f63d5df83b8d
   languageName: node
   linkType: hard
 
@@ -92,7 +92,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@arsenalamerica/source@workspace:."
   dependencies:
-    "@ariakit/react": "npm:0.4.15"
+    "@ariakit/react": "npm:0.4.20"
     "@babel/core": "npm:7.26.9"
     "@babel/preset-react": "npm:7.26.3"
     "@bjeco/blocks": "npm:1.1.0"
@@ -118,7 +118,7 @@ __metadata:
     "@swc-node/register": "npm:1.10.9"
     "@swc/cli": "npm:0.6.0"
     "@swc/core": "npm:1.10.8"
-    "@swc/helpers": "npm:0.5.15"
+    "@swc/helpers": "npm:0.5.17"
     "@swc/jest": "npm:0.2.37"
     "@swc/types": "npm:0.1.17"
     "@testing-library/dom": "npm:10.4.0"
@@ -132,12 +132,12 @@ __metadata:
     "@types/svg2png": "npm:4.1.5"
     "@typescript-eslint/eslint-plugin": "npm:8.22.0"
     "@typescript-eslint/parser": "npm:8.22.0"
-    "@vercel/analytics": "npm:1.4.1"
+    "@vercel/analytics": "npm:1.6.1"
     "@vercel/functions": "npm:1.5.2"
-    "@vercel/og": "npm:0.6.4"
+    "@vercel/og": "npm:0.8.5"
     babel-jest: "npm:29.7.0"
     clsx: "npm:2.1.1"
-    core-js: "npm:3.40.0"
+    core-js: "npm:3.47.0"
     cypress: "npm:13.13.1"
     dotenv: "npm:16.4.7"
     eslint: "npm:9.18.0"
@@ -166,7 +166,7 @@ __metadata:
     pino: "npm:9.6.0"
     postcss: "npm:8.5.1"
     prettier: "npm:3.4.2"
-    ramda: "npm:0.30.1"
+    ramda: "npm:0.32.0"
     react: "npm:19.2.1"
     react-dom: "npm:19.2.1"
     react-ios-pwa-prompt: "npm:2.0.6"
@@ -4686,6 +4686,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@swc/helpers@npm:0.5.17":
+  version: 0.5.17
+  resolution: "@swc/helpers@npm:0.5.17"
+  dependencies:
+    tslib: "npm:^2.8.0"
+  checksum: 10/1fc8312a78f1f99c8ec838585445e99763eeebff2356100738cdfdb8ad47d2d38df678ee6edd93a90fe319ac52da67adc14ac00eb82b606c5fb8ebc5d06ec2a2
+  languageName: node
+  linkType: hard
+
 "@swc/jest@npm:0.2.37":
   version: 0.2.37
   resolution: "@swc/jest@npm:0.2.37"
@@ -5600,9 +5609,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/analytics@npm:1.4.1":
-  version: 1.4.1
-  resolution: "@vercel/analytics@npm:1.4.1"
+"@vercel/analytics@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@vercel/analytics@npm:1.6.1"
   peerDependencies:
     "@remix-run/react": ^2
     "@sveltejs/kit": ^1 || ^2
@@ -5626,7 +5635,7 @@ __metadata:
       optional: true
     vue-router:
       optional: true
-  checksum: 10/c28e6824cccc9be7917f88d744492e03189d7b9f840430d90c016956c713bb61b94955ec0181a80177ef96c3b239fd8ebb9e9f3eb715b3bdf76b2630cb405dad
+  checksum: 10/304c6cfef21cdec4c1a2c68c1664e323c1813d733972c9f3603b955ca899655b2a9a0084a34288548e6847ffb802c2916273e4b2bef70e5ce712254a18ae2f3c
   languageName: node
   linkType: hard
 
@@ -5783,14 +5792,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/og@npm:0.6.4":
-  version: 0.6.4
-  resolution: "@vercel/og@npm:0.6.4"
+"@vercel/og@npm:0.8.5":
+  version: 0.8.5
+  resolution: "@vercel/og@npm:0.8.5"
   dependencies:
     "@resvg/resvg-wasm": "npm:2.4.0"
-    satori: "npm:0.12.0"
-    yoga-wasm-web: "npm:0.3.3"
-  checksum: 10/6941bc7e95b7c88fd0e017ab1a89356c16ca1c99c29d2d5984d5470594f7ac2a4d1169945bf5e7ca77c813ffbfc3e1c2e3dd98007ca990906a412963dbb2c516
+    satori: "npm:0.16.0"
+  checksum: 10/8d6c8f8de7c755ffc386b455daf2d8a56ace635b8e51d7f891f3bab424df1b9691a82918eefa91453377436d38c31f9f6edf8b34aea74676b0eb63ccdb3a38cf
   languageName: node
   linkType: hard
 
@@ -7946,10 +7954,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:3.40.0":
-  version: 3.40.0
-  resolution: "core-js@npm:3.40.0"
-  checksum: 10/9c7e7d2839db6c3c7b72725a3ce5edf6dd61fc771e1551e08b5622ca7da330f2f5d3c7dcd6a6e7889baa8d4cc5a909ba75b4add0d1f3da940a2a60a3e0603be5
+"core-js@npm:3.47.0":
+  version: 3.47.0
+  resolution: "core-js@npm:3.47.0"
+  checksum: 10/c02dc6a091c7e6799e3527dc06a428c44bbcff7f8f6ee700ff818b90aa2ebaf1f17b0234146e692811da97cda5a39a6095ecadec9fd1a74b1135103eb0e96cb1
   languageName: node
   linkType: hard
 
@@ -8937,7 +8945,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"emoji-regex@npm:^10.2.1, emoji-regex@npm:^10.3.0":
+"emoji-regex-xs@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "emoji-regex-xs@npm:2.0.1"
+  checksum: 10/b23eb4e9cc4485ea64c8c7a77097b50a5c9fee89edc13bb27aedcb0104ba97dea6bc388701378df4ffca0dfdc3fa3a5dde7582dceb5c4af440d9cc5bbde397b7
+  languageName: node
+  linkType: hard
+
+"emoji-regex@npm:^10.3.0":
   version: 10.4.0
   resolution: "emoji-regex@npm:10.4.0"
   checksum: 10/76bb92c5bcf0b6980d37e535156231e4a9d0aa6ab3b9f5eabf7690231d5aa5d5b8e516f36e6804cbdd0f1c23dfef2a60c40ab7bb8aedd890584281a565b97c50
@@ -16014,10 +16029,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ramda@npm:0.30.1":
-  version: 0.30.1
-  resolution: "ramda@npm:0.30.1"
-  checksum: 10/f3e1a7bc11f3a113edb3bb4764c2c22088c5896594934c01cf1980184d00f1d5a7af82761a3389419e2d51542ad2121ff44e718f40792d167e2846bba79a4c6d
+"ramda@npm:0.32.0":
+  version: 0.32.0
+  resolution: "ramda@npm:0.32.0"
+  checksum: 10/ee03949247ce0cdbb86642c7087adb015552a91e29e21ffe63f1d3e492328144dc3028f7f804f53c028ce753e46e50d0f4ba09c24b394efb98c1e412a5dd046c
   languageName: node
   linkType: hard
 
@@ -16645,22 +16660,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"satori@npm:0.12.0":
-  version: 0.12.0
-  resolution: "satori@npm:0.12.0"
+"satori@npm:0.16.0":
+  version: 0.16.0
+  resolution: "satori@npm:0.16.0"
   dependencies:
     "@shuding/opentype.js": "npm:1.4.0-beta.0"
     css-background-parser: "npm:^0.1.0"
     css-box-shadow: "npm:1.0.0-3"
     css-gradient-parser: "npm:^0.0.16"
     css-to-react-native: "npm:^3.0.0"
-    emoji-regex: "npm:^10.2.1"
+    emoji-regex-xs: "npm:^2.0.1"
     escape-html: "npm:^1.0.3"
     linebreak: "npm:^1.1.0"
     parse-css-color: "npm:^0.2.1"
     postcss-value-parser: "npm:^4.2.0"
-    yoga-wasm-web: "npm:^0.3.3"
-  checksum: 10/e27c63de4ece6f43ad07e1c0e15fbd6206d02a1ecf3b5788d4d258b73e6549c7d32ffee3f8ab580635e4b9f6ac58dcfa03b6102b8f15a6a14408eeb887af676f
+    yoga-layout: "npm:^3.2.1"
+  checksum: 10/1f18645a9f53752d7aa1312a411df992484b0cd81322e4d717184e09d9824a06390dcf6d0c027cb66f3beb1c37816a8a6550926509a94e1e37faff452762e0a9
   languageName: node
   linkType: hard
 
@@ -19874,9 +19889,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yoga-wasm-web@npm:0.3.3, yoga-wasm-web@npm:^0.3.3":
-  version: 0.3.3
-  resolution: "yoga-wasm-web@npm:0.3.3"
-  checksum: 10/7a60a7dbb6dc0383395f2b40c9fac6e4f7b322f934ebb07cefc92997baca597f3ef01f67fe37e5e61c128de917760aa7639980ed2f8d94c2dfbef83bd5f61e36
+"yoga-layout@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "yoga-layout@npm:3.2.1"
+  checksum: 10/60fdd6cbcf7abf0ed9ed5a2391543eabcdf9054ee2f2212a79d624564d3545710b1f2a2acde092d7270dd35b6230a5bd1596521c0a270d995fec9542a7fb6737
   languageName: node
   linkType: hard
