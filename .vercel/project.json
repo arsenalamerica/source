@@ -1,0 +1,15 @@
+{
+  "projectId": "prj_NqBSR0oCTmQTZlsi3Oq5qn8bOWfT",
+  "orgId": "team_3FcuJksDBvOKgDoo28ETlJjx",
+  "settings": {
+    "createdAt": 1696916281798,
+    "framework": "nextjs",
+    "devCommand": null,
+    "installCommand": "yarn install --no-immutable",
+    "buildCommand": "cd ../.. && yarn nx build branches --prod",
+    "outputDirectory": "../../dist/apps/branches/.next",
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "20.x"
+  }
+}

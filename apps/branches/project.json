@@ -28,11 +28,11 @@
         },
         "commands": [
           {
-            "command": "yarn vercel pull --yes --token={args.token}",
+            "command": "yarn vercel pull --yes --token={args.token} --cwd apps/branches",
             "forwardAllArgs": false
           },
-          "yarn vercel build",
-          "yarn vercel deploy --prebuilt > deployment-url.txt"
+          "yarn vercel build --cwd apps/branches",
+          "yarn vercel deploy --prebuilt --cwd apps/branches > deployment-url.txt"
         ],
         "parallel": false
       }
