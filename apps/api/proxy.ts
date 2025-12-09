@@ -5,7 +5,7 @@ import { branchData } from '@arsenalamerica/data';
 
 const DOMAINS = Object.keys(branchData);
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   // Get the current response
   const response = NextResponse.next();
 

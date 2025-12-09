@@ -28,11 +28,11 @@
         },
         "commands": [
           {
-            "command": "yarn vercel pull --yes --token={args.token}",
+            "command": "yarn vercel pull --yes --token={args.token} --cwd apps/api",
             "forwardAllArgs": false
           },
-          "yarn vercel build",
-          "yarn vercel deploy --prebuilt > deployment-url.txt"
+          "yarn vercel build --cwd apps/api",
+          "yarn vercel deploy --prebuilt --cwd apps/api > deployment-url.txt"
         ],
         "parallel": false
       }
@@ -42,14 +42,12 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "api:build",
-        "dev": true,
-        "turbo": true
+        "dev": true
       },
       "configurations": {
         "development": {
           "port": 3333,
           "buildTarget": "api:build:development",
-
           "dev": true
         },
         "production": {
