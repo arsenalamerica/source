@@ -53,13 +53,11 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "branches:build",
-        "dev": true,
-        "turbo": true
+        "dev": true
       },
       "configurations": {
         "development": {
           "buildTarget": "branches:build:development",
-
           "dev": true
         },
         "production": {

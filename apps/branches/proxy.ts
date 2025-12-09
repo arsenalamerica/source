@@ -18,7 +18,7 @@ const DOMAINS = Object.keys(branchData);
 //   'wp-login',
 // ];
 
-export function middleware(request: NextRequest, event: NextFetchEvent) {
+export function proxy(request: NextRequest, event: NextFetchEvent) {
   const url = request.nextUrl;
   // const ip = request.ip;
 
